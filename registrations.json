@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "fullNameTh": "นายรพีพัฒน์ ยวงสุวรรณ",
+    "nickname": "เนติ์",
+    "fullNameEn": "RAPIPAT YOUNGSUWAN",
+    "gender": "ชาย",
+    "phone": "0824696922",
+    "contactId": "princenaeti",
+    "emergencyContact": "-",
+    "hotelId": "yunding",
+    "roomCapacity": 2,
+    "roommateRequest": "",
+    "dietary": "ทานอาหารได้ปกติ",
+    "shuttlePackage": "roundtrip",
+    "heuTransitOption": "metro_harbin",
+    "luggage": "กระเป๋า 20-24 นิ้ว (1 ใบ) + เป้สะพายหลัง",
+    "arrivalNote": "พร้อมกลุ่มหลักที่สถานี Metro 哈尔滨工程大学站",
+    "activities": [
+      "เดินถนนเสวี่ยหยุน & ถ่ายรูปชุดลายดอกตงเป่ย",
+      "จุดชมวิวเขาป้างฉุย & ทางเดินไม้เทพนิยาย"
+    ],
+    "coldReadiness": "เตรียมครบแล้ว (เสื้อขนเป็ด, ลองจอน, รองเท้าลุยหิมะ)",
+    "notes": "-",
+    "updatedAtMs": 1795364567458,
+    "id": "reg_1795364568514_wzyk",
+    "createdAtMs": 1795364568514
+  }
+]
