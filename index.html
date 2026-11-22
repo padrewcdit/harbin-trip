@@ -172,21 +172,22 @@
                             ทริปหมู่บ้านหิมะจีน – ยาบูลี
                         </h1>
                         <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
-                            ออกเดินทางจาก <strong>ม.ฮาร์บินเอ็นจิเนียริ่ง (HEU)</strong> • พักบูทีคโฮมสเตย์เบรฟส์โฮมแลนด์ • รถตู้เหมา 15 ที่นั่งไป-กลับพร้อมกันทั้งกลุ่ม
+                            ออกเดินทางจาก <strong>ม.ฮาร์บินเอ็นจิเนียริ่ง (HEU)</strong> • เลือกที่พักได้ 2 แห่ง (<strong>เบรฟส์โฮมแลนด์</strong> หรือ <strong>โรงแรมหยุนติ้งเสว</strong>) • รถตู้เหมา 15 ที่นั่งไป-กลับพร้อมกันทั้งกลุ่ม
                         </p>
                     </div>
 
                     <!-- Live Quota Pill -->
-                    <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 shrink-0 sm:min-w-[210px]">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 shrink-0 sm:min-w-[225px]">
                         <div class="flex items-center justify-between text-xs text-sky-200">
                             <span>ผู้ลงทะเบียนแล้ว</span>
                             <span id="hub-seats-badge" class="font-bold text-emerald-300">ว่าง 15 ที่นั่ง</span>
                         </div>
                         <div class="flex items-baseline gap-1.5 mt-1">
                             <span class="text-3xl font-extrabold text-white live-pax-count">0</span>
-                            <span class="text-xs text-slate-300">/ 15 ท่าน (5 ห้องพัก)</span>
+                            <span class="text-xs text-slate-300">/ 15 ที่นั่งรถตู้</span>
                         </div>
-                        <div class="w-full h-2 bg-white/15 rounded-full overflow-hidden mt-2.5">
+                        <p class="text-[11px] text-sky-200 mt-1" id="hub-rooms-summary-pill">เบรฟส์ 0/5 ห้อง • หยุนติ้งเสว 0/3 ห้อง</p>
+                        <div class="w-full h-2 bg-white/15 rounded-full overflow-hidden mt-2">
                             <div id="hub-progress-bar" class="h-full bg-gradient-to-r from-sky-400 to-emerald-400 rounded-full transition-all duration-500" style="width: 0%"></div>
                         </div>
                     </div>
@@ -197,7 +198,7 @@
             <div class="flex items-center justify-between px-1">
                 <div>
                     <h2 class="text-lg sm:text-xl font-bold text-slate-900">เลือกเมนูที่ต้องการใช้งาน</h2>
-                    <p class="text-xs sm:text-sm text-slate-500">แตะเลือกหัวข้อด้านล่างเพื่อดูข้อมูลทีละส่วนอย่างเป็นระเบียบ</p>
+                    <p class="text-xs sm:text-sm text-slate-500">แตะเลือกหัวข้อด้านล่างเพื่อดูรายละเอียดที่พักทั้ง 2 แห่ง ลงทะเบียน หรือดูผลสรุปห้องที่ต้องจอง</p>
                 </div>
             </div>
 
@@ -217,11 +218,11 @@
                             1. รายละเอียดโดยสังเขป
                         </h3>
                         <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                            ข้อมูลที่พักเบรฟส์โฮมแลนด์ รถตู้เหมา 15 ที่นั่ง ค่าเดินทางจาก HEU และกำหนดการเที่ยว 3 วัน 2 คืน
+                            เปรียบเทียบที่พัก 2 แห่ง (เบรฟส์โฮมแลนด์ vs โรงแรมหยุนติ้งเสว) สิทธิ์ฟรี กิจกรรม รถตู้เหมา 15 ที่นั่ง และตารางเที่ยว
                         </p>
                     </div>
                     <div class="flex items-center text-xs font-bold text-blue-600 pt-1">
-                        <span>เปิดดูรายละเอียดทริป</span>
+                        <span>เปิดดูรายละเอียดทริป & ที่พัก</span>
                         <i data-lucide="chevron-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition"></i>
                     </div>
                 </button>
@@ -239,7 +240,7 @@
                             2. ลงทะเบียนร่วมทริป
                         </h3>
                         <p class="text-xs sm:text-sm text-sky-100 mt-1 leading-relaxed">
-                            ตอบแบบสอบถามทีละข้อ เลือกห้องพักแบบ <strong>1 คน / 2 คน / 3 คน</strong> พร้อมหน้าสรุปค่าใช้จ่ายให้ตรวจทานก่อนบันทึก
+                            ตอบแบบสอบถามทีละข้อ เลือกโรงแรมที่ชอบ (ดูสเปกและสิทธิ์ฟรีก่อนเลือก) พร้อมเลือกรูปแบบนอน <strong>1–4 คน/ห้อง</strong>
                         </p>
                     </div>
                     <div class="flex items-center text-xs font-bold text-white pt-1">
@@ -261,7 +262,7 @@
                             3. ประมาณการค่าใช้จ่าย
                         </h3>
                         <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                            สไลด์จำลองงบหารเฉลี่ย 1–15 คน เปรียบเทียบค่าห้องพัก 1 / 2 / 3 คน และค่ารถเหมาตามจำนวนผู้เดินทางจริง
+                            สไลด์จำลองงบหารเฉลี่ย 1–15 คน สลับเทียบราคาทั้ง 2 โรงแรม และรูปแบบห้องพัก 1–4 คน/ห้องได้ทันที
                         </p>
                     </div>
                     <div class="flex items-center text-xs font-bold text-indigo-600 pt-1">
@@ -282,14 +283,14 @@
                     </div>
                     <div>
                         <h3 class="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition">
-                            4. ผลการลงทะเบียน & จับคู่ห้อง
+                            4. ผลการลงทะเบียน & สรุปห้องจอง
                         </h3>
                         <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                            ตรวจรายชื่อผู้ลงทะเบียน ระบบแมตช์ชิ่งเพื่อนร่วมห้อง (1/2/3 คน) และประมวลผลยอดจ่ายรายบุคคลอัตโนมัติ
+                            ดูสรุปว่า <strong>ต้องจองที่ไหนกี่ห้อง</strong> ผลจับคู่เพื่อนร่วมห้องแยกตามโรงแรม และยอดจ่ายรายบุคคลอัตโนมัติ
                         </p>
                     </div>
                     <div class="flex items-center text-xs font-bold text-emerald-600 pt-1">
-                        <span>ดูรายชื่อและผลจับคู่ห้องพัก</span>
+                        <span>ดูรายชื่อและสรุปห้องที่ต้องจอง</span>
                         <i data-lucide="chevron-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition"></i>
                     </div>
                 </button>
@@ -298,40 +299,42 @@
         </section>
 
         <!-- ======================================================= -->
-        <!-- VIEW 1: รายละเอียดโดยสังเขป (BRIEF OVERVIEW)             -->
+        <!-- VIEW 1: รายละเอียดโดยสังเขป (BRIEF OVERVIEW + 2 HOTELS)   -->
         <!-- ======================================================= -->
         <section id="view-overview" class="hidden view-fade space-y-6">
             <div class="flex items-center justify-between gap-3">
                 <div>
                     <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">เมนูที่ 1</span>
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900">รายละเอียดทริปโดยสังเขป</h2>
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900">รายละเอียดทริป & เปรียบเทียบที่พัก 2 แห่ง</h2>
                 </div>
                 <button type="button" onclick="navigateTo('register')" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold shadow-sm transition">
                     ไปหน้าลงทะเบียน →
                 </button>
             </div>
 
-            <!-- 3 Core Summary Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Transit Cards (HEU <-> Yabuli + Shuttle 15-Seater) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <!-- Transit HEU <-> Yabuli -->
                 <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
                     <div class="space-y-2.5">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center">
-                            <i data-lucide="train-front" class="w-5 h-5"></i>
+                        <div class="flex items-center justify-between">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                <i data-lucide="train-front" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-lg">ช่วงที่ 1 • เดินทางจากมอ</span>
                         </div>
-                        <span class="inline-block text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-md">ช่วงที่ 1 • เดินทางจากมอ</span>
-                        <h3 class="text-base font-bold text-slate-900">HEU ↔ สถานียาบูลี (ไป-กลับ)</h3>
+                        <h3 class="text-base font-bold text-slate-900">ม.ฮาร์บินเอ็นจิเนียริ่ง (HEU) ↔ สถานียาบูลี</h3>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            นั่ง Metro จาก <strong>ม.ฮาร์บินเอ็นจิเนียริ่ง (HEU)</strong> ไปสถานี Harbin (¥4 ไป-กลับ) ต่อรถไฟความเร็วสูงถึง <strong>Yabulixi</strong> (¥148 ไป-กลับ)
+                            นั่ง Metro จาก <strong>HEU</strong> ไปสถานี Harbin (¥4 ไป-กลับ) ต่อรถไฟความเร็วสูงถึง <strong>Yabulixi</strong> (¥148 ไป-กลับ) ใช้เวลา ~1 ชม. 16 นาที
                         </p>
                     </div>
-                    <div class="pt-2 border-t border-slate-100 space-y-2">
-                        <div class="flex items-baseline justify-between">
-                            <span class="text-xs text-slate-500">ค่าใช้จ่ายไป-กลับ:</span>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+                        <div>
+                            <span class="text-[11px] text-slate-400 block">ค่าเดินทางไป-กลับ:</span>
                             <span class="text-base font-bold text-indigo-700">~฿ 769.12 <span class="text-xs font-normal text-slate-500">(¥152)</span></span>
                         </div>
-                        <button type="button" onclick="openModal('heu_transit')" class="w-full py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-semibold transition">
-                            ดูรายละเอียดรอบรถไฟ & ส่วนลดนักศึกษา
+                        <button type="button" onclick="openModal('heu_transit')" class="px-3.5 py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-semibold transition">
+                            ดูรอบรถไฟ & ส่วนลด นศ.
                         </button>
                     </div>
                 </div>
@@ -339,46 +342,129 @@
                 <!-- Chartered Van -->
                 <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
                     <div class="space-y-2.5">
-                        <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center">
-                            <i data-lucide="bus" class="w-5 h-5"></i>
+                        <div class="flex items-center justify-between">
+                            <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center">
+                                <i data-lucide="bus" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-sky-700 bg-sky-50 px-2.5 py-1 rounded-lg">ช่วงที่ 2 • ไป-กลับพร้อมกันทั้งกลุ่ม</span>
                         </div>
-                        <span class="inline-block text-[11px] font-bold text-sky-700 bg-sky-50 px-2.5 py-0.5 rounded-md">ช่วงที่ 2 • ไป-กลับพร้อมกันทั้งกลุ่ม</span>
-                        <h3 class="text-base font-bold text-slate-900">รถตู้เหมา 15 ที่นั่ง (เกาลูน)</h3>
+                        <h3 class="text-base font-bold text-slate-900">รถตู้เหมา 15 ที่นั่ง (เกาลูน) ยาบูลี ↔ หมู่บ้านหิมะ</h3>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            รับ-ส่งสายตรง <strong>ยาบูลี ↔ หมู่บ้านหิมะ</strong> (ศ. 18 ธ.ค. & อา. 20 ธ.ค.) เหมารวมไป-กลับ <strong>฿ 9,367.26 / คัน</strong> (เที่ยวละ ฿4,683.63 ลดแล้ว ฿150)
+                            รับ-ส่งสายตรง (ศ. 18 ธ.ค. & อา. 20 ธ.ค.) เหมารวมไป-กลับ <strong>฿ 9,367.26 / คัน</strong> (เที่ยวละ ฿4,683.63 ลดแล้ว ฿150)
                         </p>
                     </div>
-                    <div class="pt-2 border-t border-slate-100 space-y-2">
-                        <div class="flex items-baseline justify-between">
-                            <span class="text-xs text-slate-500">หารเฉลี่ย (10–15 คน):</span>
-                            <span class="text-base font-bold text-sky-700">฿ 624 – ฿ 937 <span class="text-xs font-normal text-slate-500">/คน</span></span>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+                        <div>
+                            <span class="text-[11px] text-slate-400 block">หารเฉลี่ย (10–15 คน):</span>
+                            <span class="text-base font-bold text-sky-700">฿ 624.48 – ฿ 936.73 <span class="text-xs font-normal text-slate-500">/คน</span></span>
                         </div>
-                        <button type="button" onclick="openModal('shuttle')" class="w-full py-2 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-700 text-xs font-semibold transition">
-                            ดูสเปกรถ 15 ที่นั่ง & เงื่อนไข
+                        <button type="button" onclick="openModal('shuttle')" class="px-3.5 py-2 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-700 text-xs font-semibold transition">
+                            ดูสเปกรถ 15 ที่นั่ง
                         </button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Accommodation -->
-                <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
-                    <div class="space-y-2.5">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
-                            <i data-lucide="home" class="w-5 h-5"></i>
-                        </div>
-                        <span class="inline-block text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md">ช่วงที่ 3 • พัก 2 คืน (รวมอาหารเช้า)</span>
-                        <h3 class="text-base font-bold text-slate-900">บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            ห้อง <strong>Cozy Warm Kang Room</strong> ถนนเสวี่ยหยุน (&lt;100 ม. จากลานสกี) เฉลี่ยห้องละ <strong>฿ 6,673.60 / 2 คืน</strong> (เลือกนอน 1, 2 หรือ 3 คนได้)
-                        </p>
+            <!-- 2 ACCOMMODATIONS COMPARISON SECTION -->
+            <div class="space-y-3">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                            <i data-lucide="building-2" class="w-5 h-5 text-emerald-600"></i>
+                            <span>ช่วงที่ 3 • ที่พัก 2 คืน (18–20 ธ.ค. 2569) เลือกได้ 2 แห่ง</span>
+                        </h3>
+                        <p class="text-xs text-slate-500">สามารถเลือกพักที่ใดที่หนึ่งตอนลงทะเบียน ระบบจะจับคู่เพื่อนร่วมห้องและสรุปจำนวนห้องที่ต้องจองแยกให้แต่ละโรงแรม</p>
                     </div>
-                    <div class="pt-2 border-t border-slate-100 space-y-2">
-                        <div class="flex items-baseline justify-between">
-                            <span class="text-xs text-slate-500">ต่อท่าน (ตามจำนวนคน/ห้อง):</span>
-                            <span class="text-base font-bold text-emerald-700">฿ 2,225 – ฿ 6,674</span>
+                    <button type="button" onclick="openModal('hotel_compare')" class="self-start sm:self-auto px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition">
+                        ตารางเทียบ 2 โรงแรมชัดๆ
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Hotel 1: Brave's Homeland (Old) -->
+                    <div class="bg-white rounded-3xl p-5 sm:p-6 border-2 border-emerald-200 shadow-sm flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-start justify-between gap-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-[11px] font-bold">ตัวเลือกที่ 1 • โฮมสเตย์ใจกลางถนนหิมะ</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-600 border border-rose-200 text-[11px] font-bold">🔥 เหลือ 5 ห้องสุดท้าย</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์</h4>
+                                <p class="text-xs text-slate-500">ห้อง Cozy Warm Kang Room (เตียงคังอุ่น 15 ตร.ม. • ถนนเสวี่ยหยุน)</p>
+                            </div>
+
+                            <!-- Freebies Tags -->
+                            <div class="bg-emerald-50/70 rounded-2xl p-3.5 border border-emerald-100 space-y-1.5 text-xs">
+                                <p class="font-bold text-emerald-900">🎁 สิทธิ์ฟรีที่รวมในห้องพัก:</p>
+                                <ul class="space-y-1 text-slate-700">
+                                    <li>✓ <strong>รวมอาหารเช้าฟรี 3 ท่าน/ห้อง</strong> + ของขวัญฟรี</li>
+                                    <li>✓ <strong>ฟรี Wi-Fi</strong> + <strong>ฟรีที่เก็บสัมภาระ</strong> + เช็คอินก่อนเวลา</li>
+                                    <li>✓ <strong>ฟรีชุดเสื้อคลุมลายดอกตงเป่ย</strong> ให้ใส่ถ่ายรูป</li>
+                                </ul>
+                            </div>
+
+                            <!-- Activities & Nearby -->
+                            <div class="text-xs text-slate-600 space-y-1">
+                                <p class="font-bold text-slate-800">🎿 กิจกรรม & ทำเลใกล้เคียง:</p>
+                                <p>• ติดถนนเสน่ห์หิมะ (&lt;100 ม.) และลานสกี <strong>Xuebao Ski Field (&lt;100 ม.)</strong>, Snow World (7.8 กม.), ห้องบิลเลียด/หมากรุก, คาเฟ่</p>
+                            </div>
                         </div>
-                        <button type="button" onclick="openModal('hotel')" class="w-full py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-semibold transition">
-                            ดูรายละเอียดห้องพัก & ลิงก์ Trip.com
-                        </button>
+
+                        <div class="pt-3 border-t border-slate-100 space-y-2.5">
+                            <div class="flex items-baseline justify-between">
+                                <span class="text-xs text-slate-500">ราคา 2 คืน (รวมภาษี):</span>
+                                <div class="text-right">
+                                    <span class="text-base font-extrabold text-emerald-700">฿ 6,673.60 <span class="text-xs font-normal text-slate-500">/ห้อง</span></span>
+                                    <span class="block text-[11px] text-slate-500">หาร 3 คน = <strong>฿ 2,224.53/คน</strong> (พักได้ 1–3 คน)</span>
+                                </div>
+                            </div>
+                            <button type="button" onclick="openModal('hotel_braves')" class="w-full py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold transition">
+                                ดูสเปกห้อง & สิ่งอำนวยความสะดวกทั้งหมด
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hotel 2: Yunding Snow Hotel (New) -->
+                    <div class="bg-white rounded-3xl p-5 sm:p-6 border-2 border-blue-300 shadow-sm flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-start justify-between gap-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-blue-100 text-blue-800 text-[11px] font-bold">ตัวเลือกที่ 2 (ใหม่) • รีวิว 9.6/10 ดีเลิศ</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-600 border border-rose-200 text-[11px] font-bold">🔥 เหลือ 3 ห้องสุดท้าย</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">โรงแรมหยุนติ้งเสว (Yunding Snow Hotel)</h4>
+                                <p class="text-xs text-slate-500">ห้อง Chen Xue · Tatami Family Room (19 ตร.ม. • วิวภูเขา • ชั้น B1)</p>
+                            </div>
+
+                            <!-- Freebies Tags -->
+                            <div class="bg-blue-50/70 rounded-2xl p-3.5 border border-blue-100 space-y-1.5 text-xs">
+                                <p class="font-bold text-blue-900">🎁 สิทธิ์ฟรี & สเปกเด่นในห้องพัก:</p>
+                                <ul class="space-y-1 text-slate-700">
+                                    <li>✓ <strong>รวมอาหารเช้าฟรี 4 ท่าน/ห้อง</strong> + ของขวัญฟรี + ฟรี Wi-Fi</li>
+                                    <li>✓ <strong>บริการรถรับ-ส่ง/ช่วยขนกระเป๋าฟรี</strong> + Butler ส่วนตัว</li>
+                                    <li>✓ <strong>พื้นอุ่นทั้งห้อง (Floor Heating)</strong> + น้ำอุ่น 24 ชม. + <strong>ชักโครกอัจฉริยะ</strong></li>
+                                </ul>
+                            </div>
+
+                            <!-- Activities & Nearby -->
+                            <div class="text-xs text-slate-600 space-y-1">
+                                <p class="font-bold text-slate-800">♨️ กิจกรรม & สิ่งอำนวยความสะดวก:</p>
+                                <p>• ในโรงแรม: <strong>บ่อน้ำพุร้อน, ซาวน่า, สปา</strong> (มีค่าบริการเพิ่ม), ห้องนวด, พื้นที่อาบแดด • นอกที่พัก: <strong>เล่นสกี, ขี่ม้า, เดินป่า</strong>, ใกล้ป้ายหินใหญ่ & ลานกองไฟ</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-100 space-y-2.5">
+                            <div class="flex items-baseline justify-between">
+                                <span class="text-xs text-slate-500">ราคา 2 คืน (฿4,465/คืน):</span>
+                                <div class="text-right">
+                                    <span class="text-base font-extrabold text-blue-700">฿ 8,930.00 <span class="text-xs font-normal text-slate-500">/ห้อง</span></span>
+                                    <span class="block text-[11px] text-slate-500">หาร 4 คน = <strong>฿ 2,232.50/คน</strong> (พักได้ 1–4 คน)</span>
+                                </div>
+                            </div>
+                            <button type="button" onclick="openModal('hotel_yunding')" class="w-full py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-800 text-xs font-bold transition">
+                                ดูสเปกห้อง & สิ่งอำนวยความสะดวกทั้งหมด
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -399,12 +485,12 @@
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
                         <span class="font-bold text-blue-700">ศุกร์ที่ 18 ธ.ค. 2569</span>
                         <p class="font-bold text-slate-900 text-sm">HEU → ยาบูลี → หมู่บ้านหิมะ</p>
-                        <p class="text-slate-600 leading-relaxed">เดินทางจาก HEU ขึ้นรถไฟความเร็วสูงลง Yabulixi ต่อรถตู้เหมา 15 ที่นั่งเข้าเช็คอินที่พักถนนเสวี่ยหยุน ชมโคมแดงยามค่ำ</p>
+                        <p class="text-slate-600 leading-relaxed">เดินทางจาก HEU ขึ้นรถไฟความเร็วสูงลง Yabulixi ต่อรถตู้เหมา 15 ที่นั่งเข้าเช็คอินที่พักที่เลือก ชมโคมแดงยามค่ำ & ลานกองไฟ</p>
                     </div>
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
                         <span class="font-bold text-indigo-700">เสาร์ที่ 19 ธ.ค. 2569</span>
                         <p class="font-bold text-slate-900 text-sm">เที่ยวหมู่บ้านหิมะเต็มวัน</p>
-                        <p class="text-slate-600 leading-relaxed">อาหารเช้าที่โฮมสเตย์ เดินทางเดินไม้เทพนิยาย จุดชมวิวป้างฉุย เล่นสกีที่ Xuebao Ski Field (&lt;100 ม.) ชมขบวนพาเหรดตงเป่ย</p>
+                        <p class="text-slate-600 leading-relaxed">อาหารเช้าที่พัก เล่นสกี (Xuebao Ski Field), ขี่ม้า/เดินป่าชมหิมะ, จุดชมวิวป้างฉุย, แช่น้ำพุร้อน/สปา หรือถ่ายรูปชุดตงเป่ย</p>
                     </div>
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
                         <span class="font-bold text-emerald-700">อาทิตย์ที่ 20 ธ.ค. 2569</span>
@@ -415,24 +501,24 @@
 
                 <!-- Quick External Links -->
                 <div class="flex flex-wrap gap-2 pt-2">
-                    <a href="https://th.trip.com/hotels/hailin-hotel-detail-1116944/brave-s-homeland-boutique-homestay/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-blue-100 text-slate-700 hover:text-blue-700 text-xs font-semibold transition">
+                    <a href="https://th.trip.com/hotels/hailin-hotel-detail-1116944/brave-s-homeland-boutique-homestay/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-emerald-100 text-slate-700 hover:text-emerald-800 text-xs font-semibold transition">
                         <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                        <span>หน้าจอง Trip.com</span>
+                        <span>Trip.com: เบรฟส์โฮมแลนด์</span>
                     </a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=China+Snow+Town+Xueyun+Street+Hailin+Heilongjiang" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-emerald-100 text-slate-700 hover:text-emerald-700 text-xs font-semibold transition">
+                    <a href="https://th.trip.com/hotels/hailin-snow-town/hotels-c1666m26751685/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-blue-100 text-slate-700 hover:text-blue-800 text-xs font-semibold transition">
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        <span>Trip.com: โรงแรมหยุนติ้งเสว</span>
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=China+Snow+Town+Xueyun+Street+Hailin+Heilongjiang" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-indigo-100 text-slate-700 hover:text-indigo-800 text-xs font-semibold transition">
                         <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
-                        <span>แผนที่ถนนเสวี่ยหยุน</span>
-                    </a>
-                    <a href="https://www.accuweather.com/en/cn/hailin/58459/weather-forecast/58459" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 text-xs font-semibold transition">
-                        <i data-lucide="thermometer-snowflake" class="w-3.5 h-3.5"></i>
-                        <span>พยากรณ์อากาศ Hailin</span>
+                        <span>แผนที่หมู่บ้านหิมะ</span>
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- ======================================================= -->
-        <!-- VIEW 2: ลงทะเบียนทีละข้อ + สรุปค่าใช้จ่ายก่อนบันทึก       -->
+        <!-- VIEW 2: ลงทะเบียนทีละข้อ + เลือกโรงแรมพร้อมดูรายละเอียด  -->
         <!-- ======================================================= -->
         <section id="view-register" class="hidden view-fade max-w-2xl mx-auto space-y-5">
             <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-3">
@@ -522,58 +608,51 @@
                     </div>
                 </div>
 
-                <!-- STEP 4 -->
+                <!-- STEP 4: เลือกโรงแรมที่พัก (แสดงรายละเอียดครบ) + จำนวนคนต่อห้อง -->
                 <div id="wizard-step-4" class="wizard-step hidden space-y-5">
                     <div class="space-y-1">
                         <span class="inline-block px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold">คำถามที่ 4 / 7</span>
-                        <h3 class="text-xl font-bold text-slate-900">คุณประสงค์พักห้องละกี่คน?</h3>
-                        <p class="text-xs text-slate-500">ระบบจะนำตัวเลือกนี้ไปจับคู่เพื่อนร่วมห้องและคำนวณค่าห้องพักให้อัตโนมัติ (รวมอาหารเช้า 2 คืน)</p>
+                        <h3 class="text-xl font-bold text-slate-900">เลือกที่พักและจำนวนคนต่อห้อง</h3>
+                        <p class="text-xs text-slate-500">แตะเลือกโรงแรมเพื่ออ่านรายละเอียดสเปกห้อง สิทธิ์ฟรี และกิจกรรม จากนั้นเลือกรูปแบบห้องพัก</p>
                     </div>
 
+                    <input type="hidden" id="hotelId" value="braves">
                     <input type="hidden" id="roomCapacity" value="3">
 
-                    <div class="space-y-3">
-                        <button type="button" onclick="selectRoomCapacity(3)" data-cap="3" class="room-cap-btn w-full text-left p-4 sm:p-5 rounded-2xl border-2 border-blue-600 bg-blue-50/70 transition flex items-center justify-between gap-3">
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-2">
-                                    <span class="px-2 py-0.5 rounded-md bg-blue-600 text-white text-[11px] font-bold">คุ้มค่าที่สุด</span>
-                                    <span class="font-bold text-base text-slate-900">นอน 3 คน / ห้อง</span>
-                                </div>
-                                <p class="text-xs text-slate-600">หารค่าห้อง ฿6,673.60 ร่วมกัน 3 ท่าน (เตียงคังใหญ่ + อาหารเช้า)</p>
+                    <!-- 2 Hotel Selection Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <button type="button" onclick="selectHotel('braves')" id="hotel-card-braves" class="text-left p-4 rounded-2xl border-2 border-emerald-600 bg-emerald-50/70 transition space-y-1.5">
+                            <div class="flex items-center justify-between gap-1">
+                                <span class="px-2 py-0.5 rounded-md bg-emerald-600 text-white text-[10px] font-bold">ที่พัก 1</span>
+                                <span class="text-[10px] font-bold text-rose-600" id="wiz-quota-braves">เหลือ 5 ห้อง</span>
                             </div>
-                            <div class="text-right shrink-0">
-                                <p class="text-lg font-extrabold text-blue-700">฿ 2,224.53</p>
-                                <p class="text-[11px] text-slate-500">ค่าที่พัก 2 คืน/คน</p>
-                            </div>
+                            <p class="font-bold text-sm text-slate-900 leading-snug">บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์</p>
+                            <p class="text-[11px] text-slate-600">Cozy Warm Kang • พักได้ 1–3 คน/ห้อง</p>
+                            <p class="text-xs font-extrabold text-emerald-700 pt-0.5">฿ 6,673.60 / 2 คืน (เริ่ม ฿2,225/คน)</p>
                         </button>
 
-                        <button type="button" onclick="selectRoomCapacity(2)" data-cap="2" class="room-cap-btn w-full text-left p-4 sm:p-5 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-300 transition flex items-center justify-between gap-3">
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-2">
-                                    <span class="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-700 text-[11px] font-bold">พักคู่</span>
-                                    <span class="font-bold text-base text-slate-900">นอน 2 คน / ห้อง</span>
-                                </div>
-                                <p class="text-xs text-slate-600">หารค่าห้อง ฿6,673.60 ร่วมกัน 2 ท่าน (พื้นที่กว้างขึ้น)</p>
+                        <button type="button" onclick="selectHotel('yunding')" id="hotel-card-yunding" class="text-left p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-400 transition space-y-1.5">
+                            <div class="flex items-center justify-between gap-1">
+                                <span class="px-2 py-0.5 rounded-md bg-blue-600 text-white text-[10px] font-bold">ที่พัก 2 (ใหม่)</span>
+                                <span class="text-[10px] font-bold text-rose-600" id="wiz-quota-yunding">เหลือ 3 ห้อง</span>
                             </div>
-                            <div class="text-right shrink-0">
-                                <p class="text-lg font-extrabold text-slate-900">฿ 3,336.80</p>
-                                <p class="text-[11px] text-slate-500">ค่าที่พัก 2 คืน/คน</p>
-                            </div>
+                            <p class="font-bold text-sm text-slate-900 leading-snug">โรงแรมหยุนติ้งเสว (Yunding)</p>
+                            <p class="text-[11px] text-slate-600">Tatami Family • พักได้ 1–4 คน/ห้อง</p>
+                            <p class="text-xs font-extrabold text-blue-700 pt-0.5">฿ 8,930.00 / 2 คืน (เริ่ม ฿2,233/คน)</p>
                         </button>
+                    </div>
 
-                        <button type="button" onclick="selectRoomCapacity(1)" data-cap="1" class="room-cap-btn w-full text-left p-4 sm:p-5 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-300 transition flex items-center justify-between gap-3">
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-2">
-                                    <span class="px-2 py-0.5 rounded-md bg-purple-100 text-purple-700 text-[11px] font-bold">ส่วนตัว</span>
-                                    <span class="font-bold text-base text-slate-900">นอน 1 คน / ห้อง (เหมาเดี่ยว)</span>
-                                </div>
-                                <p class="text-xs text-slate-600">พักส่วนตัวคนเดียวเต็มห้อง 2 คืน ไม่ต้องแชร์กับใคร</p>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <p class="text-lg font-extrabold text-slate-900">฿ 6,673.60</p>
-                                <p class="text-[11px] text-slate-500">ค่าที่พัก 2 คืน/คน</p>
-                            </div>
-                        </button>
+                    <!-- Live Detailed Specification Box for Selected Hotel -->
+                    <div id="selected-hotel-detail-box" class="bg-slate-50 rounded-2xl p-4 border border-slate-200 space-y-2.5 text-xs">
+                        <!-- Rendered dynamically by renderHotelDetailPanel() -->
+                    </div>
+
+                    <!-- Room Capacity Options (Dynamically Rendered for 1..3 or 1..4) -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-bold text-slate-700">เลือกรูปแบบการหารห้องพัก (2 คืน รวมอาหารเช้า):</label>
+                        <div id="room-capacity-options-container" class="space-y-2.5">
+                            <!-- Rendered dynamically by renderRoomCapacityButtons() -->
+                        </div>
                     </div>
                 </div>
 
@@ -582,7 +661,7 @@
                     <div class="space-y-1">
                         <span class="inline-block px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold">คำถามที่ 5 / 7</span>
                         <h3 class="text-xl font-bold text-slate-900">จับคู่เพื่อนร่วมห้อง & ข้อจำกัดด้านอาหาร</h3>
-                        <p class="text-xs text-slate-500" id="step5-room-hint">ระบุชื่อเล่นเพื่อนที่ต้องการนอนห้องเดียวกัน เพื่อให้ระบบแมตช์ชิ่งจับคู่ให้อัตโนมัติ</p>
+                        <p class="text-xs text-slate-500" id="step5-room-hint">ระบุชื่อเล่นเพื่อนที่ต้องการนอนห้องเดียวกัน (ระบบจะจับคู่เฉพาะคนที่เลือกโรงแรมเดียวกัน)</p>
                     </div>
 
                     <div class="space-y-4">
@@ -592,7 +671,7 @@
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">ข้อจำกัดด้านอาหาร (สำหรับอาหารเช้าที่โฮมสเตย์)</label>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">ข้อจำกัดด้านอาหาร (สำหรับอาหารเช้าที่โรงแรม)</label>
                             <select id="dietary" class="w-full px-4 py-3.5 rounded-2xl border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none text-sm bg-white transition">
                                 <option value="ทานอาหารได้ปกติ">ทานอาหารได้ปกติ (ไม่แพ้อาหาร)</option>
                                 <option value="ไม่ทานเนื้อวัว">ไม่ทานเนื้อวัว</option>
@@ -640,39 +719,39 @@
                     </div>
                 </div>
 
-                <!-- STEP 7 -->
+                <!-- STEP 7: กิจกรรมที่สนใจ (รวมทั้งกิจกรรมของที่พักเก่าและใหม่) -->
                 <div id="wizard-step-7" class="wizard-step hidden space-y-5">
                     <div class="space-y-1">
                         <span class="inline-block px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold">คำถามที่ 7 / 7</span>
                         <h3 class="text-xl font-bold text-slate-900">กิจกรรมที่สนใจ & ความพร้อมอากาศหนาว (-25°C)</h3>
-                        <p class="text-xs text-slate-500">เลือกกิจกรรมที่อยากทำเพื่อใช้วางแผนเวลาหน้างาน</p>
+                        <p class="text-xs text-slate-500">เลือกกิจกรรมที่อยากทำ (รวมกิจกรรมรอบหมู่บ้านหิมะ & สิ่งอำนวยความสะดวกโรงแรม)</p>
                     </div>
 
                     <div class="space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                             <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                                <input type="checkbox" name="activities" value="เดินเล่นถนนเสวี่ยหยุน & ถ่ายรูปโคมแดง" checked class="w-4 h-4 text-blue-600 rounded">
-                                <span class="font-medium text-slate-800">เดินถนนเสวี่ยหยุน & โคมแดง</span>
+                                <input type="checkbox" name="activities" value="เดินถนนเสวี่ยหยุน & ถ่ายรูปชุดลายดอกตงเป่ย" checked class="w-4 h-4 text-blue-600 rounded">
+                                <span class="font-medium text-slate-800">ถนนเสวี่ยหยุน & ชุดลายดอกตงเป่ย</span>
                             </label>
                             <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                                <input type="checkbox" name="activities" value="เล่นสกี Xuebao Ski Field (<100ม.)" class="w-4 h-4 text-blue-600 rounded">
-                                <span class="font-medium text-slate-800">เล่นสกี Xuebao Ski Field</span>
+                                <input type="checkbox" name="activities" value="เล่นสกี (Xuebao Ski Field / นอกที่พัก)" class="w-4 h-4 text-blue-600 rounded">
+                                <span class="font-medium text-slate-800">เล่นสกี (Xuebao Ski Field)</span>
+                            </label>
+                            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                <input type="checkbox" name="activities" value="แช่บ่อน้ำพุร้อน / ซาวน่า / สปา / ห้องนวด" class="w-4 h-4 text-blue-600 rounded">
+                                <span class="font-medium text-slate-800">บ่อน้ำพุร้อน / ซาวน่า / สปา</span>
+                            </label>
+                            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                                <input type="checkbox" name="activities" value="ขี่ม้า / เดินป่าชมหิมะ / ลานกองไฟ" class="w-4 h-4 text-blue-600 rounded">
+                                <span class="font-medium text-slate-800">ขี่ม้า / เดินป่า / ลานกองไฟ</span>
                             </label>
                             <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
                                 <input type="checkbox" name="activities" value="จุดชมวิวเขาป้างฉุย & ทางเดินไม้เทพนิยาย" checked class="w-4 h-4 text-blue-600 rounded">
                                 <span class="font-medium text-slate-800">จุดชมวิวป้างฉุย & ทางเดินไม้</span>
                             </label>
                             <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                                <input type="checkbox" name="activities" value="ล่องแก่งน้ำแข็งแม่น้ำเอ้อร์หลาง" class="w-4 h-4 text-blue-600 rounded">
-                                <span class="font-medium text-slate-800">ล่องแก่งน้ำแข็งเอ้อร์หลาง</span>
-                            </label>
-                            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                                <input type="checkbox" name="activities" value="สโนว์โมบิล / รถถังหิมะเขาต้าทูดิงจื่อ" class="w-4 h-4 text-blue-600 rounded">
-                                <span class="font-medium text-slate-800">สโนว์โมบิล / รถถังหิมะ</span>
-                            </label>
-                            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                                <input type="checkbox" name="activities" value="หม้อไฟเหล็กหล่อสไตล์ตงเป่ย" class="w-4 h-4 text-blue-600 rounded">
-                                <span class="font-medium text-slate-800">ชิมหม้อไฟเหล็กหล่อตงเป่ย</span>
+                                <input type="checkbox" name="activities" value="สโนว์โมบิล / ล่องแก่งน้ำแข็ง / หม้อไฟตงเป่ย" class="w-4 h-4 text-blue-600 rounded">
+                                <span class="font-medium text-slate-800">สโนว์โมบิล / ล่องแก่ง / หม้อไฟ</span>
                             </label>
                         </div>
 
@@ -697,13 +776,13 @@
                     <div class="space-y-1">
                         <span class="inline-block px-2.5 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold">ขั้นตอนสุดท้าย • ตรวจสอบก่อนบันทึก</span>
                         <h3 class="text-xl font-bold text-slate-900">สรุปข้อมูลลงทะเบียน & ประมาณการค่าใช้จ่าย</h3>
-                        <p class="text-xs text-slate-500">กรุณาตรวจสอบความถูกต้องของข้อมูลและยอดค่าใช้จ่ายคร่าวๆ ด้านล่างก่อนกดยืนยันบันทึก</p>
+                        <p class="text-xs text-slate-500">กรุณาตรวจสอบที่พักที่เลือก สิทธิ์ฟรี และยอดค่าใช้จ่ายคร่าวๆ ด้านล่างก่อนกดยืนยันบันทึก</p>
                     </div>
 
                     <div class="bg-gradient-to-br from-slate-900 via-arctic-900 to-blue-900 rounded-2xl p-5 text-white space-y-3.5 shadow-lg">
                         <div class="flex items-center justify-between border-b border-white/15 pb-3">
                             <div>
-                                <p class="text-xs text-sky-300 font-semibold">ประมาณการค่าใช้จ่ายคร่าวๆ ของคุณ</p>
+                                <p class="text-xs text-sky-300 font-semibold" id="review-hotel-name-label">บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์</p>
                                 <p class="text-[11px] text-slate-300" id="review-room-type-label">ห้องพักแบบ นอน 3 คน / ห้อง</p>
                             </div>
                             <div class="text-right">
@@ -726,15 +805,15 @@
                             </div>
                             <div class="flex justify-between items-center text-slate-200">
                                 <div>
-                                    <span>3. ที่พัก 2 คืน + อาหารเช้า (<span id="review-room-cap-text">3 คน/ห้อง</span>)</span>
-                                    <span class="block text-[10px] text-emerald-300" id="review-room-note">หากจับคู่ได้ครบตามจำนวนที่เลือก</span>
+                                    <span>3. ค่าที่พัก 2 คืน (<span id="review-room-cap-text">3 คน/ห้อง</span>)</span>
+                                    <span class="block text-[10px] text-emerald-300" id="review-room-note">รวมอาหารเช้าฟรี + สิทธิ์ฟรีตามแพ็กเกจ</span>
                                 </div>
                                 <span class="font-bold text-emerald-300" id="review-cost-hotel">฿ 2,224.53</span>
                             </div>
                         </div>
 
                         <p class="text-[10px] text-slate-400 pt-1 border-t border-white/10">
-                            * หมายเหตุ: ยอดจริงจะประมวลผลตามผลการจับคู่ห้องพักและจำนวนผู้ร่วมเดินทางจริงในเมนูที่ 4 (ยังไม่รวมตั๋วเข้าอุทยานหมู่บ้านหิมะ ~¥120–135)
+                            * หมายเหตุ: ยอดจริงจะประมวลผลตามผลการจับคู่ห้องพักในโรงแรมเดียวกันและจำนวนผู้ร่วมเดินทางจริงในเมนูที่ 4 (ยังไม่รวมตั๋วเข้าอุทยานหมู่บ้านหิมะ ~¥120–135)
                         </p>
                     </div>
 
@@ -775,7 +854,7 @@
                 <div>
                     <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">เมนูที่ 3 • DBD Calculator</span>
                     <h2 class="text-xl sm:text-2xl font-bold text-slate-900">ประมาณการค่าใช้จ่าย (จำลอง 1–15 คน)</h2>
-                    <p class="text-xs sm:text-sm text-slate-600">เลื่อนปรับจำนวนผู้เดินทางและรูปแบบห้องพักเพื่อดูยอดหารเฉลี่ยต่อท่าน</p>
+                    <p class="text-xs sm:text-sm text-slate-600">สลับโรงแรมที่พัก รูปแบบห้องพัก และเลื่อนปรับจำนวนผู้เดินทางเพื่อดูยอดหารเฉลี่ยต่อท่าน</p>
                 </div>
                 <button type="button" onclick="navigateTo('register')" class="self-start sm:self-auto px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold shadow-sm transition">
                     ไปลงทะเบียน →
@@ -783,19 +862,25 @@
             </div>
 
             <div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-5 sm:p-7 space-y-6">
+                <!-- Hotel Switcher inside DBD Calculator -->
                 <div class="space-y-2">
-                    <span class="text-xs font-bold text-slate-600">เลือกรูปแบบห้องพักที่ต้องการจำลองราคา:</span>
-                    <div class="grid grid-cols-3 gap-2">
-                        <button type="button" onclick="setDbdRoomCap(3)" id="dbd-cap-btn-3" class="py-2.5 px-3 rounded-xl bg-blue-600 text-white text-xs sm:text-sm font-bold shadow-sm transition">
-                            นอน 3 คน/ห้อง<br><span class="text-[10px] font-normal opacity-90">฿2,224.53/คน</span>
+                    <span class="text-xs font-bold text-slate-600">1. เลือกโรงแรมที่ต้องการคำนวณงบ:</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <button type="button" onclick="setDbdHotel('braves')" id="dbd-hotel-btn-braves" class="p-3 rounded-2xl border-2 border-emerald-600 bg-emerald-50 text-left transition">
+                            <span class="text-xs font-extrabold text-emerald-800 block">บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์</span>
+                            <span class="text-[11px] text-slate-600">฿6,673.60 / 2 คืน (พักได้ 1–3 คน/ห้อง)</span>
                         </button>
-                        <button type="button" onclick="setDbdRoomCap(2)" id="dbd-cap-btn-2" class="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold transition">
-                            นอน 2 คน/ห้อง<br><span class="text-[10px] font-normal text-slate-500">฿3,336.80/คน</span>
-                        </button>
-                        <button type="button" onclick="setDbdRoomCap(1)" id="dbd-cap-btn-1" class="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold transition">
-                            นอน 1 คน/ห้อง<br><span class="text-[10px] font-normal text-slate-500">฿6,673.60/คน</span>
+                        <button type="button" onclick="setDbdHotel('yunding')" id="dbd-hotel-btn-yunding" class="p-3 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-400 text-left transition">
+                            <span class="text-xs font-extrabold text-slate-900 block">โรงแรมหยุนติ้งเสว (Yunding Snow Hotel)</span>
+                            <span class="text-[11px] text-slate-600">฿8,930.00 / 2 คืน (พักได้ 1–4 คน/ห้อง)</span>
                         </button>
                     </div>
+                </div>
+
+                <!-- Room Capacity Buttons (Dynamically rendered for 1..3 or 1..4) -->
+                <div class="space-y-2">
+                    <span class="text-xs font-bold text-slate-600">2. เลือกรูปแบบจำนวนคนต่อห้อง:</span>
+                    <div id="dbd-cap-buttons-container" class="grid grid-cols-3 gap-2"></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
@@ -829,7 +914,7 @@
                     <div class="lg:col-span-7 bg-gradient-to-br from-blue-50 via-white to-sky-50 rounded-2xl p-5 border border-blue-200 flex flex-col justify-between space-y-4">
                         <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-blue-100 pb-3">
                             <div>
-                                <span class="text-xs font-bold text-blue-700">ยอดประมาณการรวมสุทธิ / ท่าน</span>
+                                <span class="text-xs font-bold text-blue-700" id="dbd-spot-hotel-title">ยอดประมาณการรวมสุทธิ / ท่าน (เบรฟส์โฮมแลนด์)</span>
                                 <div class="flex items-baseline gap-2 mt-0.5">
                                     <span id="dbd-spot-total" class="text-3xl font-extrabold text-slate-900">฿ 3,930.38</span>
                                     <span class="text-xs text-slate-500">/ ท่าน</span>
@@ -874,14 +959,14 @@
         </section>
 
         <!-- ======================================================= -->
-        <!-- VIEW 4: ผลการลงทะเบียน & ระบบจับคู่ห้องพักอัตโนมัติ        -->
+        <!-- VIEW 4: ผลการลงทะเบียน & สรุปจำนวนห้องที่ต้องจองแยกโรงแรม   -->
         <!-- ======================================================= -->
         <section id="view-results" class="hidden view-fade space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
-                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">เมนูที่ 4 • Live Database & Room Matching</span>
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900">ผลการลงทะเบียน & จับคู่ห้องพัก</h2>
-                    <p class="text-xs sm:text-sm text-slate-600">ประมวลผลจับคู่ห้องพัก (1/2/3 คน) และยอดค่าใช้จ่ายรายบุคคลแบบเรียลไทม์</p>
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">เมนูที่ 4 • Live Database & Hotel Booking Planner</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900">ผลการลงทะเบียน & สรุปห้องที่ต้องจอง</h2>
+                    <p class="text-xs sm:text-sm text-slate-600">ประมวลผลแยกตามโรงแรมที่เลือก จับคู่เพื่อนร่วมห้อง และสรุปยอดที่ต้องจองจริง</p>
                 </div>
 
                 <div class="flex flex-wrap items-center gap-2">
@@ -943,6 +1028,21 @@
                 </div>
             </div>
 
+            <!-- HOTEL BOOKING SUMMARY BOARD (สรุปว่าต้องจองที่ไหนกี่ห้อง!) -->
+            <div class="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i data-lucide="building-2" class="w-5 h-5 text-blue-600"></i>
+                        <span>สรุปจำนวนห้องพักที่ต้องกดจองแยกตามโรงแรม (18–20 ธ.ค. 2569)</span>
+                    </h3>
+                    <span class="text-xs text-slate-500" id="booking-summary-subtitle">อัปเดตอัตโนมัติตามรายชื่อผู้ลงทะเบียน</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="hotel-booking-summary-cards">
+                    <!-- Rendered dynamically by renderResultsViews() -->
+                </div>
+            </div>
+
             <!-- Summary KPI Strip -->
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
                 <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
@@ -951,9 +1051,9 @@
                     <p class="text-[11px] text-blue-600 mt-0.5" id="stat-gender-split">ชาย 0 • หญิง 0</p>
                 </div>
                 <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
-                    <p class="text-[11px] font-semibold text-slate-500">จำนวนห้องที่แมตช์ได้</p>
-                    <p class="text-2xl font-extrabold text-slate-900 mt-0.5"><span id="stat-rooms-matched">0</span> <span class="text-xs font-normal text-slate-500">/ 5 ห้อง</span></p>
-                    <p class="text-[11px] text-emerald-600 mt-0.5" id="stat-room-pref-split">1คน:0 | 2คน:0 | 3คน:0</p>
+                    <p class="text-[11px] font-semibold text-slate-500">รวมห้องที่ต้องจองทั้งหมด</p>
+                    <p class="text-2xl font-extrabold text-slate-900 mt-0.5"><span id="stat-rooms-matched">0</span> <span class="text-xs font-normal text-slate-500">ห้อง</span></p>
+                    <p class="text-[11px] text-emerald-600 mt-0.5" id="stat-room-pref-split">เบรฟส์ 0 ห้อง • หยุนติ้งเสว 0 ห้อง</p>
                 </div>
                 <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
                     <p class="text-[11px] font-semibold text-slate-500">ค่ารถเหมา 15 ที่นั่ง/คน</p>
@@ -989,13 +1089,16 @@
                 <div class="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-2.5">
                     <div class="relative flex-1">
                         <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
-                        <input type="text" id="search-input" oninput="renderResultsViews()" placeholder="ค้นหาชื่อ, ชื่อเล่น, ห้องที่จับคู่..." class="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-200 focus:border-blue-500 outline-none text-sm">
+                        <input type="text" id="search-input" oninput="renderResultsViews()" placeholder="ค้นหาชื่อ, ชื่อเล่น, ชื่อโรงแรม, ห้อง..." class="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-200 focus:border-blue-500 outline-none text-sm">
                     </div>
                     <select id="filter-select" onchange="renderResultsViews()" class="px-3.5 py-2 rounded-xl border border-slate-200 text-sm bg-white outline-none">
-                        <option value="all">ทุกประเภทห้องพัก</option>
-                        <option value="3">เลือกนอน 3 คน/ห้อง</option>
-                        <option value="2">เลือกนอน 2 คน/ห้อง</option>
-                        <option value="1">เลือกนอน 1 คน/ห้อง</option>
+                        <option value="all">ทุกโรงแรม & ทุกประเภทห้อง</option>
+                        <option value="hotel:braves">เฉพาะ บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์</option>
+                        <option value="hotel:yunding">เฉพาะ โรงแรมหยุนติ้งเสว</option>
+                        <option value="cap:4">เลือกนอน 4 คน/ห้อง</option>
+                        <option value="cap:3">เลือกนอน 3 คน/ห้อง</option>
+                        <option value="cap:2">เลือกนอน 2 คน/ห้อง</option>
+                        <option value="cap:1">เลือกนอน 1 คน/ห้อง</option>
                     </select>
                 </div>
 
@@ -1181,7 +1284,7 @@
         </div>
     </div>
 
-    <!-- Toast Notification (Safe Icon Wrapper so it never crashes) -->
+    <!-- Toast Notification -->
     <div id="toast-notification" class="fixed bottom-20 md:bottom-6 right-4 left-4 sm:left-auto z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
         <div class="bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-2xl border border-white/15 flex items-center gap-2.5 text-xs sm:text-sm font-medium max-w-md ml-auto">
             <span id="toast-icon-wrap" class="shrink-0 text-emerald-400">
@@ -1214,11 +1317,70 @@
                 token: savedStoredToken || _defaultGhToken
             };
 
-            const LOCAL_CACHE_KEY = 'xuexiang_2569_registrations_cache_v1';
+            const LOCAL_CACHE_KEY = 'xuexiang_2569_registrations_cache_v2';
 
             // =============================================================
-            // 2. PRICING & TRIP CONSTANTS (ตรงตามภาพจริง + เส้นทาง HEU)
+            // 2. HOTELS CATALOG & PRICING CONSTANTS (ทั้งเก่าและใหม่)
             // =============================================================
+            const HOTELS = {
+                braves: {
+                    id: 'braves',
+                    shortName: 'เบรฟส์โฮมแลนด์',
+                    name: 'บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์',
+                    enName: "Brave's Homeland Boutique Homestay",
+                    roomType: 'Cozy Warm Kang Room',
+                    roomSpecs: 'เตียงคังอุ่น 1 เตียง • 15 ตร.ม. • ชั้น 1–2 • ปลอดบุหรี่',
+                    nightlyDisplay: 3147.00,
+                    roomTotal2Nights: 6673.60, // เฉลี่ย ฿33,368 ÷ 5 ห้อง (รวมภาษีแล้ว)
+                    priceNote: 'รวมภาษีแล้ว (อ้างอิง ฿33,368 / 5 ห้อง × 2 คืน)',
+                    maxCapacity: 3,
+                    availableRooms: 5,
+                    rating: '9.1 / 10 (ดีมาก)',
+                    freebies: [
+                        'รวมอาหารเช้าฟรี 3 ท่าน / ห้อง',
+                        'ของขวัญฟรีจากโฮมสเตย์',
+                        'ฟรี Wi-Fi + ฟรีที่เก็บสัมภาระ + เช็คอินก่อนเวลา',
+                        'ฟรีชุดเสื้อคลุมลายดอกตงเป่ยให้ใส่ถ่ายรูป'
+                    ],
+                    activities: [
+                        'เดินถนนเสน่ห์หิมะ Xueyun Street (<100 ม.)',
+                        'เล่นสกี Xuebao Ski Field (<100 ม.)',
+                        'Snow Town Snow World Happy Valley (7.8 กม.)',
+                        'ห้องบิลเลียด / หมากรุก / คาเฟ่ & ร้านอาหารตงเป่ย'
+                    ],
+                    tripUrl: 'https://th.trip.com/hotels/hailin-hotel-detail-1116944/brave-s-homeland-boutique-homestay/',
+                    themeColor: 'emerald'
+                },
+                yunding: {
+                    id: 'yunding',
+                    shortName: 'โรงแรมหยุนติ้งเสว',
+                    name: 'โรงแรมหยุนติ้งเสว (Yunding Snow Hotel)',
+                    enName: 'Yunding Snow Hotel',
+                    roomType: 'Chen Xue · Tatami Family Room',
+                    roomSpecs: 'ฟูกทาทามิ 1 เตียงใหญ่ • 19 ตร.ม. • วิวภูเขา • ชั้น B1 • สูบบุหรี่ได้',
+                    nightlyDisplay: 4465.00,
+                    roomTotal2Nights: 8930.00, // ฿4,465 × 2 คืน
+                    priceNote: '฿4,465/คืน × 2 คืน (ลดจาก ฿6,569/คืน)',
+                    maxCapacity: 4,
+                    availableRooms: 3,
+                    rating: '9.6 / 10 (ดีเลิศ)',
+                    freebies: [
+                        'รวมอาหารเช้าฟรี 4 ท่าน / ห้อง',
+                        'ของขวัญฟรีจากโรงแรม + ฟรี Wi-Fi',
+                        'บริการรถรับ-ส่ง & ผู้ช่วยขนกระเป๋า (Butler Service) ฟรี',
+                        'พื้นทำความร้อนทั้งหลัง (Floor Heating) + น้ำอุ่น 24 ชม. + ชักโครกอัจฉริยะ'
+                    ],
+                    activities: [
+                        'บ่อน้ำพุร้อน (Hot Spring) / ซาวน่า / สปา (มีค่าบริการเพิ่ม)',
+                        'ห้องนวด (Massage Room) & พื้นที่อาบแดด (Sun Terrace)',
+                        'เล่นสกี / ขี่ม้า / เดินป่าชมหิมะ (นอกที่พัก)',
+                        'ใกล้ป้ายหินใหญ่ & ลานกองไฟ (Bonfire Square)'
+                    ],
+                    tripUrl: 'https://th.trip.com/hotels/hailin-snow-town/hotels-c1666m26751685/',
+                    themeColor: 'blue'
+                }
+            };
+
             const PRICING = {
                 cnyToThb: 5.06,
                 heuTransitOptions: {
@@ -1243,10 +1405,7 @@
                 },
                 shuttleOneWayNet: 4683.63,     // ฿4,833.63 - ส่วนลด ฿150
                 shuttleRoundTripNet: 9367.26,  // ไป-กลับ 2 เที่ยว (รถตู้เหมา 15 ที่นั่ง เกาลูน)
-                maxVanSeats: 15,
-                roomNightlyDisplay: 3147.00,   // ราคาต่อคืนก่อนภาษี
-                roomTotal2Nights: 6673.60,     // เฉลี่ย 1 ห้อง × 2 คืน รวมภาษีและอาหารเช้า (จาก ฿33,368 ÷ 5 ห้อง)
-                maxRooms: 5
+                maxVanSeats: 15
             };
 
             // =============================================================
@@ -1267,6 +1426,7 @@
                 'train-front': '<path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"/><path d="m8 19-2 3"/><path d="m16 19 2 3"/>',
                 'bus': '<path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/>',
                 'home': '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+                'building-2': '<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>',
                 'calendar-check': '<rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/>',
                 'external-link': '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
                 'map-pin': '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
@@ -1325,7 +1485,6 @@
             let registrations = [];
             let pendingDeleteId = null;
 
-            // Admin Authentication State
             const ADMIN_CREDENTIALS = {
                 username: 'devilnananae',
                 password: 'naenanadevil'
@@ -1339,8 +1498,13 @@
             const TOTAL_WIZARD_STEPS = 8;
 
             let dbdSelectedPax = 10;
+            let dbdHotelId = 'braves';
             let dbdRoomCap = 3;
             let resultsSubTab = 'rooms';
+
+            function getHotelObj(id) {
+                return HOTELS[id] || HOTELS.braves;
+            }
 
             function fmtThb(num) {
                 return Number(num || 0).toLocaleString('en-US', {
@@ -1416,7 +1580,7 @@
             }
 
             // =============================================================
-            // 5. GITHUB JSON DATABASE SYNC ENGINE (with Local Cache Fallback)
+            // 5. GITHUB JSON DATABASE SYNC ENGINE
             // =============================================================
             function utf8ToBase64(str) {
                 const bytes = new TextEncoder().encode(str);
@@ -1454,9 +1618,7 @@
 
             async function fetchGitHubRecords(silent = true) {
                 const { owner, repo, branch, filePath, token } = activeGitHubTarget;
-                if (!owner || !repo || !filePath) {
-                    throw new Error('ยังไม่ได้ระบุ Owner/Repo');
-                }
+                if (!owner || !repo || !filePath) throw new Error('ยังไม่ได้ระบุ Owner/Repo');
 
                 const apiUrl = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${filePath}?ref=${encodeURIComponent(branch || 'main')}&_t=${Date.now()}`;
                 const headers = { 'Accept': 'application/vnd.github+json' };
@@ -1479,9 +1641,7 @@
                     throw new Error(githubStatusReason);
                 }
 
-                if (!res.ok) {
-                    throw new Error(`GitHub API ตอบกลับสถานะ ${res.status}`);
-                }
+                if (!res.ok) throw new Error(`GitHub API ตอบกลับสถานะ ${res.status}`);
 
                 const payload = await res.json();
                 githubFileSha = payload.sha || null;
@@ -1503,9 +1663,7 @@
 
             async function mutateGitHubRecords(mutatorFn, commitMessage) {
                 const { owner, repo, branch, filePath, token } = activeGitHubTarget;
-                if (!token) {
-                    throw new Error('ไม่มี GitHub Token สำหรับเขียนไฟล์');
-                }
+                if (!token) throw new Error('ไม่มี GitHub Token สำหรับเขียนไฟล์');
 
                 const apiUrl = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${filePath}`;
                 const headers = {
@@ -1567,9 +1725,7 @@
                         return updatedRecords;
                     }
 
-                    if (putRes.status === 409 && attempt < 2) {
-                        continue; // Retry on SHA conflict
-                    }
+                    if (putRes.status === 409 && attempt < 2) continue;
 
                     const errJson = await putRes.json().catch(() => ({}));
                     throw new Error(errJson.message || `บันทึกไฟล์ลง GitHub ไม่สำเร็จ (${putRes.status})`);
@@ -1577,7 +1733,6 @@
             }
 
             async function initCentralDatabase() {
-                // Load local cache immediately so UI is responsive right away
                 registrations = loadLocalCache();
                 syncAllViews();
 
@@ -1585,10 +1740,7 @@
                     updateDbStatusBadge('syncing', 'ซิงก์ GitHub...');
                     try {
                         await fetchGitHubRecords(true);
-                        if (useGitHubDb) {
-                            updateDbStatusBadge('github', 'GitHub DB');
-                        }
-                        // Poll every 25 seconds when viewing results
+                        if (useGitHubDb) updateDbStatusBadge('github', 'GitHub DB');
                         setInterval(() => {
                             if (activeView === 'results' && !document.hidden) {
                                 fetchGitHubRecords(true).catch(() => {});
@@ -1606,7 +1758,7 @@
             }
 
             // =============================================================
-            // 6. NAVIGATION & INTERACTIVE SELECTORS
+            // 6. NAVIGATION, HOTEL SELECTION & ROOM CAPACITY LOGIC
             // =============================================================
             window.navigateTo = function(viewName) {
                 activeView = viewName;
@@ -1642,6 +1794,9 @@
                     else backHubBtn.classList.remove('hidden');
                 }
 
+                if (viewName === 'register') {
+                    selectHotel(document.getElementById('hotelId')?.value || 'braves');
+                }
                 if (viewName === 'results') renderResultsViews();
                 if (viewName === 'budget') renderDbdSection();
 
@@ -1660,17 +1815,124 @@
                 });
             };
 
+            window.selectHotel = function(hotelKey) {
+                const hotel = getHotelObj(hotelKey);
+                const hotelInput = document.getElementById('hotelId');
+                if (hotelInput) hotelInput.value = hotel.id;
+
+                const cardBraves = document.getElementById('hotel-card-braves');
+                const cardYunding = document.getElementById('hotel-card-yunding');
+
+                if (cardBraves) {
+                    cardBraves.className = hotel.id === 'braves'
+                        ? 'text-left p-4 rounded-2xl border-2 border-emerald-600 bg-emerald-50/70 shadow-sm transition space-y-1.5'
+                        : 'text-left p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-emerald-400 transition space-y-1.5';
+                }
+                if (cardYunding) {
+                    cardYunding.className = hotel.id === 'yunding'
+                        ? 'text-left p-4 rounded-2xl border-2 border-blue-600 bg-blue-50/70 shadow-sm transition space-y-1.5'
+                        : 'text-left p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-400 transition space-y-1.5';
+                }
+
+                // Clamp current roomCapacity to the hotel's maxCapacity (e.g. 4 -> 3 if switching to braves)
+                const capInput = document.getElementById('roomCapacity');
+                let currentCap = Number(capInput?.value || hotel.maxCapacity);
+                if (currentCap > hotel.maxCapacity || currentCap < 1) {
+                    currentCap = hotel.maxCapacity;
+                }
+                if (capInput) capInput.value = currentCap;
+
+                renderHotelDetailPanel(hotel);
+                renderRoomCapacityButtons(hotel, currentCap);
+                selectRoomCapacity(currentCap);
+            };
+
+            function renderHotelDetailPanel(hotel) {
+                const box = document.getElementById('selected-hotel-detail-box');
+                if (!box) return;
+
+                const { hotelStats } = computeRoomMatchingAndCosts();
+                const st = hotelStats[hotel.id];
+                const usedRooms = st ? st.roomsBooked : 0;
+                const remRooms = Math.max(0, hotel.availableRooms - usedRooms);
+
+                const freebiesHtml = hotel.freebies.map(f => `<li>✓ ${escapeHtml(f)}</li>`).join('');
+                const actsHtml = hotel.activities.map(a => `<li>• ${escapeHtml(a)}</li>`).join('');
+
+                box.innerHTML = `
+                    <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
+                        <div>
+                            <span class="font-extrabold text-sm text-slate-900">${escapeHtml(hotel.name)}</span>
+                            <span class="block text-[11px] text-slate-500">${escapeHtml(hotel.roomType)} • ${escapeHtml(hotel.roomSpecs)}</span>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-lg ${remRooms > 0 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-700'} text-[11px] font-bold">
+                            จองแล้ว ${usedRooms}/${hotel.availableRooms} ห้อง (ว่าง ${remRooms} ห้อง)
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                        <div class="bg-white p-3 rounded-xl border border-slate-200/80 space-y-1">
+                            <p class="font-bold text-emerald-800">🎁 สิ่งที่ฟรีในแพ็กเกจ:</p>
+                            <ul class="space-y-0.5 text-[11px] text-slate-700">${freebiesHtml}</ul>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-200/80 space-y-1">
+                            <p class="font-bold text-blue-800">🎿 กิจกรรม & สิ่งอำนวยความสะดวก:</p>
+                            <ul class="space-y-0.5 text-[11px] text-slate-700">${actsHtml}</ul>
+                        </div>
+                    </div>
+                `;
+            }
+
+            function renderRoomCapacityButtons(hotel, selectedCap) {
+                const container = document.getElementById('room-capacity-options-container');
+                if (!container) return;
+
+                const caps = [];
+                for (let c = hotel.maxCapacity; c >= 1; c--) {
+                    caps.push(c);
+                }
+
+                container.innerHTML = caps.map(c => {
+                    const perPerson = hotel.roomTotal2Nights / c;
+                    const isBest = c === hotel.maxCapacity;
+                    const badgeLabel = isBest
+                        ? `คุ้มค่าที่สุด (${c} คน)`
+                        : (c === 1 ? 'พักเดี่ยวส่วนตัว' : `หาร ${c} คน`);
+                    const badgeCls = isBest
+                        ? 'bg-blue-600 text-white'
+                        : (c === 1 ? 'bg-purple-100 text-purple-700' : 'bg-indigo-100 text-indigo-700');
+
+                    return `
+                        <button type="button" onclick="selectRoomCapacity(${c})" data-cap="${c}" class="room-cap-btn w-full text-left p-4 rounded-2xl border-2 ${c === selectedCap ? 'border-blue-600 bg-blue-50/70' : 'border-slate-200 bg-white hover:border-blue-300'} transition flex items-center justify-between gap-3">
+                            <div class="space-y-0.5">
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2 py-0.5 rounded-md ${badgeCls} text-[10px] font-bold">${badgeLabel}</span>
+                                    <span class="font-bold text-sm sm:text-base text-slate-900">นอน ${c} คน / ห้อง</span>
+                                </div>
+                                <p class="text-[11px] text-slate-600">
+                                    ${c === 1 ? `เหมาห้องส่วนตัวเต็มห้อง 2 คืน` : `หารค่าห้อง ฿${fmtThb(hotel.roomTotal2Nights)} ร่วมกัน ${c} ท่าน`}
+                                </p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <p class="text-base sm:text-lg font-extrabold ${c === selectedCap ? 'text-blue-700' : 'text-slate-900'}">฿ ${fmtThb(perPerson)}</p>
+                                <p class="text-[10px] text-slate-500">ค่าที่พัก 2 คืน/คน</p>
+                            </div>
+                        </button>
+                    `;
+                }).join('');
+            }
+
             window.selectRoomCapacity = function(cap) {
-                const numCap = Number(cap) || 3;
+                const hotel = getHotelObj(document.getElementById('hotelId')?.value || 'braves');
+                const numCap = Math.max(1, Math.min(hotel.maxCapacity, Number(cap) || hotel.maxCapacity));
                 const input = document.getElementById('roomCapacity');
                 if (input) input.value = numCap;
 
                 document.querySelectorAll('.room-cap-btn').forEach(btn => {
                     const btnCap = Number(btn.getAttribute('data-cap'));
                     if (btnCap === numCap) {
-                        btn.className = 'room-cap-btn w-full text-left p-4 sm:p-5 rounded-2xl border-2 border-blue-600 bg-blue-50/70 transition flex items-center justify-between gap-3';
+                        btn.className = 'room-cap-btn w-full text-left p-4 rounded-2xl border-2 border-blue-600 bg-blue-50/70 transition flex items-center justify-between gap-3';
                     } else {
-                        btn.className = 'room-cap-btn w-full text-left p-4 sm:p-5 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-300 transition flex items-center justify-between gap-3';
+                        btn.className = 'room-cap-btn w-full text-left p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-300 transition flex items-center justify-between gap-3';
                     }
                 });
 
@@ -1678,10 +1940,10 @@
                 const hint = document.getElementById('step5-room-hint');
                 if (numCap === 1) {
                     if (wrapper) wrapper.classList.add('hidden');
-                    if (hint) hint.textContent = 'คุณเลือกพักเดี่ยวส่วนตัว 1 ห้อง ไม่ต้องจับคู่เพื่อนร่วมห้อง';
+                    if (hint) hint.textContent = `คุณเลือกพักเดี่ยวส่วนตัว 1 ห้อง ที่ ${hotel.shortName} ไม่ต้องจับคู่เพื่อนร่วมห้อง`;
                 } else {
                     if (wrapper) wrapper.classList.remove('hidden');
-                    if (hint) hint.textContent = `ระบุชื่อเล่นเพื่อนที่ต้องการนอนห้องเดียวกัน (แบบนอน ${numCap} คน/ห้อง) เพื่อให้ระบบแมตช์ชิ่งให้อัตโนมัติ`;
+                    if (hint) hint.textContent = `ระบุชื่อเล่นเพื่อนที่เลือกพัก "${hotel.shortName}" เหมือนกัน (แบบนอน ${numCap} คน/ห้อง) เพื่อให้ระบบแมตช์ชิ่งให้อัตโนมัติ`;
                 }
             };
 
@@ -1717,6 +1979,10 @@
                 if (prevBtn) {
                     if (target === 1) prevBtn.classList.add('opacity-50', 'pointer-events-none');
                     else prevBtn.classList.remove('opacity-50', 'pointer-events-none');
+                }
+
+                if (target === 4) {
+                    selectHotel(document.getElementById('hotelId')?.value || 'braves');
                 }
 
                 if (target === TOTAL_WIZARD_STEPS) {
@@ -1802,6 +2068,7 @@
                         if (el) el.value = '';
                     });
                     selectGender('ชาย');
+                    selectHotel('braves');
                     selectRoomCapacity(3);
                     const dietaryEl = document.getElementById('dietary');
                     if (dietaryEl) dietaryEl.selectedIndex = 0;
@@ -1822,7 +2089,8 @@
                 const gender = document.getElementById('gender')?.value || 'ชาย';
                 const phone = (document.getElementById('phone')?.value || '').trim();
                 const contactId = (document.getElementById('contactId')?.value || '').trim();
-                const roomCap = Number(document.getElementById('roomCapacity')?.value || 3);
+                const hotel = getHotelObj(document.getElementById('hotelId')?.value || 'braves');
+                const roomCap = Number(document.getElementById('roomCapacity')?.value || hotel.maxCapacity);
                 const roommateReq = (document.getElementById('roommateRequest')?.value || '').trim();
                 const dietary = document.getElementById('dietary')?.value || 'ทานอาหารได้ปกติ';
                 const heuKey = document.getElementById('heuTransitOption')?.value || 'metro_harbin';
@@ -1832,9 +2100,10 @@
                 const isEditing = Boolean(document.getElementById('editing-doc-id')?.value);
                 const projectedPax = Math.max(registrations.length + (isEditing ? 0 : 1), 10);
                 const vanCost = PRICING.shuttleRoundTripNet / projectedPax;
-                const hotelCost = PRICING.roomTotal2Nights / roomCap;
+                const hotelCost = hotel.roomTotal2Nights / roomCap;
                 const grandTotal = heuInfo.thb + vanCost + hotelCost;
 
+                const hotelLabelEl = document.getElementById('review-hotel-name-label');
                 const typeLabel = document.getElementById('review-room-type-label');
                 const grandEl = document.getElementById('review-grand-total');
                 const heuEl = document.getElementById('review-cost-heu');
@@ -1845,7 +2114,8 @@
                 const hotelEl = document.getElementById('review-cost-hotel');
                 const gridEl = document.getElementById('review-details-grid');
 
-                if (typeLabel) typeLabel.textContent = `ห้องพักแบบ นอน ${roomCap} คน / ห้อง`;
+                if (hotelLabelEl) hotelLabelEl.textContent = hotel.name;
+                if (typeLabel) typeLabel.textContent = `${hotel.roomType} • นอน ${roomCap} คน / ห้อง`;
                 if (grandEl) grandEl.textContent = `฿ ${fmtThb(grandTotal)}`;
                 if (heuEl) heuEl.textContent = `฿ ${fmtThb(heuInfo.thb)}`;
                 if (vanEl) vanEl.textContent = `฿ ${fmtThb(vanCost)}`;
@@ -1853,15 +2123,15 @@
                 if (capTextEl) capTextEl.textContent = `${roomCap} คน/ห้อง`;
                 if (roomNoteEl) {
                     roomNoteEl.textContent = roomCap === 1
-                        ? 'พักเดี่ยวส่วนตัว 1 ห้องเต็ม (2 คืน + อาหารเช้า)'
-                        : `หารค่าห้อง ฿6,673.60 ร่วมกัน ${roomCap} ท่าน (2 คืน + อาหารเช้า)`;
+                        ? `พักเดี่ยวส่วนตัว 1 ห้องเต็ม (฿${fmtThb(hotel.roomTotal2Nights)}/2 คืน)`
+                        : `หารค่าห้อง ฿${fmtThb(hotel.roomTotal2Nights)} ร่วมกัน ${roomCap} ท่าน + อาหารเช้าฟรี`;
                 }
                 if (hotelEl) hotelEl.textContent = `฿ ${fmtThb(hotelCost)}`;
 
                 if (gridEl) {
                     const roomMatchText = roomCap === 1
-                        ? 'นอน 1 คน/ห้อง (พักเดี่ยวส่วนตัว)'
-                        : `นอน ${roomCap} คน/ห้อง (${roommateReq ? 'จับคู่: ' + roommateReq : 'ให้ระบบจับคู่อัตโนมัติ'})`;
+                        ? `${hotel.shortName} • นอน 1 คน/ห้อง`
+                        : `${hotel.shortName} • นอน ${roomCap} คน/ห้อง (${roommateReq ? 'จับคู่: ' + roommateReq : 'จัดคู่อัตโนมัติ'})`;
 
                     gridEl.innerHTML = `
                         <div class="bg-white p-2.5 rounded-xl border border-slate-200/80">
@@ -1877,7 +2147,7 @@
                             <strong class="text-slate-900">${escapeHtml(phone)} • ${escapeHtml(contactId)}</strong>
                         </div>
                         <div class="bg-white p-2.5 rounded-xl border border-slate-200/80">
-                            <span class="text-[11px] text-slate-400 block">ห้องพัก & เพื่อนร่วมห้อง</span>
+                            <span class="text-[11px] text-slate-400 block">โรงแรม & ห้องพัก</span>
                             <strong class="text-blue-700">${escapeHtml(roomMatchText)}</strong>
                         </div>
                         <div class="bg-white p-2.5 rounded-xl border border-slate-200/80">
@@ -1907,6 +2177,8 @@
                 try {
                     const editingId = (document.getElementById('editing-doc-id')?.value || '').trim();
                     const checkedActivities = Array.from(document.querySelectorAll('input[name="activities"]:checked')).map(cb => cb.value);
+                    const selectedHotel = getHotelObj(document.getElementById('hotelId')?.value || 'braves');
+                    const selectedCap = Math.max(1, Math.min(selectedHotel.maxCapacity, Number(document.getElementById('roomCapacity')?.value || selectedHotel.maxCapacity)));
 
                     const recordData = {
                         fullNameTh: (document.getElementById('fullNameTh')?.value || '').trim(),
@@ -1916,7 +2188,8 @@
                         phone: (document.getElementById('phone')?.value || '').trim(),
                         contactId: (document.getElementById('contactId')?.value || '').trim(),
                         emergencyContact: (document.getElementById('emergencyContact')?.value || '').trim() || '-',
-                        roomCapacity: Number(document.getElementById('roomCapacity')?.value || 3),
+                        hotelId: selectedHotel.id,
+                        roomCapacity: selectedCap,
                         roommateRequest: (document.getElementById('roommateRequest')?.value || '').trim(),
                         dietary: document.getElementById('dietary')?.value || 'ทานอาหารได้ปกติ',
                         shuttlePackage: 'roundtrip',
@@ -2007,6 +2280,7 @@
                 document.getElementById('phone').value = item.phone || '';
                 document.getElementById('contactId').value = item.contactId || '';
                 document.getElementById('emergencyContact').value = item.emergencyContact === '-' ? '' : (item.emergencyContact || '');
+                selectHotel(item.hotelId || 'braves');
                 selectRoomCapacity(item.roomCapacity || 3);
                 document.getElementById('roommateRequest').value = item.roommateRequest || '';
                 document.getElementById('dietary').value = item.dietary || 'ทานอาหารได้ปกติ';
@@ -2080,7 +2354,7 @@
             }
 
             // =============================================================
-            // 9. SMART ROOM MATCHING & INDIVIDUAL BILLING ENGINE
+            // 9. SMART HOTEL-GROUPED ROOM MATCHING & BOOKING CALCULATOR
             // =============================================================
             function computeRoomMatchingAndCosts() {
                 const totalPax = registrations.length;
@@ -2090,82 +2364,104 @@
 
                 const rooms = [];
                 const personBillingMap = {};
-                const assignedIds = new Set();
-
-                // Sort by creation order
                 const ordered = [...registrations].sort((a, b) => (a.createdAtMs || 0) - (b.createdAtMs || 0));
 
-                // 1) Private 1-person rooms
-                ordered.filter(p => Number(p.roomCapacity || 3) === 1).forEach(p => {
-                    assignedIds.add(p.id);
-                    rooms.push({
-                        roomNumber: rooms.length + 1,
-                        capacity: 1,
-                        members: [p]
-                    });
-                });
+                // Group matching independently per hotel (braves vs yunding)
+                ['braves', 'yunding'].forEach(hId => {
+                    const hotel = getHotelObj(hId);
+                    const hotelGuests = ordered.filter(p => (p.hotelId || 'braves') === hId);
+                    const assignedIds = new Set();
 
-                // 2) Shared rooms (capacity 2 or 3)
-                [3, 2].forEach(cap => {
-                    const pool = ordered.filter(p => !assignedIds.has(p.id) && Number(p.roomCapacity || 3) === cap);
-
-                    // First pass: group people who explicitly requested each other's nickname
-                    for (const person of pool) {
-                        if (assignedIds.has(person.id)) continue;
-
-                        const group = [person];
-                        assignedIds.add(person.id);
-                        const reqText = (person.roommateRequest || '').toLowerCase();
-
-                        if (reqText) {
-                            for (const candidate of pool) {
-                                if (group.length >= cap) break;
-                                if (assignedIds.has(candidate.id)) continue;
-                                const candNick = (candidate.nickname || '').trim().toLowerCase();
-                                const candFull = (candidate.fullNameTh || '').trim().toLowerCase();
-                                if ((candNick && reqText.includes(candNick)) || (candFull && reqText.includes(candFull))) {
-                                    group.push(candidate);
-                                    assignedIds.add(candidate.id);
-                                }
-                            }
-                        }
-
-                        // Check if anyone else in the pool requested this person
-                        if (group.length < cap) {
-                            const myNick = (person.nickname || '').trim().toLowerCase();
-                            for (const candidate of pool) {
-                                if (group.length >= cap) break;
-                                if (assignedIds.has(candidate.id)) continue;
-                                const candReq = (candidate.roommateRequest || '').toLowerCase();
-                                if (myNick && candReq.includes(myNick)) {
-                                    group.push(candidate);
-                                    assignedIds.add(candidate.id);
-                                }
-                            }
-                        }
-
-                        // Fill remaining slots with unassigned people of same room capacity
-                        for (const candidate of pool) {
-                            if (group.length >= cap) break;
-                            if (assignedIds.has(candidate.id)) continue;
-                            group.push(candidate);
-                            assignedIds.add(candidate.id);
-                        }
-
+                    // 1) Private 1-person rooms
+                    hotelGuests.filter(p => Number(p.roomCapacity || hotel.maxCapacity) === 1).forEach(p => {
+                        assignedIds.add(p.id);
                         rooms.push({
                             roomNumber: rooms.length + 1,
-                            capacity: cap,
-                            members: group
+                            hotelId: hId,
+                            hotel,
+                            capacity: 1,
+                            members: [p]
                         });
+                    });
+
+                    // 2) Shared rooms from maxCapacity down to 2
+                    for (let cap = hotel.maxCapacity; cap >= 2; cap--) {
+                        const pool = hotelGuests.filter(p => !assignedIds.has(p.id) && Number(p.roomCapacity || hotel.maxCapacity) === cap);
+
+                        for (const person of pool) {
+                            if (assignedIds.has(person.id)) continue;
+
+                            const group = [person];
+                            assignedIds.add(person.id);
+                            const reqText = (person.roommateRequest || '').toLowerCase();
+
+                            // Match requested roommates
+                            if (reqText) {
+                                for (const candidate of pool) {
+                                    if (group.length >= cap) break;
+                                    if (assignedIds.has(candidate.id)) continue;
+                                    const candNick = (candidate.nickname || '').trim().toLowerCase();
+                                    const candFull = (candidate.fullNameTh || '').trim().toLowerCase();
+                                    if ((candNick && reqText.includes(candNick)) || (candFull && reqText.includes(candFull))) {
+                                        group.push(candidate);
+                                        assignedIds.add(candidate.id);
+                                    }
+                                }
+                            }
+
+                            // Match reverse requests
+                            if (group.length < cap) {
+                                const myNick = (person.nickname || '').trim().toLowerCase();
+                                for (const candidate of pool) {
+                                    if (group.length >= cap) break;
+                                    if (assignedIds.has(candidate.id)) continue;
+                                    const candReq = (candidate.roommateRequest || '').toLowerCase();
+                                    if (myNick && candReq.includes(myNick)) {
+                                        group.push(candidate);
+                                        assignedIds.add(candidate.id);
+                                    }
+                                }
+                            }
+
+                            // Fill remaining slots with unassigned guests of same hotel & capacity
+                            for (const candidate of pool) {
+                                if (group.length >= cap) break;
+                                if (assignedIds.has(candidate.id)) continue;
+                                group.push(candidate);
+                                assignedIds.add(candidate.id);
+                            }
+
+                            rooms.push({
+                                roomNumber: rooms.length + 1,
+                                hotelId: hId,
+                                hotel,
+                                capacity: cap,
+                                members: group
+                            });
+                        }
                     }
                 });
 
-                // Compute individual bills
+                // Compute individual bills & per-hotel booking summary
                 let groupGrandTotal = 0;
+                const hotelStats = {
+                    braves: { hotel: HOTELS.braves, paxCount: 0, roomsBooked: 0, fullRooms: 0, partialRooms: 0, totalHotelCost: 0 },
+                    yunding: { hotel: HOTELS.yunding, paxCount: 0, roomsBooked: 0, fullRooms: 0, partialRooms: 0, totalHotelCost: 0 }
+                };
+
                 rooms.forEach(room => {
+                    const st = hotelStats[room.hotelId];
+                    if (st) {
+                        st.roomsBooked += 1;
+                        st.paxCount += room.members.length;
+                        st.totalHotelCost += room.hotel.roomTotal2Nights;
+                        if (room.members.length >= room.capacity) st.fullRooms += 1;
+                        else st.partialRooms += 1;
+                    }
+
                     const memberCount = Math.max(room.members.length, 1);
-                    const currentActualRoomShare = PRICING.roomTotal2Nights / memberCount;
-                    const fullTargetRoomShare = PRICING.roomTotal2Nights / room.capacity;
+                    const currentActualRoomShare = room.hotel.roomTotal2Nights / memberCount;
+                    const fullTargetRoomShare = room.hotel.roomTotal2Nights / room.capacity;
 
                     room.members.forEach(m => {
                         const heuInfo = PRICING.heuTransitOptions[m.heuTransitOption] || PRICING.heuTransitOptions.metro_harbin;
@@ -2175,6 +2471,9 @@
 
                         personBillingMap[m.id] = {
                             roomNumber: room.roomNumber,
+                            hotelId: room.hotelId,
+                            hotelShortName: room.hotel.shortName,
+                            hotelName: room.hotel.name,
                             roomCapacity: room.capacity,
                             roomMemberCount: memberCount,
                             isRoomFull: memberCount >= room.capacity,
@@ -2193,7 +2492,8 @@
                     rooms,
                     personBillingMap,
                     actualVanShare,
-                    groupGrandTotal
+                    groupGrandTotal,
+                    hotelStats
                 };
             }
 
@@ -2202,18 +2502,37 @@
             // =============================================================
             function syncAllViews() {
                 const count = registrations.length;
+                const { hotelStats } = computeRoomMatchingAndCosts();
+
                 document.querySelectorAll('.live-pax-count').forEach(el => {
                     el.textContent = String(count);
                 });
 
                 const seatsBadge = document.getElementById('hub-seats-badge');
                 const progressBar = document.getElementById('hub-progress-bar');
+                const hubRoomsPill = document.getElementById('hub-rooms-summary-pill');
                 const remaining = Math.max(0, PRICING.maxVanSeats - count);
+
                 if (seatsBadge) {
                     seatsBadge.textContent = remaining > 0 ? `ว่าง ${remaining} ที่นั่ง` : 'เต็ม 15 ที่นั่งแล้ว';
                 }
                 if (progressBar) {
                     progressBar.style.width = `${Math.min(100, (count / PRICING.maxVanSeats) * 100)}%`;
+                }
+                if (hubRoomsPill) {
+                    hubRoomsPill.textContent = `เบรฟส์ ${hotelStats.braves.roomsBooked}/${HOTELS.braves.availableRooms} ห้อง • หยุนติ้งเสว ${hotelStats.yunding.roomsBooked}/${HOTELS.yunding.availableRooms} ห้อง`;
+                }
+
+                // Update wizard remaining room badges
+                const wizBraves = document.getElementById('wiz-quota-braves');
+                const wizYunding = document.getElementById('wiz-quota-yunding');
+                if (wizBraves) {
+                    const remB = Math.max(0, HOTELS.braves.availableRooms - hotelStats.braves.roomsBooked);
+                    wizBraves.textContent = remB > 0 ? `เหลือ ${remB}/${HOTELS.braves.availableRooms} ห้อง` : 'ครบ 5 ห้องแล้ว';
+                }
+                if (wizYunding) {
+                    const remY = Math.max(0, HOTELS.yunding.availableRooms - hotelStats.yunding.roomsBooked);
+                    wizYunding.textContent = remY > 0 ? `เหลือ ${remY}/${HOTELS.yunding.availableRooms} ห้อง` : 'ครบ 3 ห้องแล้ว';
                 }
 
                 if (activeView === 'results') renderResultsViews();
@@ -2221,17 +2540,32 @@
             }
 
             // DBD Calculator Renderers
+            window.setDbdHotel = function(hotelKey) {
+                const hotel = getHotelObj(hotelKey);
+                dbdHotelId = hotel.id;
+                if (dbdRoomCap > hotel.maxCapacity) {
+                    dbdRoomCap = hotel.maxCapacity;
+                }
+
+                const btnBraves = document.getElementById('dbd-hotel-btn-braves');
+                const btnYunding = document.getElementById('dbd-hotel-btn-yunding');
+                if (btnBraves) {
+                    btnBraves.className = hotel.id === 'braves'
+                        ? 'p-3 rounded-2xl border-2 border-emerald-600 bg-emerald-50 text-left transition'
+                        : 'p-3 rounded-2xl border-2 border-slate-200 bg-white hover:border-emerald-400 text-left transition';
+                }
+                if (btnYunding) {
+                    btnYunding.className = hotel.id === 'yunding'
+                        ? 'p-3 rounded-2xl border-2 border-blue-600 bg-blue-50 text-left transition'
+                        : 'p-3 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-400 text-left transition';
+                }
+
+                renderDbdSection();
+            };
+
             window.setDbdRoomCap = function(cap) {
-                dbdRoomCap = Number(cap) || 3;
-                [3, 2, 1].forEach(c => {
-                    const btn = document.getElementById(`dbd-cap-btn-${c}`);
-                    if (!btn) return;
-                    if (c === dbdRoomCap) {
-                        btn.className = 'py-2.5 px-3 rounded-xl bg-blue-600 text-white text-xs sm:text-sm font-bold shadow-sm transition';
-                    } else {
-                        btn.className = 'py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold transition';
-                    }
-                });
+                const hotel = getHotelObj(dbdHotelId);
+                dbdRoomCap = Math.max(1, Math.min(hotel.maxCapacity, Number(cap) || hotel.maxCapacity));
                 renderDbdSection();
             };
 
@@ -2253,17 +2587,35 @@
             };
 
             function renderDbdSection() {
+                const hotel = getHotelObj(dbdHotelId);
+                const capContainer = document.getElementById('dbd-cap-buttons-container');
+                if (capContainer) {
+                    const caps = [];
+                    for (let c = hotel.maxCapacity; c >= 1; c--) caps.push(c);
+                    capContainer.className = caps.length === 4 ? 'grid grid-cols-2 sm:grid-cols-4 gap-2' : 'grid grid-cols-3 gap-2';
+                    capContainer.innerHTML = caps.map(c => {
+                        const perPerson = hotel.roomTotal2Nights / c;
+                        const active = c === dbdRoomCap;
+                        return `
+                            <button type="button" onclick="setDbdRoomCap(${c})" class="py-2.5 px-3 rounded-xl ${active ? 'bg-blue-600 text-white font-bold shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold'} text-xs sm:text-sm transition">
+                                นอน ${c} คน/ห้อง<br><span class="text-[10px] font-normal ${active ? 'opacity-90' : 'text-slate-500'}">฿${fmtThb(perPerson)}/คน</span>
+                            </button>
+                        `;
+                    }).join('');
+                }
+
                 const n = dbdSelectedPax;
                 const heuCost = PRICING.heuTransitOptions.metro_harbin.thb;
                 const vanShare = PRICING.shuttleRoundTripNet / n;
                 const vanFull15 = PRICING.shuttleRoundTripNet / 15;
-                const hotelShare = PRICING.roomTotal2Nights / dbdRoomCap;
+                const hotelShare = hotel.roomTotal2Nights / dbdRoomCap;
                 const totalPerPerson = heuCost + vanShare + hotelShare;
                 const diffFromFull15 = vanShare - vanFull15;
 
                 const matchBadge = document.getElementById('dbd-match-badge');
                 const displayEl = document.getElementById('dbd-selected-pax-display');
                 const subEl = document.getElementById('dbd-room-summary-sub');
+                const spotTitle = document.getElementById('dbd-spot-hotel-title');
                 const spotTotal = document.getElementById('dbd-spot-total');
                 const spotDiff = document.getElementById('dbd-spot-diff');
                 const spotHeu = document.getElementById('dbd-spot-heu');
@@ -2274,6 +2626,7 @@
                 if (matchBadge) matchBadge.textContent = `${n} ท่าน`;
                 if (displayEl) displayEl.textContent = String(n);
                 if (subEl) subEl.textContent = n < 15 ? `เหลือที่นั่งว่างในรถ ${15 - n} ที่` : 'เต็มคันรถตู้ 15 ที่นั่งพอดี!';
+                if (spotTitle) spotTitle.textContent = `ยอดประมาณการรวมสุทธิ / ท่าน (${hotel.shortName})`;
                 if (spotTotal) spotTotal.textContent = `฿ ${fmtThb(totalPerPerson)}`;
                 if (spotDiff) {
                     spotDiff.textContent = n < 15
@@ -2300,7 +2653,7 @@
                                     <span class="text-[10px] px-2 py-0.5 rounded-full ${i === 15 ? 'bg-emerald-100 text-emerald-700 font-bold' : 'bg-slate-100 text-slate-600'}">รถ ฿${Math.round(vShare)}</span>
                                 </div>
                                 <p class="text-lg font-extrabold text-slate-900 mt-2">฿ ${fmtThb(tot)}</p>
-                                <p class="text-[10px] text-slate-500 mt-0.5">รวม HEU + รถ + ที่พัก</p>
+                                <p class="text-[10px] text-slate-500 mt-0.5">รวม HEU + รถ + ${hotel.shortName}</p>
                             </button>
                         `;
                     }
@@ -2330,15 +2683,60 @@
             };
 
             window.renderResultsViews = function() {
-                const { rooms, personBillingMap, actualVanShare, groupGrandTotal } = computeRoomMatchingAndCosts();
+                const { rooms, personBillingMap, actualVanShare, groupGrandTotal, hotelStats } = computeRoomMatchingAndCosts();
                 const total = registrations.length;
 
-                // KPI Updates
+                // 1. Render Hotel Booking Summary Board ("ต้องจองที่ไหนกี่ห้อง")
+                const bookingCardsEl = document.getElementById('hotel-booking-summary-cards');
+                if (bookingCardsEl) {
+                    bookingCardsEl.innerHTML = ['braves', 'yunding'].map(hId => {
+                        const st = hotelStats[hId];
+                        const h = st.hotel;
+                        const isOverQuota = st.roomsBooked > h.availableRooms;
+                        const remRooms = Math.max(0, h.availableRooms - st.roomsBooked);
+                        const borderCls = isOverQuota
+                            ? 'border-rose-400 bg-rose-50/40'
+                            : (hId === 'braves' ? 'border-emerald-200 bg-emerald-50/30' : 'border-blue-200 bg-blue-50/30');
+                        const accentText = hId === 'braves' ? 'text-emerald-700' : 'text-blue-700';
+
+                        return `
+                            <div class="rounded-2xl p-4 sm:p-5 border-2 ${borderCls} space-y-2.5">
+                                <div class="flex items-start justify-between gap-2">
+                                    <div>
+                                        <span class="text-[11px] font-bold ${accentText}">${escapeHtml(h.roomType)}</span>
+                                        <h4 class="text-base font-bold text-slate-900">${escapeHtml(h.name)}</h4>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg ${isOverQuota ? 'bg-rose-600 text-white' : 'bg-white border border-slate-200 text-slate-700'} text-xs font-extrabold shrink-0">
+                                        จอง ${st.roomsBooked} / ${h.availableRooms} ห้อง
+                                    </span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 bg-white p-2.5 rounded-xl border border-slate-200/80 text-center text-xs">
+                                    <div>
+                                        <span class="text-[10px] text-slate-400 block">ผู้เข้าพัก</span>
+                                        <strong class="text-slate-900 text-sm">${st.paxCount} คน</strong>
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] text-slate-400 block">ต้องกดจอง</span>
+                                        <strong class="${accentText} text-sm">${st.roomsBooked} ห้อง</strong>
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] text-slate-400 block">โควตาที่เหลือ</span>
+                                        <strong class="${isOverQuota ? 'text-rose-600' : 'text-slate-900'} text-sm">${isOverQuota ? 'เกินโควตา!' : remRooms + ' ห้อง'}</strong>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between text-xs pt-0.5">
+                                    <span class="text-slate-600">ยอดค่าห้องรวม 2 คืน (${st.roomsBooked} ห้อง):</span>
+                                    <strong class="text-slate-900">฿ ${fmtThb(st.totalHotelCost)}</strong>
+                                </div>
+                                ${isOverQuota ? `<p class="text-[11px] text-rose-700 font-semibold">⚠️ จำนวนห้องที่ต้องการ (${st.roomsBooked} ห้อง) เกินโควตาห้องว่าง (${h.availableRooms} ห้องสุดท้าย) กรุณาปรับย้ายบางส่วนไปอีกโรงแรม</p>` : ''}
+                            </div>
+                        `;
+                    }).join('');
+                }
+
+                // 2. KPI Updates
                 const maleCount = registrations.filter(r => r.gender === 'ชาย').length;
                 const femaleCount = registrations.filter(r => r.gender === 'หญิง').length;
-                const cap1Count = registrations.filter(r => Number(r.roomCapacity) === 1).length;
-                const cap2Count = registrations.filter(r => Number(r.roomCapacity) === 2).length;
-                const cap3Count = registrations.filter(r => Number(r.roomCapacity || 3) === 3).length;
 
                 const statTotal = document.getElementById('stat-total');
                 const statGender = document.getElementById('stat-gender-split');
@@ -2351,7 +2749,7 @@
                 if (statTotal) statTotal.textContent = String(total);
                 if (statGender) statGender.textContent = `ชาย ${maleCount} • หญิง ${femaleCount}`;
                 if (statRooms) statRooms.textContent = String(rooms.length);
-                if (statPref) statPref.textContent = `1คน:${cap1Count} | 2คน:${cap2Count} | 3คน:${cap3Count}`;
+                if (statPref) statPref.textContent = `เบรฟส์ ${hotelStats.braves.roomsBooked} ห้อง • หยุนติ้งเสว ${hotelStats.yunding.roomsBooked} ห้อง`;
                 if (statVan) statVan.textContent = `฿ ${fmtThb(actualVanShare)}`;
                 if (statVanNote) {
                     statVanNote.textContent = total > 0
@@ -2360,14 +2758,14 @@
                 }
                 if (statGrand) statGrand.textContent = `฿ ${fmtThb(groupGrandTotal)}`;
 
-                // Sub-Tab A: Room Matching Cards
+                // 3. Sub-Tab A: Room Matching Cards
                 const roomContainer = document.getElementById('room-matching-container');
                 if (roomContainer) {
                     if (rooms.length === 0) {
                         roomContainer.innerHTML = `
                             <div class="md:col-span-2 bg-white rounded-3xl p-8 border border-slate-200 text-center space-y-3">
                                 <p class="text-base font-bold text-slate-800">ยังไม่มีรายชื่อผู้ลงทะเบียนในระบบ</p>
-                                <p class="text-xs text-slate-500">เมื่อมีผู้ลงทะเบียนเข้ามา ระบบจะจัดกลุ่มห้องพัก (1/2/3 คน) และคำนวณยอดจ่ายรายบุคคลให้อัตโนมัติทันที</p>
+                                <p class="text-xs text-slate-500">เมื่อมีผู้ลงทะเบียนเข้ามา ระบบจะจัดกลุ่มห้องพักแยกตามโรงแรมและคำนวณยอดจ่ายรายบุคคลให้อัตโนมัติทันที</p>
                                 <button type="button" onclick="navigateTo('register')" class="px-5 py-2.5 rounded-xl bg-blue-600 text-white text-xs font-bold">ไปหน้าลงทะเบียนคนแรก →</button>
                             </div>
                         `;
@@ -2375,7 +2773,10 @@
                         roomContainer.innerHTML = rooms.map(room => {
                             const isFull = room.members.length >= room.capacity;
                             const missingCount = Math.max(0, room.capacity - room.members.length);
-                            const badgeHtml = isFull
+                            const hotelBadgeCls = room.hotelId === 'braves'
+                                ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                : 'bg-blue-50 text-blue-700 border-blue-200';
+                            const statusBadgeHtml = isFull
                                 ? `<span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">ครบ ${room.capacity}/${room.capacity} คน</span>`
                                 : `<span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-bold">รอเพื่อนเพิ่มอีก ${missingCount} คน (${room.members.length}/${room.capacity})</span>`;
 
@@ -2404,33 +2805,35 @@
 
                             return `
                                 <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-3">
-                                    <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-3">
-                                        <div>
-                                            <span class="text-xs font-bold text-blue-600">ห้องที่ ${room.roomNumber}</span>
-                                            <h3 class="text-base font-bold text-slate-900">แพ็กเกจนอน ${room.capacity} คน / ห้อง</h3>
+                                    <div class="flex items-start justify-between gap-2 border-b border-slate-100 pb-3">
+                                        <div class="space-y-1">
+                                            <span class="inline-block px-2 py-0.5 rounded-md border ${hotelBadgeCls} text-[10px] font-bold">${escapeHtml(room.hotel.shortName)}</span>
+                                            <h3 class="text-base font-bold text-slate-900">ห้องที่ ${room.roomNumber} • นอน ${room.capacity} คน / ห้อง</h3>
                                         </div>
-                                        ${badgeHtml}
+                                        ${statusBadgeHtml}
                                     </div>
                                     <div class="space-y-2">${membersHtml}</div>
-                                    ${!isFull ? `<p class="text-[11px] text-amber-700 bg-amber-50 px-3 py-2 rounded-xl">หากมีเพื่อนเลือกนอน ${room.capacity} คน/ห้อง เพิ่มอีก ${missingCount} คน ค่าที่พักจะลดเหลือ ฿${fmtThb(PRICING.roomTotal2Nights / room.capacity)}/คน</p>` : ''}
+                                    ${!isFull ? `<p class="text-[11px] text-amber-700 bg-amber-50 px-3 py-2 rounded-xl">หากมีเพื่อนเลือก "${escapeHtml(room.hotel.shortName)}" แบบนอน ${room.capacity} คน/ห้อง เพิ่มอีก ${missingCount} คน ค่าที่พักจะลดเหลือ ฿${fmtThb(room.hotel.roomTotal2Nights / room.capacity)}/คน</p>` : ''}
                                 </div>
                             `;
                         }).join('');
                     }
                 }
 
-                // Sub-Tab B: All Participants List
+                // 4. Sub-Tab B: All Participants List
                 const listContainer = document.getElementById('participant-cards-container');
                 if (listContainer) {
                     const q = (document.getElementById('search-input')?.value || '').trim().toLowerCase();
-                    const filterCap = document.getElementById('filter-select')?.value || 'all';
+                    const filterVal = document.getElementById('filter-select')?.value || 'all';
 
                     const filtered = registrations.filter(item => {
+                        const hId = item.hotelId || 'braves';
                         const capStr = String(item.roomCapacity || 3);
-                        if (filterCap !== 'all' && capStr !== filterCap) return false;
+                        if (filterVal.startsWith('hotel:') && hId !== filterVal.split(':')[1]) return false;
+                        if (filterVal.startsWith('cap:') && capStr !== filterVal.split(':')[1]) return false;
                         if (!q) return true;
                         const bill = personBillingMap[item.id];
-                        const hay = `${item.fullNameTh} ${item.nickname} ${item.fullNameEn} ${item.roommateRequest} ห้องที่ ${bill ? bill.roomNumber : ''}`.toLowerCase();
+                        const hay = `${item.fullNameTh} ${item.nickname} ${item.fullNameEn} ${item.roommateRequest} ${bill ? bill.hotelName : ''} ห้องที่ ${bill ? bill.roomNumber : ''}`.toLowerCase();
                         return hay.includes(q);
                     });
 
@@ -2443,6 +2846,10 @@
                     } else {
                         listContainer.innerHTML = filtered.map((item, idx) => {
                             const bill = personBillingMap[item.id];
+                            const hBadgeCls = (item.hotelId || 'braves') === 'braves'
+                                ? 'bg-emerald-50 text-emerald-700'
+                                : 'bg-blue-50 text-blue-700';
+
                             return `
                                 <div class="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200 shadow-sm space-y-3">
                                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -2454,7 +2861,7 @@
                                                 <div class="flex flex-wrap items-center gap-1.5">
                                                     <h4 class="font-bold text-base text-slate-900">${escapeHtml(item.nickname)} — ${escapeHtml(item.fullNameTh)}</h4>
                                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 text-[11px] font-semibold">${escapeHtml(item.gender)}</span>
-                                                    ${bill ? `<span class="px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 text-[11px] font-bold">ห้องที่ ${bill.roomNumber} (${bill.roomCapacity} คน/ห้อง)</span>` : ''}
+                                                    ${bill ? `<span class="px-2 py-0.5 rounded-md ${hBadgeCls} text-[11px] font-bold">${escapeHtml(bill.hotelShortName)} • ห้องที่ ${bill.roomNumber} (${bill.roomCapacity} คน)</span>` : ''}
                                                 </div>
                                                 <p class="text-xs text-slate-500 mt-0.5">${escapeHtml(item.fullNameEn)}</p>
                                             </div>
@@ -2666,17 +3073,96 @@
                         </div>
                     `
                 },
-                hotel: {
-                    title: 'รายละเอียดที่พัก: บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์ (ถนนเสวี่ยหยุน)',
+                hotel_braves: {
+                    title: 'รายละเอียดที่พัก 1: บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์ (ถนนเสวี่ยหยุน)',
                     html: `
                         <div class="space-y-3 text-xs sm:text-sm">
                             <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-1.5">
-                                <p class="font-bold text-emerald-900">Brave's Homeland Boutique Homestay (ถนนเสวี่ยหยุน)</p>
-                                <p>• <strong>ประเภทห้อง:</strong> Cozy Warm Kang Room (เตียงคังอุ่นสไตล์ตงเป่ย ขนาด 15 ตร.ม. ชั้น 1–2 ห้องปลอดบุหรี่ มีฮีทเตอร์ทุกห้อง และ Wi-Fi ฟรี)</p>
-                                <p>• <strong>ทำเล:</strong> ห่างจากถนนเสน่ห์หิมะ (Xueyun Street) และลานสกี Xuebao Ski Field น้อยกว่า <strong>100 เมตร</strong></p>
-                                <p>• <strong>สิทธิ์ที่รวมในแพ็กเกจ:</strong> รวมอาหารเช้าสำหรับผู้ใหญ่สูงสุด 3 ท่าน/ห้อง, ฟรีที่เก็บสัมภาระ, เช็คอินก่อนเวลาได้ (ขึ้นอยู่กับห้องว่าง)</p>
-                                <p>• <strong>ราคาอ้างอิง (18–20 ธ.ค. 2569):</strong> 5 ห้อง × 2 คืน รวมภาษี = <strong>฿ 33,368</strong> (เฉลี่ยห้องละ <strong>฿ 6,673.60 / 2 คืน</strong>)</p>
+                                <p class="font-bold text-emerald-900">Brave's Homeland Boutique Homestay (คะแนน 9.1/10)</p>
+                                <p>• <strong>ประเภทห้อง:</strong> Cozy Warm Kang Room (เตียงคังอุ่น 1 เตียง ขนาด 15 ตร.ม. ชั้น 1–2 ห้องปลอดบุหรี่ มีฮีทเตอร์ทุกห้อง)</p>
+                                <p>• <strong>โควตาห้องว่าง:</strong> <strong>5 ห้องสุดท้าย</strong> (พักได้สูงสุด 3 คน/ห้อง)</p>
+                                <p>• <strong>ราคา (18–20 ธ.ค. 2569):</strong> 5 ห้อง × 2 คืน รวมภาษี = <strong>฿ 33,368</strong> (เฉลี่ยห้องละ <strong>฿ 6,673.60 / 2 คืน</strong> หรือ <strong>฿ 2,224.53 / คน</strong> เมื่อพัก 3 คน)</p>
                             </div>
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                <p class="font-bold text-slate-900">🎁 สิทธิ์ฟรี & กิจกรรมในที่พัก:</p>
+                                <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                                    <li><strong>ฟรีอาหารเช้า 3 ท่าน / ห้อง</strong> (อาหารท้องถิ่นตงเป่ย) + ของขวัญฟรี</li>
+                                    <li><strong>ฟรี Wi-Fi</strong> + <strong>ฟรีที่เก็บสัมภาระ</strong> + เช็คอินก่อนเวลาได้</li>
+                                    <li><strong>ฟรีชุดเสื้อคลุมลายดอกตงเป่ย</strong> ให้ใส่ถ่ายรูปในหมู่บ้านหิมะ</li>
+                                    <li><strong>กิจกรรม & ทำเล:</strong> ติดถนนเสน่ห์หิมะ (&lt;100 ม.), ลานสกี <strong>Xuebao Ski Field (&lt;100 ม.)</strong>, Snow World (7.8 กม.), ห้องบิลเลียด/หมากรุก, ห้องสมุด</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                hotel_yunding: {
+                    title: 'รายละเอียดที่พัก 2: โรงแรมหยุนติ้งเสว (Yunding Snow Hotel)',
+                    html: `
+                        <div class="space-y-3 text-xs sm:text-sm">
+                            <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 space-y-1.5">
+                                <p class="font-bold text-blue-900">Yunding Snow Hotel (คะแนนรีวิว 9.6/10 ดีเลิศ)</p>
+                                <p>• <strong>ประเภทห้อง:</strong> Chen Xue · Tatami Family Room (ฟูกนอนทาทามิ 1 เตียงใหญ่ ขนาด <strong>19 ตร.ม.</strong> <strong>วิวภูเขา</strong> ชั้น B1 สูบบุหรี่ได้)</p>
+                                <p>• <strong>สเปกความสบาย:</strong> ระบบทำความร้อนใต้พื้นทั้งห้อง (Whole House Floor Heating), น้ำอุ่นตลอด 24 ชม., <strong>โถสุขภัณฑ์อัจฉริยะ (Smart Toilet)</strong></p>
+                                <p>• <strong>โควตาห้องว่าง:</strong> <strong>เหลือ 3 ห้องสุดท้าย</strong> (พักได้สูงสุด <strong>4 คน/ห้อง</strong>)</p>
+                                <p>• <strong>ราคา (18–20 ธ.ค. 2569):</strong> คืนละ <strong>฿ 4,465</strong> (ลดจาก ฿6,569) รวม 2 คืน = <strong>฿ 8,930.00 / ห้อง</strong> (หาร 4 คน = <strong>฿ 2,232.50 / คน</strong>)</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                <p class="font-bold text-slate-900">🎁 สิทธิ์ฟรี & บริการ/กิจกรรม:</p>
+                                <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                                    <li><strong>ฟรีอาหารเช้า 4 ท่าน / ห้อง</strong> + ของขวัญฟรี + ฟรี Wi-Fi</li>
+                                    <li><strong>ฟรีบริการรถรับ-ส่ง & ผู้ช่วยขนกระเป๋า (Butler Service)</strong> จากจุดจอดรถ</li>
+                                    <li><strong>ในโรงแรม:</strong> บ่อน้ำพุร้อน (Hot Spring), ซาวน่า (Sauna), สปา (Spa) <em>(มีค่าบริการเพิ่มเติม)</em>, ห้องนวด (Massage Room), พื้นที่อาบแดด (Sun Terrace)</li>
+                                    <li><strong>กิจกรรมภายนอก:</strong> เล่นสกี, ขี่ม้า, เดินป่าชมหิมะ, สนามกอล์ฟ, วอลเลย์บอลชายหาด ใกล้ป้ายหินใหญ่ & ลานกองไฟ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                hotel_compare: {
+                    title: 'ตารางเปรียบเทียบที่พักทั้ง 2 แห่ง (18–20 ธ.ค. 2569)',
+                    html: `
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse text-xs">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-800 border-b border-slate-200">
+                                        <th class="p-2.5 font-bold">หัวข้อเปรียบเทียบ</th>
+                                        <th class="p-2.5 font-bold text-emerald-800">1. เบรฟส์โฮมแลนด์</th>
+                                        <th class="p-2.5 font-bold text-blue-800">2. โรงแรมหยุนติ้งเสว</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200">
+                                    <tr>
+                                        <td class="p-2.5 font-semibold">ประเภทห้อง & ขนาด</td>
+                                        <td class="p-2.5">Cozy Warm Kang (15 ตร.ม.)</td>
+                                        <td class="p-2.5">Tatami Family (19 ตร.ม. วิวภูเขา)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-semibold">พักได้สูงสุด / โควตา</td>
+                                        <td class="p-2.5"><strong>3 คน/ห้อง</strong> (ว่าง 5 ห้อง)</td>
+                                        <td class="p-2.5"><strong>4 คน/ห้อง</strong> (ว่าง 3 ห้อง)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-semibold">ราคาห้อง / 2 คืน</td>
+                                        <td class="p-2.5">฿ 6,673.60 (รวมภาษี)</td>
+                                        <td class="p-2.5">฿ 8,930.00 (฿4,465/คืน)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-semibold">ราคาหารเต็มห้อง/คน</td>
+                                        <td class="p-2.5 font-bold text-emerald-700">฿ 2,224.53 (3 คน)</td>
+                                        <td class="p-2.5 font-bold text-blue-700">฿ 2,232.50 (4 คน)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-semibold">อาหารเช้า & ของฟรี</td>
+                                        <td class="p-2.5">ฟรีอาหารเช้า 3 ท่าน + ชุดลายดอก</td>
+                                        <td class="p-2.5">ฟรีอาหารเช้า 4 ท่าน + รถรับส่ง/ขนกระเป๋า</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-semibold">จุดเด่น & กิจกรรม</td>
+                                        <td class="p-2.5">ติดถนนหิมะ & ลานสกี <100ม.</td>
+                                        <td class="p-2.5">พื้นอุ่น, Smart Toilet, น้ำพุร้อน, สปา, ซาวน่า, ขี่ม้า</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     `
                 },
@@ -2802,20 +3288,23 @@
             }
 
             window.copyGroupSummary = function() {
-                const { rooms, personBillingMap, actualVanShare } = computeRoomMatchingAndCosts();
+                const { rooms, personBillingMap, actualVanShare, hotelStats } = computeRoomMatchingAndCosts();
                 const lines = [
                     `❄️ สรุปรายชื่อทริปหมู่บ้านหิมะจีน – ยาบูลี (18–20 ธ.ค. 2569)`,
-                    `👥 ผู้ลงทะเบียนทั้งหมด: ${registrations.length} / 15 ท่าน (เปิด ${rooms.length} ห้อง)`,
+                    `👥 ผู้ลงทะเบียนทั้งหมด: ${registrations.length} / 15 ท่าน`,
+                    `🏨 สรุปห้องที่ต้องจอง:`,
+                    `   • บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์: ${hotelStats.braves.roomsBooked}/${HOTELS.braves.availableRooms} ห้อง (${hotelStats.braves.paxCount} ท่าน)`,
+                    `   • โรงแรมหยุนติ้งเสว: ${hotelStats.yunding.roomsBooked}/${HOTELS.yunding.availableRooms} ห้อง (${hotelStats.yunding.paxCount} ท่าน)`,
                     `🚐 ค่ารถตู้เหมา 15 ที่นั่ง (ไป-กลับ): ฿${fmtThb(actualVanShare)} / คน`,
                     `--------------------------------`
                 ];
 
                 rooms.forEach(r => {
                     const names = r.members.map(m => `${m.nickname} (฿${fmtThb(personBillingMap[m.id]?.currentActualTotal || 0)})`).join(', ');
-                    lines.push(`🏠 ห้องที่ ${r.roomNumber} [นอน ${r.capacity} คน]: ${names}`);
+                    lines.push(`🏠 [${r.hotel.shortName}] ห้องที่ ${r.roomNumber} (นอน ${r.capacity} คน): ${names}`);
                 });
 
-                copyTextFallback(lines.join('\n'), 'คัดลอกสรุปรายชื่อและยอดจ่ายส่งเข้า LINE เรียบร้อยแล้ว!');
+                copyTextFallback(lines.join('\n'), 'คัดลอกสรุปรายชื่อและจำนวนห้องที่ต้องจองส่งเข้า LINE เรียบร้อยแล้ว!');
             };
 
             window.exportCSV = function() {
@@ -2824,7 +3313,7 @@
                     return;
                 }
                 const { personBillingMap } = computeRoomMatchingAndCosts();
-                const headers = ['ลำดับ', 'ชื่อเล่น', 'ชื่อ-นามสกุล (ไทย)', 'ชื่อพาสปอร์ต (อังกฤษ)', 'เพศ', 'เบอร์โทร', 'LINE/WeChat', 'ประเภทห้อง(คน)', 'ห้องที่จับคู่ได้', 'เพื่อนที่ขอจับคู่', 'อาหาร', 'เดินทาง HEU', 'กระเป๋า', 'ยอดประมาณการรวม(บาท)'];
+                const headers = ['ลำดับ', 'ชื่อเล่น', 'ชื่อ-นามสกุล (ไทย)', 'ชื่อพาสปอร์ต (อังกฤษ)', 'เพศ', 'เบอร์โทร', 'LINE/WeChat', 'โรงแรมที่เลือก', 'ประเภทห้อง(คน)', 'ห้องที่จับคู่ได้', 'เพื่อนที่ขอจับคู่', 'อาหาร', 'เดินทาง HEU', 'กระเป๋า', 'ยอดประมาณการรวม(บาท)'];
                 const rows = registrations.map((r, i) => {
                     const b = personBillingMap[r.id];
                     return [
@@ -2835,6 +3324,7 @@
                         r.gender,
                         r.phone,
                         r.contactId,
+                        b ? b.hotelName : HOTELS.braves.name,
                         r.roomCapacity || 3,
                         b ? `ห้องที่ ${b.roomNumber}` : '-',
                         r.roommateRequest || '-',
@@ -2884,6 +3374,7 @@
                         if (!exists) {
                             merged.push({
                                 ...rec,
+                                hotelId: rec.hotelId || 'braves',
                                 id: rec.id || ('reg_' + Date.now() + '_' + added),
                                 createdAtMs: rec.createdAtMs || (Date.now() + added),
                                 updatedAtMs: Date.now()
