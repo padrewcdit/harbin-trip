@@ -1,9 +1,9 @@
 [
   {
     "fullNameTh": "4",
-    "nickname": "14",
+    "nickname": "145",
     "fullNameEn": "14",
-    "gender": "หญิง",
+    "gender": "อื่นๆ",
     "phone": "14",
     "contactId": "14",
     "emergencyContact": "14",
@@ -20,7 +20,7 @@
     ],
     "coldReadiness": "เตรียมครบแล้ว (เสื้อขนเป็ด, ลองจอน, รองเท้าลุยหิมะ)",
     "notes": "-",
-    "updatedAtMs": 1795363523720,
+    "updatedAtMs": 1795363561917,
     "id": "reg_1795363523720_yex0",
     "createdAtMs": 1795363523720
   }
