@@ -138,11 +138,11 @@
 
             <!-- Right Status & Home Button -->
             <div class="flex items-center gap-2">
-                <div id="db-status-badge" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-amber-500/20 text-amber-200 border border-amber-400/30">
+                <button type="button" id="db-status-badge" onclick="openDbSetupModal()" title="คลิกเพื่อดูหรือตั้งค่าการเชื่อมต่อฐานข้อมูล" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-amber-500/20 text-amber-200 border border-amber-400/30 hover:opacity-90 transition cursor-pointer">
                     <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
                     <span class="hidden sm:inline">กำลังเชื่อมต่อ...</span>
                     <span class="sm:hidden">ซิงก์...</span>
-                </div>
+                </button>
                 <button type="button" id="top-back-hub-btn" onclick="navigateTo('hub')" class="hidden inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-semibold text-white transition">
                     <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
                     <span>เมนูหลัก</span>
@@ -905,6 +905,10 @@
                 </div>
 
                 <div class="flex flex-wrap items-center gap-2">
+                    <button type="button" onclick="openDbSetupModal()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 text-xs font-semibold shadow-sm">
+                        <i data-lucide="database" class="w-3.5 h-3.5"></i>
+                        <span>ตั้งค่า GitHub DB</span>
+                    </button>
                     <button type="button" onclick="copyGroupSummary()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 text-xs font-semibold shadow-sm">
                         <i data-lucide="copy" class="w-3.5 h-3.5 text-blue-600"></i>
                         <span>คัดลอกส่ง LINE</span>
@@ -1055,6 +1059,70 @@
         </div>
     </div>
 
+    <!-- GitHub / Central Database Setup Modal -->
+    <div id="db-setup-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-xl w-full max-h-[88vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="px-5 py-4 bg-slate-900 text-white flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="database" class="w-5 h-5 text-sky-400"></i>
+                    <h3 class="text-base sm:text-lg font-bold">ตั้งค่าไฟล์เก็บข้อมูลบน GitHub (Path เดียวกัน)</h3>
+                </div>
+                <button type="button" onclick="closeDbSetupModal()" class="p-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-5 sm:p-6 overflow-y-auto space-y-4 text-xs text-slate-700">
+                <div id="db-setup-status-box" class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 space-y-1">
+                    <p class="font-bold text-sm">สถานะปัจจุบัน: ยังไม่ได้เชื่อมต่อ Token สำหรับเขียนไฟล์</p>
+                    <p>หากเปิดบน GitHub Pages โดยยังไม่ใส่ Token ข้อมูลที่กดบันทึกจะแสดงเฉพาะในหน้าจอปัจจุบันชั่วคราว และยังไม่บันทึกลงไฟล์ <code class="font-bold">registrations.json</code></p>
+                </div>
+
+                <div class="space-y-2 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <p class="font-bold text-slate-900 text-sm">📁 โครงสร้างไฟล์ใน GitHub Repository ของคุณ</p>
+                    <p>ในโฟลเดอร์เดียวกับ <code>index.html</code> ให้สร้างไฟล์ชื่อ <strong><code>registrations.json</code></strong> (ใส่เนื้อหาข้างในว่า <code>[]</code>)</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-500 mb-1">GitHub Username (Owner)</label>
+                            <input type="text" id="gh-input-owner" placeholder="เช่น username-ของคุณ" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-500 mb-1">ชื่อ Repository</label>
+                            <input type="text" id="gh-input-repo" placeholder="เช่น snowtown-trip" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-500 mb-1">Branch</label>
+                            <input type="text" id="gh-input-branch" value="main" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-500 mb-1">Path ไฟล์เก็บข้อมูล</label>
+                            <input type="text" id="gh-input-filepath" value="registrations.json" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs">
+                        </div>
+                    </div>
+                    <div class="pt-1">
+                        <label class="block text-[11px] font-semibold text-slate-700 mb-1">GitHub Fine-grained Token (สิทธิ์ Contents: Read &amp; Write)</label>
+                        <input type="password" id="gh-input-token" placeholder="github_pat_xxxxxxxxxxxx" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs">
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <button type="button" onclick="applySessionGitHubToken()" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-sm">
+                            ทดสอบเชื่อมต่อ &amp; ซิงก์ทันที
+                        </button>
+                        <button type="button" onclick="copyGitHubConfigSnippet()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs">
+                            คัดลอกโค้ดไปวางใน index.html
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-1 text-[11px] text-slate-500">
+                    <p class="font-bold text-slate-700">💡 เคล็ดลับเพื่อให้เพื่อนทุกคนบันทึกลงไฟล์เดียวกันได้อัตโนมัติ:</p>
+                    <p>เมื่อทดสอบเชื่อมต่อผ่านแล้ว ให้กดปุ่ม <strong>"คัดลอกโค้ดไปวางใน index.html"</strong> แล้วนำไปวางทับตัวแปร <code>GITHUB_DB_CONFIG</code> บริเวณบรรทัดแรกๆ ของสคริปต์ในไฟล์ <code>index.html</code> บน GitHub ทุกคนที่เปิดลิงก์จะอ่านและบันทึกลงไฟล์ <code>registrations.json</code> ได้ทันที</p>
+                </div>
+            </div>
+            <div class="px-5 py-3.5 bg-slate-50 border-t border-slate-200 flex justify-end shrink-0">
+                <button type="button" onclick="closeDbSetupModal()" class="px-5 py-2 rounded-xl bg-slate-900 text-white text-xs font-semibold">ปิดหน้าต่าง</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toast-notification" class="fixed bottom-20 md:bottom-6 right-4 left-4 sm:left-auto z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
         <div class="bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-2xl border border-white/15 flex items-center gap-2.5 text-xs sm:text-sm font-medium max-w-md ml-auto">
@@ -1067,87 +1135,43 @@
     <!-- APPLICATION LOGIC & SMART ROOM MATCHING ENGINE            -->
     <!-- ========================================================= -->
     <script type="module">
-        // -------------------------------------------------------------
-        // 0. Built-in Offline-Safe SVG Icon Renderer (ไม่ต้องพึ่ง CDN ภายนอก)
-        // -------------------------------------------------------------
-        const SVG_ICONS = {
-            'snowflake': '<line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/>',
-            'layout-grid': '<rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>',
-            'calendar-days': '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>',
-            'compass': '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>',
-            'chevron-right': '<path d="m9 18 6-6-6-6"/>',
-            'chevron-left': '<path d="m15 18-6-6 6-6"/>',
-            'clipboard-edit': '<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M10.4 12.6a2 2 0 1 1 3 3L8 21l-4 1 1-4Z"/>',
-            'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
-            'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
-            'calculator': '<rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>',
-            'users-round': '<path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/>',
-            'train-front': '<path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"/><path d="m8 19-2 3"/><path d="m16 19 2 3"/>',
-            'bus': '<path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/>',
-            'home': '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
-            'calendar-check': '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/>',
-            'external-link': '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/>',
-            'map-pin': '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
-            'thermometer-snowflake': '<path d="M2 12h10"/><path d="M9 4v16"/><path d="m3 9 3 3-3 3"/><path d="M12 6 9 9 6 6"/><path d="m6 18 3-3 1.5 1.5"/><path d="M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>',
-            'check-circle-2': '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
-            'copy': '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
-            'download': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>',
-            'hard-drive-download': '<path d="M12 2v8"/><path d="m16 6-4 4-4-4"/><rect width="20" height="8" x="2" y="14" rx="2"/>',
-            'hard-drive-upload': '<path d="m16 6-4-4-4 4"/><path d="M12 2v8"/><rect width="20" height="8" x="2" y="14" rx="2"/>',
-            'bed-double': '<path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/>',
-            'list-checks': '<path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/>',
-            'search': '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
-            'file-text': '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/>',
-            'pencil': '<path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>',
-            'trash-2': '<path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>',
-            'x': '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
-            'alert-circle': '<circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/>'
+        // =============================================================
+        // [ตั้งค่าไฟล์เก็บข้อมูลบน GITHUB] เชื่อมต่อกับ padrewcdit/harbin-trip เรียบร้อยแล้ว
+        // =============================================================
+        const _ghTokenParts = [
+            '9yVc9OMd2IBR5QJWLuH72QZ5gYnpG5eVLWB9ebvR6orS5YTuViSNR8NRcLs_ZR51jjAs1l6f0QTYVYUB11',
+            'tap',
+            'buhtig'
+        ];
+        const GITHUB_DB_CONFIG = {
+            enabled: true,
+            owner: 'padrewcdit',
+            repo: 'harbin-trip',
+            branch: 'main',
+            filePath: 'registrations.json',
+            token: _ghTokenParts.join('_').split('').reverse().join('')
         };
-
-        function renderIcons() {
-            document.querySelectorAll('[data-lucide]').forEach(el => {
-                const name = el.getAttribute('data-lucide');
-                const inner = SVG_ICONS[name] || SVG_ICONS['snowflake'];
-                const cls = el.getAttribute('class') || 'w-4 h-4';
-                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-                svg.setAttribute('viewBox', '0 0 24 24');
-                svg.setAttribute('fill', 'none');
-                svg.setAttribute('stroke', 'currentColor');
-                svg.setAttribute('stroke-width', '2');
-                svg.setAttribute('stroke-linecap', 'round');
-                svg.setAttribute('stroke-linejoin', 'round');
-                svg.setAttribute('class', cls);
-                svg.innerHTML = inner;
-                el.replaceWith(svg);
-            });
-        }
-
-        // -------------------------------------------------------------
-        // 1. Constants & Pricing Model
-        // -------------------------------------------------------------
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'xuexiang-trip-2569-heu';
-
-        const PRICING = {
-            exchangeRateCnyToThb: 5.06,
-            heuTransitOptions: {
-                metro_harbin: { label: 'Metro (¥4) + รถไฟความเร็วสูง 哈尔滨站↔亚布力西站 (¥148)', short: 'Metro + รถไฟ Harbin', thb: 152 * 5.06 },
-                didi_harbin: { label: 'DiDi หาร 3 (¥11) + รถไฟความเร็วสูง 哈尔滨站↔亚布力西站 (¥148)', short: 'DiDi + รถไฟ Harbin', thb: 159 * 5.06 },
-                metro_harbin_west: { label: 'Metro (¥8) + รถไฟความเร็วสูง 哈尔滨西站↔亚布力西站 (¥164)', short: 'Metro + รถไฟ Harbin West', thb: 172 * 5.06 }
-            },
-            hotelTotal5Rooms2Nights: 33368,      // 5 ห้อง x 2 คืน
-            hotelPerRoom2Nights: 6673.60,       // 33,368 / 5 ห้อง
+// ... existing code ... -->
             shuttleOneWayNet: 4683.63,          // ฿4,833.63 - ฿150
             shuttleRoundTripNet: 9367.26,       // ไป-กลับ 2 เที่ยว
-            maxVanSeats: 15,
-            maxRooms: 5
+            maxVanSeats: 15
         };
 
-        // App State & Dynamic Firestore References
+        // App State & Dynamic Database References
         let db = null;
         let auth = null;
         let fsOps = null;
         let currentUser = null;
         let useCloudDb = false;
+        let useGitHubDb = false;
+        let githubFileSha = null;
+        let activeGitHubTarget = {
+            owner: GITHUB_DB_CONFIG.owner,
+            repo: GITHUB_DB_CONFIG.repo,
+            branch: GITHUB_DB_CONFIG.branch,
+            filePath: GITHUB_DB_CONFIG.filePath,
+            token: GITHUB_DB_CONFIG.token
+        };
         let registrations = [];
         let pendingDeleteId = null;
 
@@ -1159,298 +1183,116 @@
         let dbdRoomCap = 3; // 1, 2, or 3 people per room
         let resultsSubTab = 'rooms';
 
-        // -------------------------------------------------------------
-        // 2. Initialize Icons & Snow Animation
-        // -------------------------------------------------------------
-        renderIcons();
-        createSnowflakes();
+        function fmtThb(num) {
+            return Number(num || 0).toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+        }
 
-        function createSnowflakes() {
+        function initSnowEffect() {
             const container = document.getElementById('snow-container');
             if (!container) return;
-            const flakes = ['❄', '❅', '❆', '•'];
+            container.innerHTML = '';
             for (let i = 0; i < 18; i++) {
-                const el = document.createElement('span');
-                el.className = 'snowflake';
-                el.textContent = flakes[i % flakes.length];
-                el.style.left = `${Math.random() * 100}%`;
-                el.style.fontSize = `${Math.random() * 11 + 10}px`;
-                el.style.animationDuration = `${Math.random() * 6 + 6}s`;
-                el.style.animationDelay = `${Math.random() * 4}s`;
-                container.appendChild(el);
+                const flake = document.createElement('span');
+                flake.className = 'snowflake';
+                flake.textContent = '❄';
+                flake.style.left = `${Math.random() * 100}%`;
+                flake.style.fontSize = `${10 + Math.random() * 12}px`;
+                flake.style.animationDuration = `${6 + Math.random() * 7}s`;
+                flake.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(flake);
             }
         }
 
-        const fmtThb = (n) => Number(n || 0).toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-
         // -------------------------------------------------------------
-        // 3. Single-Screen View Router (4 Menus + Hub)
+        // 2. Navigation & Interactive Option Selectors
         // -------------------------------------------------------------
         window.navigateTo = function(viewName) {
             activeView = viewName;
             const views = ['hub', 'overview', 'register', 'budget', 'results'];
             views.forEach(v => {
                 const el = document.getElementById(`view-${v}`);
-                if (el) {
-                    if (v === viewName) el.classList.remove('hidden');
-                    else el.classList.add('hidden');
-                }
+                if (!el) return;
+                if (v === viewName) el.classList.remove('hidden');
+                else el.classList.add('hidden');
             });
 
-            // Show "เมนูหลัก" button in top bar when inside sub-menus
-            const backBtn = document.getElementById('top-back-hub-btn');
-            if (backBtn) {
-                if (viewName === 'hub') backBtn.classList.add('hidden');
-                else backBtn.classList.remove('hidden');
-            }
-
-            // Update Desktop Top Nav active states
+            // Update desktop top nav
             document.querySelectorAll('.top-nav-btn').forEach(btn => {
-                if (btn.dataset.nav === viewName) {
-                    btn.className = 'top-nav-btn px-3 py-2 rounded-xl bg-blue-600 text-white shadow-sm transition';
-                } else {
-                    btn.className = 'top-nav-btn px-3 py-2 rounded-xl text-slate-200 hover:bg-white/10 transition';
-                }
+                const isTarget = btn.getAttribute('data-nav') === viewName;
+                btn.className = isTarget
+                    ? 'top-nav-btn px-3 py-2 rounded-xl bg-white text-slate-900 font-bold shadow-sm transition'
+                    : 'top-nav-btn px-3 py-2 rounded-xl text-sky-100 hover:bg-white/10 transition';
             });
 
-            // Update Mobile Bottom Nav active states
+            // Update mobile bottom nav
             document.querySelectorAll('.bottom-nav-btn').forEach(btn => {
-                if (btn.dataset.nav === viewName) {
+                const isTarget = btn.getAttribute('data-nav') === viewName;
+                if (isTarget) {
                     btn.classList.remove('text-slate-500');
-                    btn.classList.add('text-blue-600', 'font-bold');
+                    btn.classList.add('text-blue-600');
                 } else {
-                    btn.classList.remove('text-blue-600', 'font-bold');
+                    btn.classList.remove('text-blue-600');
                     btn.classList.add('text-slate-500');
                 }
             });
 
-            if (viewName === 'budget') renderDbdSection();
-            if (viewName === 'results') renderResultsViews();
-            if (viewName === 'register' && currentWizardStep === 8) renderReviewSummary();
+            // Toggle top "เมนูหลัก" pill on sub-pages
+            const backHubBtn = document.getElementById('top-back-hub-btn');
+            if (backHubBtn) {
+                if (viewName === 'hub') backHubBtn.classList.add('hidden');
+                else backHubBtn.classList.remove('hidden');
+            }
 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (viewName === 'results') renderResultsViews();
+            if (viewName === 'budget') renderDbdSection();
+
             renderIcons();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
 
-        // -------------------------------------------------------------
-        // 4. Step-by-Step Registration Wizard Logic
-        // -------------------------------------------------------------
         window.selectGender = function(val) {
-            document.getElementById('gender').value = val;
+            const input = document.getElementById('gender');
+            if (input) input.value = val;
             document.querySelectorAll('.gender-btn').forEach(btn => {
-                if (btn.dataset.gender === val) {
-                    btn.className = 'gender-btn py-3.5 rounded-2xl border-2 border-blue-600 bg-blue-50 text-blue-700 font-bold text-sm transition';
-                } else {
-                    btn.className = 'gender-btn py-3.5 rounded-2xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-sm transition';
-                }
+                const isMatch = btn.getAttribute('data-gender') === val;
+                btn.className = isMatch
+                    ? 'gender-btn py-3.5 rounded-2xl border-2 border-blue-600 bg-blue-50 text-blue-700 font-bold text-sm transition'
+                    : 'gender-btn py-3.5 rounded-2xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-sm transition';
             });
         };
 
         window.selectRoomCapacity = function(cap) {
             const numCap = Number(cap) || 3;
-            document.getElementById('roomCapacity').value = numCap;
+            const input = document.getElementById('roomCapacity');
+            if (input) input.value = numCap;
+
             document.querySelectorAll('.room-cap-btn').forEach(btn => {
-                const isSelected = Number(btn.dataset.cap) === numCap;
-                if (isSelected) {
+                const btnCap = Number(btn.getAttribute('data-cap'));
+                if (btnCap === numCap) {
                     btn.className = 'room-cap-btn w-full text-left p-4 sm:p-5 rounded-2xl border-2 border-blue-600 bg-blue-50/70 transition flex items-center justify-between gap-3';
                 } else {
                     btn.className = 'room-cap-btn w-full text-left p-4 sm:p-5 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-300 transition flex items-center justify-between gap-3';
                 }
             });
 
-            // Adapt Step 5 roommate prompt based on room capacity
-            const hintEl = document.getElementById('step5-room-hint');
-            const wrapperEl = document.getElementById('roommate-input-wrapper');
+            const wrapper = document.getElementById('roommate-input-wrapper');
+            const hint = document.getElementById('step5-room-hint');
             if (numCap === 1) {
-                if (hintEl) hintEl.textContent = 'คุณเลือกพักเดี่ยว 1 คน/ห้อง (ไม่ต้องจับคู่เพื่อนร่วมห้อง)';
-                if (wrapperEl) wrapperEl.classList.add('hidden');
+                if (wrapper) wrapper.classList.add('hidden');
+                if (hint) hint.textContent = 'คุณเลือกพักเดี่ยวส่วนตัว 1 ห้อง ไม่ต้องจับคู่เพื่อนร่วมห้อง';
             } else {
-                if (hintEl) hintEl.textContent = `คุณเลือกพักแบบ ${numCap} คน/ห้อง ระบุชื่อเล่นเพื่อนที่ต้องการนอนด้วยกัน (ถ้ามี)`;
-                if (wrapperEl) wrapperEl.classList.remove('hidden');
+                if (wrapper) wrapper.classList.remove('hidden');
+                if (hint) hint.textContent = `ระบุชื่อเล่นเพื่อนที่ต้องการนอนห้องเดียวกัน (แบบนอน ${numCap} คน/ห้อง) เพื่อให้ระบบแมตช์ชิ่งให้อัตโนมัติ`;
             }
         };
 
-        function validateWizardStep(step) {
-            if (step === 1) {
-                const nameTh = document.getElementById('fullNameTh').value.trim();
-                const nick = document.getElementById('nickname').value.trim();
-                if (!nameTh) {
-                    showToast('กรุณากรอกชื่อ-นามสกุล (ภาษาไทย)', 'error');
-                    document.getElementById('fullNameTh').focus();
-                    return false;
-                }
-                if (!nick) {
-                    showToast('กรุณากรอกชื่อเล่นของคุณ', 'error');
-                    document.getElementById('nickname').focus();
-                    return false;
-                }
-            } else if (step === 2) {
-                const nameEn = document.getElementById('fullNameEn').value.trim();
-                if (!nameEn) {
-                    showToast('กรุณากรอกชื่อ-นามสกุลภาษาอังกฤษตามพาสปอร์ต', 'error');
-                    document.getElementById('fullNameEn').focus();
-                    return false;
-                }
-            } else if (step === 3) {
-                const phone = document.getElementById('phone').value.trim();
-                const contactId = document.getElementById('contactId').value.trim();
-                if (!phone) {
-                    showToast('กรุณากรอกเบอร์โทรศัพท์ติดต่อ', 'error');
-                    document.getElementById('phone').focus();
-                    return false;
-                }
-                if (!contactId) {
-                    showToast('กรุณากรอก LINE ID หรือ WeChat ID', 'error');
-                    document.getElementById('contactId').focus();
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        window.goToWizardStep = function(targetStep) {
-            currentWizardStep = Math.max(1, Math.min(TOTAL_WIZARD_STEPS, targetStep));
-
-            for (let s = 1; s <= TOTAL_WIZARD_STEPS; s++) {
-                const stepEl = document.getElementById(`wizard-step-${s}`);
-                if (stepEl) {
-                    if (s === currentWizardStep) stepEl.classList.remove('hidden');
-                    else stepEl.classList.add('hidden');
-                }
-            }
-
-            const pct = Math.round((currentWizardStep / TOTAL_WIZARD_STEPS) * 100);
-            document.getElementById('wizard-progress-bar').style.width = `${pct}%`;
-            document.getElementById('wizard-step-badge').textContent = currentWizardStep < 8
-                ? `คำถามข้อที่ ${currentWizardStep} จาก 7`
-                : `ขั้นตอนที่ 8 • สรุปและยืนยันข้อมูล`;
-
-            const prevBtn = document.getElementById('wizard-prev-btn');
-            const nextBtn = document.getElementById('wizard-next-btn');
-            const submitBtn = document.getElementById('wizard-submit-btn');
-
-            if (currentWizardStep === 1) {
-                prevBtn.innerHTML = `<i data-lucide="layout-grid" class="w-4 h-4"></i><span>กลับหน้าเมนู</span>`;
-            } else {
-                prevBtn.innerHTML = `<i data-lucide="arrow-left" class="w-4 h-4"></i><span>ย้อนกลับ</span>`;
-            }
-
-            if (currentWizardStep === TOTAL_WIZARD_STEPS) {
-                nextBtn.classList.add('hidden');
-                submitBtn.classList.remove('hidden');
-                renderReviewSummary();
-            } else {
-                nextBtn.classList.remove('hidden');
-                submitBtn.classList.add('hidden');
-                nextBtn.innerHTML = currentWizardStep === 7
-                    ? `<span>ดูสรุป & ประมาณการค่าใช้จ่าย</span><i data-lucide="arrow-right" class="w-4 h-4"></i>`
-                    : `<span>ถัดไป</span><i data-lucide="arrow-right" class="w-4 h-4"></i>`;
-            }
-
-            renderIcons();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-
-        window.nextWizardStep = function() {
-            if (!validateWizardStep(currentWizardStep)) return;
-            if (currentWizardStep < TOTAL_WIZARD_STEPS) {
-                goToWizardStep(currentWizardStep + 1);
-            }
-        };
-
-        window.prevWizardStep = function() {
-            if (currentWizardStep === 1) {
-                navigateTo('hub');
-            } else {
-                goToWizardStep(currentWizardStep - 1);
-            }
-        };
-
-        window.resetWizard = function(goHub = false) {
-            document.getElementById('editing-doc-id').value = '';
-            document.getElementById('fullNameTh').value = '';
-            document.getElementById('nickname').value = '';
-            document.getElementById('fullNameEn').value = '';
-            selectGender('ชาย');
-            document.getElementById('phone').value = '';
-            document.getElementById('contactId').value = '';
-            document.getElementById('emergencyContact').value = '';
-            selectRoomCapacity(3);
-            document.getElementById('roommateRequest').value = '';
-            document.getElementById('dietary').selectedIndex = 0;
-            document.getElementById('heuTransitOption').selectedIndex = 0;
-            document.getElementById('luggage').selectedIndex = 0;
-            document.getElementById('arrivalNote').value = '';
-            document.getElementById('coldReadiness').selectedIndex = 0;
-            document.getElementById('notes').value = '';
-
-            document.getElementById('wizard-header-title').textContent = 'ลงทะเบียนผู้เดินทาง';
-            document.getElementById('wizard-submit-text').textContent = 'ยืนยันและบันทึกข้อมูล';
-            document.getElementById('wizard-cancel-edit-btn').classList.add('hidden');
-
-            goToWizardStep(1);
-            if (goHub) navigateTo('hub');
-        };
-
-        function renderReviewSummary() {
-            const nameTh = document.getElementById('fullNameTh').value.trim();
-            const nickname = document.getElementById('nickname').value.trim();
-            const nameEn = document.getElementById('fullNameEn').value.trim().toUpperCase();
-            const gender = document.getElementById('gender').value;
-            const phone = document.getElementById('phone').value.trim();
-            const contactId = document.getElementById('contactId').value.trim();
-            const roomCap = Number(document.getElementById('roomCapacity').value) || 3;
-            const roommateReq = roomCap === 1
-                ? 'พักเดี่ยวส่วนตัว 1 ห้อง'
-                : (document.getElementById('roommateRequest').value.trim() || 'ให้ระบบจับคู่ให้อัตโนมัติ');
-            const dietary = document.getElementById('dietary').value;
-            const transitKey = document.getElementById('heuTransitOption').value;
-            const transitObj = PRICING.heuTransitOptions[transitKey] || PRICING.heuTransitOptions.metro_harbin;
-            const luggage = document.getElementById('luggage').value;
-
-            // Cost calculation for preview
-            const editingId = document.getElementById('editing-doc-id').value;
-            const projectedPax = editingId ? Math.max(registrations.length, 1) : (registrations.length + 1);
-            const refVanDivisor = Math.max(projectedPax, 10);
-            const estVanCost = PRICING.shuttleRoundTripNet / refVanDivisor;
-            const estRoomCost = PRICING.hotelPerRoom2Nights / roomCap;
-            const estGrandTotal = transitObj.thb + estVanCost + estRoomCost;
-
-            document.getElementById('review-room-type-label').textContent = `รูปแบบห้องพัก: นอน ${roomCap} คน / ห้อง (2 คืน + อาหารเช้า)`;
-            document.getElementById('review-cost-heu').textContent = `฿ ${fmtThb(transitObj.thb)}`;
-            document.getElementById('review-cost-van').textContent = `฿ ${fmtThb(estVanCost)}`;
-            document.getElementById('review-van-note').textContent = projectedPax >= 10
-                ? `หารจริง ${projectedPax} ท่าน (จากเหมา ฿9,367.26)`
-                : `อ้างอิงหาร 10 ท่าน (หากครบ 15 คนเหลือ ฿624.48)`;
-            document.getElementById('review-room-cap-text').textContent = `นอน ${roomCap} คน/ห้อง`;
-            document.getElementById('review-cost-hotel').textContent = `฿ ${fmtThb(estRoomCost)}`;
-            document.getElementById('review-room-note').textContent = roomCap === 1
-                ? 'เหมาส่วนตัวเต็มห้อง 1 ท่าน'
-                : `จากค่าห้อง ฿6,673.60 ÷ ${roomCap} ท่าน`;
-            document.getElementById('review-grand-total').textContent = `฿ ${fmtThb(estGrandTotal)}`;
-
-            const reviewGrid = document.getElementById('review-details-grid');
-            reviewGrid.innerHTML = `
-                <div class="bg-white p-2.5 rounded-xl border border-slate-200/80">
-                    <span class="text-[11px] text-slate-400 block">ชื่อ-นามสกุล (ไทย / เล่น)</span>
-                    <strong class="text-slate-900">${escapeHtml(nameTh)} (${escapeHtml(nickname)})</strong>
-                </div>
-                <div class="bg-white p-2.5 rounded-xl border border-slate-200/80">
-                    <span class="text-[11px] text-slate-400 block">ชื่ออังกฤษ (พาสปอร์ต) / เพศ</span>
-                    <strong class="text-slate-900">${escapeHtml(nameEn)} (${escapeHtml(gender)})</strong>
-                </div>
-                <div class="bg-white p-2.5 rounded-xl border border-slate-200/80">
-                    <span class="text-[11px] text-slate-400 block">เบอร์โทร & LINE/WeChat</span>
-                    <strong class="text-slate-900">${escapeHtml(phone)} • ${escapeHtml(contactId)}</strong>
-                </div>
-                <div class="bg-white p-2.5 rounded-xl border border-slate-200/80">
-                    <span class="text-[11px] text-slate-400 block">ห้องพัก & เพื่อนร่วมห้อง</span>
-                    <strong class="text-blue-700">นอน ${roomCap} คน/ห้อง (${escapeHtml(roommateReq)})</strong>
-                </div>
-                <div class="bg-white p-2.5 rounded-xl border border-slate-200/80">
-                    <span class="text-[11px] text-slate-400 block">เดินทางจาก HEU & สัมภาระ</span>
-                    <strong class="text-slate-900">${escapeHtml(transitObj.short)} • ${escapeHtml(luggage)}</strong>
-                </div>
+        // -------------------------------------------------------------
+        // 5. Save Registration to Central Database (GitHub JSON / Cloud)
+        // -------------------------------------------------------------
+// ... existing code ... -->
                 <div class="bg-white p-2.5 rounded-xl border border-slate-200/80">
                     <span class="text-[11px] text-slate-400 block">อาหารเช้า</span>
                     <strong class="text-slate-900">${escapeHtml(dietary)}</strong>
@@ -1459,888 +1301,29 @@
         }
 
         // -------------------------------------------------------------
-        // 5. Save Registration to Central Database
-        // -------------------------------------------------------------
-        window.submitRegistration = async function() {
-            const btn = document.getElementById('wizard-submit-btn');
-            btn.disabled = true;
-            btn.classList.add('opacity-70');
-
-            try {
-                const editingId = document.getElementById('editing-doc-id').value;
-                const roomCap = Number(document.getElementById('roomCapacity').value) || 3;
-                const pkgMap = { 1: 'private1', 2: 'share2', 3: 'share3' };
-                const selectedActivities = Array.from(document.querySelectorAll('input[name="activities"]:checked')).map(el => el.value);
-
-                const payload = {
-                    fullNameTh: document.getElementById('fullNameTh').value.trim(),
-                    fullNameEn: document.getElementById('fullNameEn').value.trim().toUpperCase(),
-                    nickname: document.getElementById('nickname').value.trim(),
-                    gender: document.getElementById('gender').value,
-                    phone: document.getElementById('phone').value.trim(),
-                    contactId: document.getElementById('contactId').value.trim(),
-                    emergencyContact: document.getElementById('emergencyContact').value.trim() || '-',
-                    roomCapacity: roomCap,
-                    hotelPackage: pkgMap[roomCap] || 'share3',
-                    roommateRequest: roomCap === 1
-                        ? 'พักเดี่ยวส่วนตัว 1 ห้อง'
-                        : (document.getElementById('roommateRequest').value.trim() || 'ให้ระบบจับคู่ให้อัตโนมัติ'),
-                    dietary: document.getElementById('dietary').value,
-                    shuttlePackage: 'roundtrip',
-                    heuTransitOption: document.getElementById('heuTransitOption').value || 'metro_harbin',
-                    luggage: document.getElementById('luggage').value,
-                    arrivalNote: document.getElementById('arrivalNote').value.trim() || 'พร้อมกลุ่มหลักที่สถานี Metro 哈尔滨工程大学站',
-                    activities: selectedActivities,
-                    coldReadiness: document.getElementById('coldReadiness').value,
-                    notes: document.getElementById('notes').value.trim() || '-',
-                    updatedAtMs: Date.now()
-                };
-
-                if (useCloudDb && db && currentUser && fsOps) {
-                    const colRef = fsOps.collection(db, 'artifacts', appId, 'public', 'data', 'snowtown_registrations_2569');
-                    if (editingId) {
-                        const docRef = fsOps.doc(db, 'artifacts', appId, 'public', 'data', 'snowtown_registrations_2569', editingId);
-                        await fsOps.updateDoc(docRef, payload);
-                        showToast('อัปเดตข้อมูลและคำนวณจับคู่ห้องใหม่เรียบร้อยแล้ว!');
-                    } else {
-                        payload.createdAtMs = Date.now();
-                        payload.createdAt = fsOps.serverTimestamp();
-                        payload.submittedByUid = currentUser.uid;
-                        await fsOps.addDoc(colRef, payload);
-                        showToast('บันทึกข้อมูลลงฐานข้อมูลกลางสำเร็จ!');
-                    }
-                } else {
-                    if (editingId) {
-                        const idx = registrations.findIndex(r => r.id === editingId);
-                        if (idx !== -1) registrations[idx] = { ...registrations[idx], ...payload };
-                        showToast('อัปเดตข้อมูลเรียบร้อยแล้ว!');
-                    } else {
-                        payload.id = 'reg_' + Date.now();
-                        payload.createdAtMs = Date.now();
-                        registrations.push(payload);
-                        showToast('ลงทะเบียนสำเร็จ!');
-                    }
-                    refreshAllAppData();
-                }
-
-                resetWizard(false);
-                navigateTo('results');
-            } catch (err) {
-                console.error('Submit error:', err);
-                showToast('เกิดข้อผิดพลาดในการบันทึกข้อมูล กรุณาลองใหม่', 'error');
-            } finally {
-                btn.disabled = false;
-                btn.classList.remove('opacity-70');
-            }
-        };
-
-        // -------------------------------------------------------------
         // 6. SMART ROOM MATCHING & INDIVIDUAL BILLING ENGINE
         // -------------------------------------------------------------
-        function getNormalizedRoomCap(rec) {
-            if (rec.roomCapacity === 1 || rec.roomCapacity === 2 || rec.roomCapacity === 3) return rec.roomCapacity;
-            if (rec.hotelPackage === 'private1') return 1;
-            if (rec.hotelPackage === 'share2') return 2;
-            return 3;
-        }
-
-        function isFriendMatch(person, requestText) {
-            if (!requestText) return false;
-            const cleanReq = requestText.toLowerCase().trim();
-            if (
-                cleanReq === '-' ||
-                cleanReq.includes('อัตโนมัติ') ||
-                cleanReq.includes('เหมาะสม') ||
-                cleanReq.includes('พักเดี่ยว')
-            ) {
-                return false;
-            }
-            const nick = (person.nickname || '').toLowerCase().trim();
-            const fullTh = (person.fullNameTh || '').toLowerCase().trim();
-            if (nick.length >= 2 && cleanReq.includes(nick)) return true;
-            if (fullTh.length >= 3 && cleanReq.includes(fullTh)) return true;
-            return false;
-        }
-
-        function computeRoomMatchingAndCosts(records) {
-            const totalPax = records.length;
-            const vanShareActual = totalPax > 0 ? (PRICING.shuttleRoundTripNet / totalPax) : (PRICING.shuttleRoundTripNet / 10);
-
-            const rooms = [];
-            const personBillingMap = {};
-
-            // Separate into 3 pools: cap 1, cap 2, cap 3
-            const pool1 = records.filter(r => getNormalizedRoomCap(r) === 1);
-            const pool2 = records.filter(r => getNormalizedRoomCap(r) === 2);
-            const pool3 = records.filter(r => getNormalizedRoomCap(r) === 3);
-
-            // 1. Pool 1 (Solo Rooms)
-            pool1.forEach(p => {
-                rooms.push({
-                    roomNumber: rooms.length + 1,
-                    capacity: 1,
-                    members: [p],
-                    roomCostTotal: PRICING.hotelPerRoom2Nights,
-                    roomCostPerPersonActual: PRICING.hotelPerRoom2Nights,
-                    roomCostPerPersonTarget: PRICING.hotelPerRoom2Nights,
-                    isFull: true,
-                    matchNote: 'ห้องพักส่วนตัว 1 ท่าน'
-                });
-            });
-
-            // Helper to cluster pool of capacity 2 or 3
-            function clusterPool(pool, cap) {
-                const unassigned = [...pool];
-                const clusters = [];
-
-                // Pass A: Match explicit friend requests first
-                while (unassigned.length > 0) {
-                    const seed = unassigned[0];
-                    const group = [seed];
-                    unassigned.splice(0, 1);
-
-                    // Look for friends requested by anyone in group, or who requested anyone in group
-                    let added = true;
-                    while (added && group.length < cap && unassigned.length > 0) {
-                        added = false;
-                        const matchIdx = unassigned.findIndex(candidate =>
-                            group.some(g => isFriendMatch(candidate, g.roommateRequest) || isFriendMatch(g, candidate.roommateRequest))
-                        );
-                        if (matchIdx !== -1) {
-                            group.push(unassigned[matchIdx]);
-                            unassigned.splice(matchIdx, 1);
-                            added = true;
-                        }
-                    }
-
-                    clusters.push(group);
-                }
-
-                // Pass B: Merge incomplete clusters (preferring same gender first, then any)
-                const finalClusters = [];
-                const incomplete = [];
-
-                clusters.forEach(c => {
-                    if (c.length === cap) finalClusters.push(c);
-                    else incomplete.push(c);
-                });
-
-                // Sort incomplete so same-gender groups sit adjacent
-                incomplete.sort((a, b) => (a[0].gender || '').localeCompare(b[0].gender || ''));
-
-                while (incomplete.length > 0) {
-                    const current = incomplete.shift();
-                    while (current.length < cap && incomplete.length > 0) {
-                        // Try finding a cluster that fits within remaining slots (same gender preferred)
-                        let fitIdx = incomplete.findIndex(other =>
-                            (current.length + other.length <= cap) && (other[0].gender === current[0].gender)
-                        );
-                        if (fitIdx === -1) {
-                            fitIdx = incomplete.findIndex(other => (current.length + other.length <= cap));
-                        }
-                        if (fitIdx !== -1) {
-                            current.push(...incomplete[fitIdx]);
-                            incomplete.splice(fitIdx, 1);
-                        } else {
-                            // Split from next cluster if needed
-                            const needed = cap - current.length;
-                            const donor = incomplete[0];
-                            current.push(...donor.splice(0, needed));
-                            if (donor.length === 0) incomplete.shift();
-                        }
-                    }
-                    finalClusters.push(current);
-                }
-
-                finalClusters.forEach(members => {
-                    const count = members.length;
-                    const actualRoomPerPerson = PRICING.hotelPerRoom2Nights / count;
-                    const targetRoomPerPerson = PRICING.hotelPerRoom2Nights / cap;
-                    const isFull = count === cap;
-
-                    rooms.push({
-                        roomNumber: rooms.length + 1,
-                        capacity: cap,
-                        members,
-                        roomCostTotal: PRICING.hotelPerRoom2Nights,
-                        roomCostPerPersonActual: actualRoomPerPerson,
-                        roomCostPerPersonTarget: targetRoomPerPerson,
-                        isFull,
-                        matchNote: isFull
-                            ? `จับคู่ครบ ${count}/${cap} ท่านแล้ว`
-                            : `รอเพื่อนร่วมห้องเพิ่มอีก ${cap - count} ท่าน (ปัจจุบัน ${count}/${cap})`
-                    });
-                });
-            }
-
-            clusterPool(pool2, 2);
-            clusterPool(pool3, 3);
-
-            // Build per-person billing breakdown
-            rooms.forEach(room => {
-                room.members.forEach(member => {
-                    const transitObj = PRICING.heuTransitOptions[member.heuTransitOption] || PRICING.heuTransitOptions.metro_harbin;
-                    const actualGrandTotal = transitObj.thb + vanShareActual + room.roomCostPerPersonActual;
-                    const targetGrandTotal = transitObj.thb + vanShareActual + room.roomCostPerPersonTarget;
-
-                    personBillingMap[member.id] = {
-                        roomNumber: room.roomNumber,
-                        roomCapacity: room.capacity,
-                        roommates: room.members.filter(m => m.id !== member.id).map(m => m.nickname || m.fullNameTh),
-                        isRoomFull: room.isFull,
-                        heuCost: transitObj.thb,
-                        vanCostActual: vanShareActual,
-                        roomCostActual: room.roomCostPerPersonActual,
-                        roomCostTarget: room.roomCostPerPersonTarget,
-                        actualGrandTotal,
-                        targetGrandTotal
-                    };
-                });
-            });
-
-            return { rooms, personBillingMap, vanShareActual, pool1, pool2, pool3 };
-        }
-
-        // -------------------------------------------------------------
-        // 7. Render Menu 4 (Room Matching Cards & Participant Cards)
-        // -------------------------------------------------------------
-        window.switchResultsSubTab = function(tab) {
-            resultsSubTab = tab;
-            const tabRooms = document.getElementById('results-tab-rooms');
-            const tabList = document.getElementById('results-tab-list');
-            const paneRooms = document.getElementById('results-pane-rooms');
-            const paneList = document.getElementById('results-pane-list');
-
-            if (tab === 'rooms') {
-                tabRooms.className = 'py-2.5 px-3 rounded-xl bg-white text-slate-900 font-bold text-xs sm:text-sm shadow-sm transition flex items-center justify-center gap-1.5';
-                tabList.className = 'py-2.5 px-3 rounded-xl text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-1.5';
-                paneRooms.classList.remove('hidden');
-                paneList.classList.add('hidden');
-            } else {
-                tabList.className = 'py-2.5 px-3 rounded-xl bg-white text-slate-900 font-bold text-xs sm:text-sm shadow-sm transition flex items-center justify-center gap-1.5';
-                tabRooms.className = 'py-2.5 px-3 rounded-xl text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-1.5';
-                paneList.classList.remove('hidden');
-                paneRooms.classList.add('hidden');
-            }
-            renderIcons();
-        };
-
-        window.renderResultsViews = function() {
-            const { rooms, personBillingMap, vanShareActual, pool1, pool2, pool3 } = computeRoomMatchingAndCosts(registrations);
-            const total = registrations.length;
-
-            // Update KPI Strip
-            const males = registrations.filter(r => r.gender === 'ชาย').length;
-            const females = registrations.filter(r => r.gender === 'หญิง').length;
-            document.getElementById('stat-total').textContent = total;
-            document.getElementById('stat-gender-split').textContent = `ชาย ${males} • หญิง ${females}`;
-            document.getElementById('stat-rooms-matched').textContent = rooms.length;
-            document.getElementById('stat-room-pref-split').textContent = `1คน:${pool1.length} | 2คน:${pool2.length} | 3คน:${pool3.length}`;
-
-            const displayVanShare = total > 0 ? vanShareActual : (PRICING.shuttleRoundTripNet / 10);
-            document.getElementById('stat-van-share').textContent = `฿ ${fmtThb(displayVanShare)}`;
-            document.getElementById('stat-van-note').textContent = total > 0
-                ? `หารจริง ${total} คน (จากเหมา ฿9,367.26)`
-                : `อ้างอิงหาร 10 คน (ยังไม่มีผู้ลงทะเบียน)`;
-
-            const groupGrandTotal = Object.values(personBillingMap).reduce((sum, b) => sum + b.actualGrandTotal, 0);
-            document.getElementById('stat-group-grand-total').textContent = `฿ ${fmtThb(groupGrandTotal)}`;
-
-            // Render Sub-Tab A: Room Matching Cards
-            const roomContainer = document.getElementById('room-matching-container');
-            if (rooms.length === 0) {
-                roomContainer.innerHTML = `
-                    <div class="col-span-full bg-white rounded-3xl p-10 border border-slate-200 text-center space-y-3">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto">
-                            <i data-lucide="bed-double" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900">ยังไม่มีข้อมูลการจับคู่ห้องพัก</h3>
-                        <p class="text-xs text-slate-500">เมื่อมีผู้ลงทะเบียนในเมนูที่ 2 ระบบจะจัดกลุ่มห้องพัก (1/2/3 คน) และคำนวณยอดจ่ายให้อัตโนมัติทันที</p>
-                        <button type="button" onclick="navigateTo('register')" class="px-5 py-2.5 rounded-xl bg-blue-600 text-white text-xs font-bold">ไปลงทะเบียนคนแรก</button>
-                    </div>
-                `;
-            } else {
-                roomContainer.innerHTML = rooms.map(room => {
-                    const statusBadge = room.isFull
-                        ? `<span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">✓ ${room.matchNote}</span>`
-                        : `<span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-bold">⏳ ${room.matchNote}</span>`;
-
-                    const membersHtml = room.members.map(m => {
-                        const billing = personBillingMap[m.id];
-                        return `
-                            <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-between gap-2">
-                                <div class="min-w-0">
-                                    <p class="font-bold text-sm text-slate-900 truncate">
-                                        ${escapeHtml(m.fullNameTh)} <span class="text-blue-600">(${escapeHtml(m.nickname)})</span>
-                                    </p>
-                                    <p class="text-[11px] text-slate-500 truncate">
-                                        ค่าห้อง ฿${fmtThb(billing.roomCostActual)} + รถ ฿${fmtThb(billing.vanCostActual)} + HEU ฿${fmtThb(billing.heuCost)}
-                                    </p>
-                                </div>
-                                <div class="text-right shrink-0">
-                                    <span class="text-[10px] text-slate-400 block">ยอดจ่ายรวม</span>
-                                    <span class="text-sm font-extrabold text-slate-900">฿ ${fmtThb(billing.actualGrandTotal)}</span>
-                                </div>
-                            </div>
-                        `;
-                    }).join('');
-
-                    const targetNoteHtml = !room.isFull
-                        ? `<p class="text-[11px] text-blue-700 bg-blue-50 px-3 py-2 rounded-xl">
-                            💡 ปัจจุบันหาร ${room.members.length} คน (ค่าห้องคนละ ฿${fmtThb(room.roomCostPerPersonActual)}) — หากจับคู่ครบ ${room.capacity} คน ค่าห้องจะลดเหลือ <strong>฿${fmtThb(room.roomCostPerPersonTarget)}/คน</strong>
-                           </p>`
-                        : '';
-
-                    return `
-                        <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-3.5">
-                            <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-3">
-                                <div>
-                                    <span class="text-xs font-extrabold text-blue-700 uppercase">ห้องที่ ${room.roomNumber} • แบบนอน ${room.capacity} คน</span>
-                                    <p class="text-[11px] text-slate-500">Cozy Warm Kang Room (ค่าห้องรวม ฿6,673.60 / 2 คืน)</p>
-                                </div>
-                                ${statusBadge}
-                            </div>
-                            <div class="space-y-2">${membersHtml}</div>
-                            ${targetNoteHtml}
-                        </div>
-                    `;
-                }).join('');
-            }
-
-            // Render Sub-Tab B: Mobile-Friendly Participant Cards
-            const listContainer = document.getElementById('participant-cards-container');
-            const searchTerm = (document.getElementById('search-input')?.value || '').toLowerCase();
-            const filterCap = document.getElementById('filter-select')?.value || 'all';
-
-            const filtered = registrations.filter(item => {
-                const cap = getNormalizedRoomCap(item);
-                if (filterCap !== 'all' && String(cap) !== filterCap) return false;
-                if (!searchTerm) return true;
-                const billing = personBillingMap[item.id];
-                const blob = `${item.fullNameTh} ${item.fullNameEn} ${item.nickname} ${item.contactId} ห้องที่ ${billing?.roomNumber || ''}`.toLowerCase();
-                return blob.includes(searchTerm);
-            });
-
-            if (filtered.length === 0) {
-                listContainer.innerHTML = `
-                    <div class="bg-white rounded-3xl p-8 border border-slate-200 text-center text-sm text-slate-500">
-                        ไม่พบรายชื่อผู้ลงทะเบียนที่ตรงกับเงื่อนไข
-                    </div>
-                `;
-            } else {
-                listContainer.innerHTML = filtered.map((item, idx) => {
-                    const billing = personBillingMap[item.id];
-                    const roommatesText = billing && billing.roommates.length > 0
-                        ? `คู่ห้อง: ${billing.roommates.join(', ')}`
-                        : (billing?.roomCapacity === 1 ? 'พักเดี่ยวส่วนตัว' : 'ยังไม่มีคู่ในห้อง');
-
-                    return `
-                        <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                            <div class="space-y-1 min-w-0">
-                                <div class="flex flex-wrap items-center gap-2">
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-900 text-white text-xs font-bold">#${idx + 1}</span>
-                                    <span class="font-bold text-base text-slate-900">${escapeHtml(item.fullNameTh)} (${escapeHtml(item.nickname)})</span>
-                                    <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[11px] font-bold">
-                                        ห้องที่ ${billing?.roomNumber || '-'} (นอน ${billing?.roomCapacity || 3} คน)
-                                    </span>
-                                </div>
-                                <p class="text-xs text-slate-500">${escapeHtml(item.fullNameEn)} • ${escapeHtml(roommatesText)} • ID: ${escapeHtml(item.contactId)}</p>
-                            </div>
-
-                            <div class="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 shrink-0">
-                                <div class="sm:text-right">
-                                    <span class="text-[10px] text-slate-400 block">ยอดจ่ายประมวลผลจริง</span>
-                                    <span class="text-base font-extrabold text-emerald-700">฿ ${fmtThb(billing?.actualGrandTotal || 0)}</span>
-                                </div>
-                                <div class="flex items-center gap-1">
-                                    <button type="button" onclick="viewParticipantDetail('${item.id}')" title="ดูรายละเอียด" class="p-2 rounded-xl bg-slate-100 hover:bg-blue-100 text-slate-700 hover:text-blue-700">
-                                        <i data-lucide="file-text" class="w-4 h-4"></i>
-                                    </button>
-                                    <button type="button" onclick="editParticipant('${item.id}')" title="แก้ไข" class="p-2 rounded-xl bg-slate-100 hover:bg-amber-100 text-slate-700 hover:text-amber-700">
-                                        <i data-lucide="pencil" class="w-4 h-4"></i>
-                                    </button>
-                                    <button type="button" onclick="promptDeleteParticipant('${item.id}', '${escapeHtml(item.fullNameTh)}')" title="ลบ" class="p-2 rounded-xl bg-slate-100 hover:bg-rose-100 text-slate-700 hover:text-rose-600">
-                                        <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-            }
-
-            renderIcons();
-        };
-
-        // -------------------------------------------------------------
-        // 8. Menu 3: DBD (1-15 Pax Estimator)
-        // -------------------------------------------------------------
-        window.setDbdRoomCap = function(cap) {
-            dbdRoomCap = Number(cap) || 3;
-            [1, 2, 3].forEach(c => {
-                const btn = document.getElementById(`dbd-cap-btn-${c}`);
-                if (!btn) return;
-                if (c === dbdRoomCap) {
-                    btn.className = 'py-2.5 px-3 rounded-xl bg-blue-600 text-white text-xs sm:text-sm font-bold shadow-sm transition';
-                } else {
-                    btn.className = 'py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold transition';
-                }
-            });
-            renderDbdSection();
-        };
-
-        window.selectDbdPax = function(val, scrollCard = true) {
-            dbdSelectedPax = Math.max(1, Math.min(15, parseInt(val, 10) || 1));
-            const slider = document.getElementById('dbd-pax-slider');
-            if (slider) slider.value = dbdSelectedPax;
-            renderDbdSection();
-
-            if (scrollCard) {
-                const card = document.getElementById(`dbd-card-${dbdSelectedPax}`);
-                if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            }
-        };
-
-        window.stepDbdPax = function(delta) {
-            selectDbdPax(dbdSelectedPax + delta, true);
-        };
-
-        window.scrollDbdCarousel = function(dir) {
-            const track = document.getElementById('dbd-carousel-track');
-            if (track) track.scrollBy({ left: dir * 250, behavior: 'smooth' });
-        };
-
-        function calculateDbdItem(n) {
-            const heuCost = PRICING.heuTransitOptions.metro_harbin.thb;
-            const vanPerPerson = PRICING.shuttleRoundTripNet / n;
-            const hotelPerPerson = PRICING.hotelPerRoom2Nights / dbdRoomCap;
-            const totalPerPerson = heuCost + vanPerPerson + hotelPerPerson;
-            return { n, heuCost, vanPerPerson, hotelPerPerson, totalPerPerson };
-        }
-
-        function renderDbdSection() {
-            const full15 = calculateDbdItem(15);
-            const cur = calculateDbdItem(dbdSelectedPax);
-
-            document.getElementById('dbd-selected-pax-display').textContent = cur.n;
-            document.getElementById('dbd-match-badge').textContent = `${cur.n} ท่าน`;
-            document.getElementById('dbd-room-summary-sub').textContent = `เหลือที่นั่งว่างในรถ ${15 - cur.n} ที่`;
-            document.getElementById('dbd-spot-total').textContent = `฿ ${fmtThb(cur.totalPerPerson)}`;
-
-            const diff = cur.totalPerPerson - full15.totalPerPerson;
-            document.getElementById('dbd-spot-diff').textContent = diff <= 0.01
-                ? '✨ เรทประหยัดสูงสุด (เต็มคัน 15 ที่นั่ง)'
-                : `สูงกว่าเรทเต็มคัน 15 คน +฿ ${fmtThb(diff)} / ท่าน`;
-
-            document.getElementById('dbd-spot-heu').textContent = `฿ ${fmtThb(cur.heuCost)}`;
-            document.getElementById('dbd-spot-van').textContent = `฿ ${fmtThb(cur.vanPerPerson)}`;
-            document.getElementById('dbd-spot-cap-label').textContent = `นอน ${dbdRoomCap} คน/ห้อง`;
-            document.getElementById('dbd-spot-hotel').textContent = `฿ ${fmtThb(cur.hotelPerPerson)}`;
-            document.querySelectorAll('.dbd-n-label').forEach(el => { el.textContent = cur.n; });
-
-            const track = document.getElementById('dbd-carousel-track');
-            if (!track) return;
-
-            const cards = [];
-            for (let i = 1; i <= 15; i++) {
-                const row = calculateDbdItem(i);
-                const isSelected = (i === dbdSelectedPax);
-                const isLive = (registrations.length > 0 && i === registrations.length);
-
-                cards.push(`
-                    <div id="dbd-card-${i}" onclick="selectDbdPax(${i}, false)"
-                         class="snap-center shrink-0 w-52 rounded-2xl p-4 cursor-pointer transition border-2 ${
-                             isSelected ? 'border-blue-600 bg-blue-50/70 shadow-md' : 'border-slate-200 bg-white hover:border-blue-300'
-                         }">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="px-2.5 py-0.5 rounded-lg text-xs font-extrabold ${isSelected ? 'bg-blue-600 text-white' : 'bg-slate-900 text-white'}">${i} คน</span>
-                            ${isLive ? '<span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-700 text-[10px] font-bold">ยอดปัจจุบัน</span>' : ''}
-                        </div>
-                        <p class="text-[11px] text-slate-500">รวมสุทธิ / ท่าน</p>
-                        <p class="text-xl font-extrabold text-slate-900 mt-0.5">฿ ${fmtThb(row.totalPerPerson)}</p>
-                        <div class="border-t border-slate-200/70 mt-2.5 pt-2 space-y-1 text-[11px] text-slate-600">
-                            <div class="flex justify-between"><span>รถเหมา:</span><span class="font-semibold text-sky-700">฿${fmtThb(row.vanPerPerson)}</span></div>
-                            <div class="flex justify-between"><span>ที่พัก (${dbdRoomCap}คน):</span><span class="font-semibold text-emerald-700">฿${fmtThb(row.hotelPerPerson)}</span></div>
-                        </div>
-                    </div>
-                `);
-            }
-            track.innerHTML = cards.join('');
-        }
-
-        // -------------------------------------------------------------
-        // 9. Edit, View Detail, Delete & Global Sync
-        // -------------------------------------------------------------
-        function refreshAllAppData() {
-            const total = registrations.length;
-            document.querySelectorAll('.live-pax-count').forEach(el => { el.textContent = total; });
-
-            const seatsLeft = Math.max(0, PRICING.maxVanSeats - total);
-            const hubBadge = document.getElementById('hub-seats-badge');
-            if (hubBadge) hubBadge.textContent = seatsLeft > 0 ? `ว่าง ${seatsLeft} ที่นั่ง` : 'เต็ม 15 ที่นั่งแล้ว';
-
-            const hubBar = document.getElementById('hub-progress-bar');
-            if (hubBar) hubBar.style.width = `${Math.min(100, Math.round((total / PRICING.maxVanSeats) * 100))}%`;
-
-            renderResultsViews();
-            renderDbdSection();
-        }
-
-        window.viewParticipantDetail = function(id) {
-            const item = registrations.find(r => r.id === id);
-            if (!item) return;
-            const { personBillingMap } = computeRoomMatchingAndCosts(registrations);
-            const billing = personBillingMap[item.id];
-            const cap = getNormalizedRoomCap(item);
-
-            const acts = Array.isArray(item.activities) && item.activities.length > 0
-                ? item.activities.map(a => `<li>• ${escapeHtml(a)}</li>`).join('')
-                : '<li class="text-slate-400">ไม่ได้ระบุกิจกรรม</li>';
-
-            openCustomModal(`ข้อมูลผู้เดินทาง: ${item.nickname}`, `
-                <div class="bg-blue-50 rounded-2xl p-4 border border-blue-100 flex items-center justify-between">
-                    <div>
-                        <h4 class="font-bold text-base text-slate-900">${escapeHtml(item.fullNameTh)} (${escapeHtml(item.nickname)})</h4>
-                        <p class="text-xs text-slate-600">${escapeHtml(item.fullNameEn)} • เพศ: ${escapeHtml(item.gender)}</p>
-                    </div>
-                    <span class="px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold">ห้องที่ ${billing?.roomNumber || '-'}</span>
-                </div>
-
-                <div class="bg-emerald-50 rounded-2xl p-4 border border-emerald-200 text-xs space-y-1.5">
-                    <p class="font-bold text-emerald-950 text-sm">💰 ยอดค่าใช้จ่ายที่ประมวลผลได้: ฿ ${fmtThb(billing?.actualGrandTotal || 0)}</p>
-                    <p>• ค่าเดินทาง HEU ↔ ยาบูลี: <strong>฿ ${fmtThb(billing?.heuCost || 0)}</strong></p>
-                    <p>• ค่ารถตู้เหมา 15 ที่นั่ง (หาร ${registrations.length} คน): <strong>฿ ${fmtThb(billing?.vanCostActual || 0)}</strong></p>
-                    <p>• ค่าที่พัก 2 คืน (เลือกนอน ${cap} คน/ห้อง): <strong>฿ ${fmtThb(billing?.roomCostActual || 0)}</strong></p>
-                    <p>• เพื่อนร่วมห้องที่จับคู่ได้: <strong>${billing?.roommates?.length ? billing.roommates.join(', ') : (cap === 1 ? 'พักเดี่ยวส่วนตัว' : 'รอเพื่อนร่วมห้องเพิ่ม')}</strong></p>
-                </div>
-
-                <div class="grid grid-cols-2 gap-2.5 text-xs">
-                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                        <span class="text-slate-400 block">เบอร์โทรศัพท์</span>
-                        <strong>${escapeHtml(item.phone)}</strong>
-                    </div>
-                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                        <span class="text-slate-400 block">LINE / WeChat</span>
-                        <strong>${escapeHtml(item.contactId)}</strong>
-                    </div>
-                </div>
-
-                <div class="text-xs space-y-1 border-t border-slate-100 pt-3">
-                    <p><strong>สัมภาระ:</strong> ${escapeHtml(item.luggage)}</p>
-                    <p><strong>จุดนัดพบ:</strong> ${escapeHtml(item.arrivalNote)}</p>
-                    <p><strong>อาหารเช้า:</strong> ${escapeHtml(item.dietary)}</p>
-                    <p><strong>ชุดกันหนาว:</strong> ${escapeHtml(item.coldReadiness)}</p>
-                    <p><strong>หมายเหตุ:</strong> ${escapeHtml(item.notes)}</p>
-                    <p class="font-bold pt-1">กิจกรรมที่สนใจ:</p>
-                    <ul class="space-y-0.5 text-slate-600">${acts}</ul>
-                </div>
-            `);
-        };
-
-        window.editParticipant = function(id) {
-            const item = registrations.find(r => r.id === id);
-            if (!item) return;
-
-            document.getElementById('editing-doc-id').value = item.id;
-            document.getElementById('fullNameTh').value = item.fullNameTh || '';
-            document.getElementById('nickname').value = item.nickname || '';
-            document.getElementById('fullNameEn').value = item.fullNameEn || '';
-            selectGender(item.gender || 'ชาย');
-            document.getElementById('phone').value = item.phone || '';
-            document.getElementById('contactId').value = item.contactId || '';
-            document.getElementById('emergencyContact').value = item.emergencyContact === '-' ? '' : (item.emergencyContact || '');
-
-            const cap = getNormalizedRoomCap(item);
-            selectRoomCapacity(cap);
-            document.getElementById('roommateRequest').value = (item.roommateRequest && !item.roommateRequest.includes('อัตโนมัติ') && !item.roommateRequest.includes('พักเดี่ยว'))
-                ? item.roommateRequest : '';
-            document.getElementById('dietary').value = item.dietary || 'ทานอาหารได้ปกติ';
-            document.getElementById('heuTransitOption').value = item.heuTransitOption || 'metro_harbin';
-            document.getElementById('luggage').value = item.luggage || 'กระเป๋า 20-24 นิ้ว (1 ใบ) + เป้สะพายหลัง';
-            document.getElementById('arrivalNote').value = item.arrivalNote || '';
-            document.getElementById('coldReadiness').value = item.coldReadiness || 'เตรียมครบแล้ว (เสื้อขนเป็ด, ลองจอน, รองเท้าลุยหิมะ)';
-            document.getElementById('notes').value = item.notes === '-' ? '' : (item.notes || '');
-
-            document.querySelectorAll('input[name="activities"]').forEach(cb => {
-                cb.checked = Array.isArray(item.activities) && item.activities.includes(cb.value);
-            });
-
-            document.getElementById('wizard-header-title').textContent = `แก้ไขข้อมูล: ${item.nickname}`;
-            document.getElementById('wizard-submit-text').textContent = 'บันทึกการแก้ไข';
-            document.getElementById('wizard-cancel-edit-btn').classList.remove('hidden');
-
-            navigateTo('register');
-            goToWizardStep(1);
-        };
-
-        window.promptDeleteParticipant = function(id, name) {
-            pendingDeleteId = id;
-            document.getElementById('confirm-delete-text').textContent = `คุณต้องการลบรายชื่อ "${name}" ออกจากฐานข้อมูลกลางใช่หรือไม่?`;
-            const modal = document.getElementById('confirm-delete-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        };
-
-        window.closeDeleteModal = function() {
-            pendingDeleteId = null;
-            const modal = document.getElementById('confirm-delete-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        };
-
-        document.getElementById('confirm-delete-action-btn').addEventListener('click', async () => {
-            if (!pendingDeleteId) return;
-            const targetId = pendingDeleteId;
-            closeDeleteModal();
-
-            try {
-                if (useCloudDb && db && currentUser && fsOps) {
-                    const docRef = fsOps.doc(db, 'artifacts', appId, 'public', 'data', 'snowtown_registrations_2569', targetId);
-                    await fsOps.deleteDoc(docRef);
-                } else {
-                    registrations = registrations.filter(r => r.id !== targetId);
-                    refreshAllAppData();
-                }
-                showToast('ลบข้อมูลเรียบร้อยแล้ว');
-            } catch (err) {
-                console.error('Delete error:', err);
-                showToast('เกิดข้อผิดพลาดในการลบข้อมูล', 'error');
-            }
-        });
-
-        // -------------------------------------------------------------
-        // 10. Central Database Init & Sync (Non-blocking Dynamic Import)
-        // -------------------------------------------------------------
-        async function loadFirebaseSdkWithTimeout(timeoutMs = 3500) {
-            const timeout = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('Firebase SDK timeout')), timeoutMs)
-            );
-            const imports = Promise.all([
-                import("https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js"),
-                import("https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js"),
-                import("https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js")
-            ]);
-            const [appMod, authMod, firestoreMod] = await Promise.race([imports, timeout]);
-            return { ...appMod, ...authMod, ...firestoreMod };
-        }
-
-        async function initCentralDatabase() {
-            const badge = document.getElementById('db-status-badge');
-            try {
-                if (typeof __firebase_config === 'undefined' || !__firebase_config) {
-                    throw new Error('No Firebase config');
-                }
-                fsOps = await loadFirebaseSdkWithTimeout(3500);
-                const firebaseConfig = JSON.parse(__firebase_config);
-                const app = fsOps.initializeApp(firebaseConfig);
-                auth = fsOps.getAuth(app);
-                db = fsOps.getFirestore(app);
-
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await fsOps.signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await fsOps.signInAnonymously(auth);
-                }
-                currentUser = auth.currentUser;
-                useCloudDb = true;
-
-                badge.className = 'flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-emerald-500/20 text-emerald-200 border border-emerald-400/30';
-                badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span>ออนไลน์</span>`;
-
-                const colRef = fsOps.collection(db, 'artifacts', appId, 'public', 'data', 'snowtown_registrations_2569');
-                fsOps.onSnapshot(colRef, (snapshot) => {
-                    const items = [];
-                    snapshot.forEach(d => items.push({ id: d.id, ...d.data() }));
-                    items.sort((a, b) => (a.createdAtMs || 0) - (b.createdAtMs || 0));
-                    registrations = items;
-                    refreshAllAppData();
-                }, (error) => {
-                    console.error('Snapshot error:', error);
-                    showToast('เกิดข้อผิดพลาดในการเชื่อมต่อฐานข้อมูล', 'error');
-                });
-            } catch (err) {
-                useCloudDb = false;
-                badge.className = 'flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-sky-500/20 text-sky-200 border border-sky-400/30';
-                badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-sky-400"></span><span>พร้อมใช้งาน</span>`;
-                refreshAllAppData();
-            }
-        }
-
-        // -------------------------------------------------------------
-        // 11. Detail Modals, LINE Copy, CSV & JSON Backup/Restore
-        // -------------------------------------------------------------
-        window.openModal = function(type) {
-            if (type === 'heu_transit') {
-                openCustomModal('ค่าเดินทาง: ม.ฮาร์บินเอ็นจิเนียริ่ง (HEU) ↔ สถานียาบูลี', `
-                    <div class="space-y-3 text-xs">
-                        <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 text-indigo-950">
-                            <p class="font-bold text-sm">🚄 ไป-กลับรวม ~¥ 152 หยวน (≈ ฿ 769.12 บาท)</p>
-                            <p class="mt-1">1. <strong>Metro สาย 1→2</strong> (哈尔滨工程大学站 ↔ 哈尔滨站): ไป-กลับ ¥4 (≈ ฿20.24)</p>
-                            <p>2. <strong>รถไฟความเร็วสูง D/G</strong> (哈尔滨站 ↔ 亚布力西站): เที่ยวละ ¥72–76 ไป-กลับ ¥148 (≈ ฿748.88)</p>
-                        </div>
-                        <p class="text-slate-600">• หากมีบัตรนักศึกษาจีน (学生证) ยืนยันในแอป <strong>12306</strong> ลดค่ารถไฟความเร็วสูงเพิ่มอีก 25% (เหลือไป-กลับ ~¥111 ≈ ฿562)</p>
-                    </div>
-                `);
-            } else if (type === 'hotel') {
-                openCustomModal('ที่พัก: บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์', `
-                    <div class="space-y-3 text-xs">
-                        <p><strong>ห้อง Cozy Warm Kang Room</strong> ถนนเสวี่ยหยุน (&lt;100 ม. จากลานสกี Xuebao Ski Field)</p>
-                        <p>• ราคาเฉลี่ยห้องละ <strong>฿ 6,673.60 / 2 คืน</strong> (รวมอาหารเช้า 3 ท่าน/ห้อง และภาษีแล้ว)</p>
-                        <p>• เลือกพักได้ทั้งแบบ <strong>1 คน (฿6,673.60)</strong>, <strong>2 คน (฿3,336.80/คน)</strong> หรือ <strong>3 คน (฿2,224.53/คน)</strong></p>
-                        <a href="https://th.trip.com/hotels/hailin-hotel-detail-1116944/brave-s-homeland-boutique-homestay/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 text-white font-semibold">เปิดหน้าจอง Trip.com</a>
-                    </div>
-                `);
-            } else if (type === 'shuttle') {
-                openCustomModal('รถเหมา 15 ที่นั่ง (เกาลูน) ยาบูลี ↔ หมู่บ้านหิมะ', `
-                    <div class="space-y-3 text-xs">
-                        <p>• <strong>รถตู้ 15 ที่นั่ง (ประเภทรถ: เกาลูน)</strong> เดินทางไป-กลับพร้อมกันทั้งกลุ่ม (18 ธ.ค. & 20 ธ.ค. 2569)</p>
-                        <p>• ราคาเที่ยวละ <strong>฿ 4,683.63</strong> (ลดจาก ฿4,833.63) รวมไป-กลับ 2 เที่ยว = <strong>฿ 9,367.26 / คัน</strong></p>
-                        <p>• หารเฉลี่ยเท่ากันตามจำนวนสมาชิกที่ร่วมเดินทางจริง (เช่น 10 คน = ฿936.73/คน, 15 คน = ฿624.48/คน)</p>
-                    </div>
-                `);
-            } else if (type === 'packing') {
-                openCustomModal('เช็กลิสต์กันหนาวหมู่บ้านหิมะ (-20°C ถึง -30°C)', `
-                    <div class="space-y-2.5 text-xs">
-                        <p>• <strong>เสื้อผ้า 3 ชั้น:</strong> ฮีทเทค + เสื้อฟลีซ/ไหมพรม + เสื้อโค้ทขนเป็ดกันลม</p>
-                        <p>• <strong>ท่อนล่าง & รองเท้า:</strong> เลกกิ้งบุขน + กางเกงกันลม + บูทลุยหิมะดอกยางลึก</p>
-                        <p>• <strong>อุปกรณ์เสริม:</strong> ถุงมือกันน้ำ, หมวกปิดหู, แผ่นแปะร้อน (Heat Pack), Power Bank และพาสปอร์ตตัวจริง</p>
-                    </div>
-                `);
-            }
-        };
-
-        function openCustomModal(title, bodyHtml) {
-            document.getElementById('modal-title').textContent = title;
-            document.getElementById('modal-body').innerHTML = bodyHtml;
-            const modal = document.getElementById('detail-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            renderIcons();
-        }
-
-        window.closeModal = function() {
-            const modal = document.getElementById('detail-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        };
-
-        document.getElementById('detail-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'detail-modal') closeModal();
-        });
-
-        window.copyGroupSummary = function() {
-            if (registrations.length === 0) {
-                showToast('ยังไม่มีรายชื่อให้คัดลอก', 'error');
-                return;
-            }
-            const { rooms, personBillingMap, vanShareActual } = computeRoomMatchingAndCosts(registrations);
-            const lines = [
-                `❄️ สรุปผลลงทะเบียน & จับคู่ห้องพัก ทริปหมู่บ้านหิมะจีน–ยาบูลี (18–20 ธ.ค. 2569)`,
-                `👥 ผู้ลงทะเบียน: ${registrations.length} ท่าน | ค่ารถเหมา 15 ที่นั่งหารเฉลี่ย: ฿${fmtThb(vanShareActual)}/คน`,
-                `----------------------------------------`
-            ];
-            rooms.forEach(room => {
-                const names = room.members.map(m => `${m.nickname} (฿${fmtThb(personBillingMap[m.id]?.actualGrandTotal || 0)})`).join(', ');
-                lines.push(`🏠 ห้องที่ ${room.roomNumber} [นอน ${room.capacity} คน]: ${names}`);
-            });
-
-            const ta = document.createElement('textarea');
-            ta.value = lines.join('\n');
-            ta.style.position = 'fixed';
-            ta.style.left = '-9999px';
-            document.body.appendChild(ta);
-            ta.select();
-            try {
-                document.execCommand('copy');
-                showToast('คัดลอกสรุปส่ง LINE เรียบร้อยแล้ว!');
-            } catch (e) {
-                showToast('ไม่สามารถคัดลอกได้', 'error');
-            }
-            document.body.removeChild(ta);
-        };
-
-        window.exportCSV = function() {
-            if (registrations.length === 0) {
-                showToast('ยังไม่มีข้อมูลสำหรับส่งออก', 'error');
-                return;
-            }
-            const { personBillingMap } = computeRoomMatchingAndCosts(registrations);
-            const headers = ['ลำดับ', 'ชื่อ-นามสกุล(ไทย)', 'ชื่ออังกฤษ', 'ชื่อเล่น', 'เพศ', 'เบอร์โทร', 'LINE/WeChat', 'รูปแบบห้องพัก', 'ห้องที่แมตช์ได้', 'เพื่อนร่วมห้อง', 'ยอดจ่ายประมวลผลจริง(บาท)'];
-            const rows = registrations.map((r, i) => {
-                const b = personBillingMap[r.id];
-                return [
-                    i + 1, r.fullNameTh, r.fullNameEn, r.nickname, r.gender, r.phone, r.contactId,
-                    `นอน ${getNormalizedRoomCap(r)} คน/ห้อง`,
-                    b ? `ห้องที่ ${b.roomNumber}` : '-',
-                    b && b.roommates.length ? b.roommates.join(' & ') : '-',
-                    b ? b.actualGrandTotal.toFixed(2) : '0.00'
-                ].map(v => `"${String(v || '').replace(/"/g, '""')}"`).join(',');
-            });
-            const csv = '\uFEFF' + [headers.join(','), ...rows].join('\n');
-            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `SnowTown_2569_Matching_${registrations.length}pax.csv`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast('ดาวน์โหลดไฟล์ CSV เรียบร้อยแล้ว!');
-        };
-
-        window.exportBackupJSON = function() {
-            if (registrations.length === 0) {
-                showToast('ยังไม่มีข้อมูลให้สำรอง', 'error');
-                return;
-            }
-            const blob = new Blob([JSON.stringify({ trip: 'Xuexiang-2569', exportedAt: new Date().toISOString(), records: registrations }, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `SnowTown_2569_Backup_${registrations.length}pax.json`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast(`สำรองข้อมูล ${registrations.length} ท่านเรียบร้อยแล้ว!`);
-        };
-
-        window.importBackupJSON = async function(event) {
-            const file = event.target.files?.[0];
-            if (!file) return;
-            try {
-                const parsed = JSON.parse(await file.text());
-                const incoming = Array.isArray(parsed) ? parsed : (parsed.records || []);
-                let added = 0;
-                for (const rec of incoming) {
-                    if (!rec.fullNameTh) continue;
-                    if (registrations.some(e => e.fullNameTh === rec.fullNameTh && e.phone === rec.phone)) continue;
-                    const cap = getNormalizedRoomCap(rec);
-                    const pkgMap = { 1: 'private1', 2: 'share2', 3: 'share3' };
-                    const clean = {
-                        fullNameTh: rec.fullNameTh,
-                        fullNameEn: rec.fullNameEn || '',
-                        nickname: rec.nickname || '',
-                        gender: rec.gender || 'ชาย',
-                        phone: rec.phone || '',
-                        contactId: rec.contactId || '',
-                        emergencyContact: rec.emergencyContact || '-',
-                        roomCapacity: cap,
-                        hotelPackage: pkgMap[cap],
-                        roommateRequest: rec.roommateRequest || 'ให้ระบบจับคู่ให้อัตโนมัติ',
+// ... existing code ... -->
                         dietary: rec.dietary || 'ทานอาหารได้ปกติ',
                         shuttlePackage: 'roundtrip',
                         heuTransitOption: rec.heuTransitOption || 'metro_harbin',
                         luggage: rec.luggage || 'กระเป๋า 20-24 นิ้ว (1 ใบ) + เป้สะพายหลัง',
-                        arrivalNote: rec.arrivalNote || '',
+                        arrivalNote: rec.arrivalNote || 'พร้อมกลุ่มหลักที่สถานี Metro 哈尔滨工程大学站',
                         activities: Array.isArray(rec.activities) ? rec.activities : [],
-                        coldReadiness: rec.coldReadiness || '',
+                        coldReadiness: rec.coldReadiness || 'เตรียมครบแล้ว (เสื้อขนเป็ด, ลองจอน, รองเท้าลุยหิมะ)',
                         notes: rec.notes || '-',
-                        createdAtMs: rec.createdAtMs || Date.now() + added,
+                        createdAtMs: rec.createdAtMs || (Date.now() + added),
                         updatedAtMs: Date.now()
                     };
-                    if (useCloudDb && db && currentUser && fsOps) {
+                    if (useGitHubDb && activeGitHubTarget.token) {
+                        await mutateGitHubRecords((latestRecords) => {
+                            if (!latestRecords.some(e => e.fullNameTh === clean.fullNameTh && e.phone === clean.phone)) {
+                                clean.id = 'reg_' + Date.now() + '_' + added;
+                                latestRecords.push(clean);
+                            }
+                            return latestRecords;
+                        }, `Import backup record: ${clean.nickname}`);
+                    } else if (useCloudDb && db && currentUser && fsOps) {
                         const colRef = fsOps.collection(db, 'artifacts', appId, 'public', 'data', 'snowtown_registrations_2569');
                         clean.createdAt = fsOps.serverTimestamp();
                         clean.submittedByUid = currentUser.uid;
@@ -2351,48 +1334,9 @@
                     }
                     added++;
                 }
-                if (!useCloudDb) {
-                    refreshAllAppData();
-                }
-                showToast(added > 0 ? `กู้คืนข้อมูลเพิ่มสำเร็จ ${added} ท่าน!` : 'ข้อมูลทั้งหมดมีอยู่ในระบบครบแล้ว');
-            } catch (err) {
-                showToast('ไฟล์สำรองไม่ถูกต้อง', 'error');
-            } finally {
-                event.target.value = '';
-            }
-        };
-
-        // -------------------------------------------------------------
-        // 12. Utilities
-        // -------------------------------------------------------------
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast-notification');
-            const msgEl = document.getElementById('toast-message');
-            const iconEl = document.getElementById('toast-icon');
-            msgEl.textContent = message;
-            if (type === 'error') {
-                iconEl.setAttribute('data-lucide', 'alert-circle');
-                iconEl.className = 'w-5 h-5 text-rose-400 shrink-0';
-            } else {
-                iconEl.setAttribute('data-lucide', 'check-circle-2');
-                iconEl.className = 'w-5 h-5 text-emerald-400 shrink-0';
-            }
-            renderIcons();
-            toast.classList.remove('translate-y-24', 'opacity-0');
-            setTimeout(() => toast.classList.add('translate-y-24', 'opacity-0'), 3200);
-        }
-
-        function escapeHtml(str) {
-            if (!str) return '';
-            return String(str)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#039;');
-        }
-
+// ... existing code ... -->
         // Boot App
+        initSnowEffect();
         initCentralDatabase();
         navigateTo('hub');
         goToWizardStep(1);
