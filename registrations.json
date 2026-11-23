@@ -24,5 +24,31 @@
     "updatedAtMs": 1795364567458,
     "id": "reg_1795364568514_wzyk",
     "createdAtMs": 1795364568514
+  },
+  {
+    "fullNameTh": "พัดยศ เพชรวงษ์",
+    "nickname": "เพ่ย เพ่ย",
+    "fullNameEn": "PATYOS PHETWONG",
+    "gender": "ชาย",
+    "phone": "0929259929",
+    "contactId": "Patyostour",
+    "emergencyContact": "-",
+    "hotelId": "braves",
+    "roomCapacity": 2,
+    "roommateRequest": "ใครก็ได้",
+    "dietary": "ทานอาหารได้ปกติ",
+    "shuttlePackage": "roundtrip",
+    "heuTransitOption": "metro_harbin",
+    "luggage": "กระเป๋า 20-24 นิ้ว (1 ใบ) + เป้สะพายหลัง",
+    "arrivalNote": "พร้อมกลุ่มหลักที่สถานี Metro 哈尔滨工程大学站",
+    "activities": [
+      "เดินถนนเสวี่ยหยุน & ถ่ายรูปชุดลายดอกตงเป่ย",
+      "จุดชมวิวเขาป้างฉุย & ทางเดินไม้เทพนิยาย"
+    ],
+    "coldReadiness": "เตรียมครบแล้ว (เสื้อขนเป็ด, ลองจอน, รองเท้าลุยหิมะ)",
+    "notes": "-",
+    "updatedAtMs": 1795403176138,
+    "id": "reg_1795403180906_ioar",
+    "createdAtMs": 1795403180906
   }
 ]
