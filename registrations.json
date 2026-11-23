@@ -50,5 +50,35 @@
     "updatedAtMs": 1795403176138,
     "id": "reg_1795403180906_ioar",
     "createdAtMs": 1795403180906
+  },
+  {
+    "fullNameTh": "ว่าที่ ร.ต.หญิงจุฑามณี ไชยสงคราม",
+    "nickname": "กวาง",
+    "fullNameEn": "JUTAMANEE CHAISONGKRAM",
+    "gender": "หญิง",
+    "phone": "15304619479",
+    "contactId": "Kwangbig",
+    "emergencyContact": "0656354179",
+    "hotelId": "yunding",
+    "roomCapacity": 4,
+    "roommateRequest": "พี่นุ้ยสพฐ. พี่นุ้ยจิตรลดา พี่อุ๊",
+    "dietary": "ไม่ทานเนื้อวัว",
+    "shuttlePackage": "roundtrip",
+    "heuTransitOption": "metro_harbin_west",
+    "luggage": "กระเป๋า 20-24 นิ้ว (1 ใบ) + เป้สะพายหลัง",
+    "arrivalNote": "พร้อมกลุ่มหลักที่สถานี Metro 哈尔滨工程大学站",
+    "activities": [
+      "เดินถนนเสวี่ยหยุน & ถ่ายรูปชุดลายดอกตงเป่ย",
+      "เล่นสกี (Xuebao Ski Field / นอกที่พัก)",
+      "แช่บ่อน้ำพุร้อน / ซาวน่า / สปา / ห้องนวด",
+      "ขี่ม้า / เดินป่าชมหิมะ / ลานกองไฟ",
+      "จุดชมวิวเขาป้างฉุย & ทางเดินไม้เทพนิยาย",
+      "สโนว์โมบิล / ล่องแก่งน้ำแข็ง / หม้อไฟตงเป่ย"
+    ],
+    "coldReadiness": "เตรียมครบแล้ว (เสื้อขนเป็ด, ลองจอน, รองเท้าลุยหิมะ)",
+    "notes": "-",
+    "updatedAtMs": 1795403520033,
+    "id": "reg_1795403521537_h3tn",
+    "createdAtMs": 1795403521537
   }
 ]
