@@ -147,6 +147,37 @@
       "updatedAtMs": 1795404792481,
       "id": "reg_1795404793625_6fxm",
       "createdAtMs": 1795404793625
+    },
+    {
+      "fullNameTh": "นายพัทธณะไชย ห่วงแก้ว",
+      "nickname": "หลอด",
+      "fullNameEn": "MR. PATTANACHAI  HUANGKAEW",
+      "gender": "ชาย",
+      "phone": "0803278619",
+      "contactId": "lohd4533",
+      "emergencyContact": "-",
+      "hotelId": "braves",
+      "hotelPurchaseMode": "ฝากซื้อ",
+      "roomCapacity": 3,
+      "roommateRequest": "เน, พี่โชค",
+      "dietary": "ทานอาหารได้ปกติ",
+      "heuTransitOption": "metro_harbin",
+      "trainPurchaseMode": "ฝากซื้อ",
+      "busPurchaseMode": "ฝากซื้อ",
+      "shuttlePackage": "roundtrip",
+      "luggage": "กระเป๋า 20-24 นิ้ว (1 ใบ) + เป้สะพายหลัง",
+      "arrivalNote": "พร้อมกลุ่มหลักที่สถานี Metro 哈尔滨工程大学站",
+      "activities": [
+        "เล่นสกี (Xuebao Ski Field / นอกที่พัก)",
+        "ขี่ม้า / เดินป่าชมหิมะ / ลานกองไฟ",
+        "จุดชมวิวเขาป้างฉุย & ทางเดินไม้เทพนิยาย",
+        "สโนว์โมบิล / ล่องแก่งน้ำแข็ง / หม้อไฟตงเป่ย"
+      ],
+      "coldReadiness": "เตรียมครบแล้ว (เสื้อขนเป็ด, ลองจอน, รองเท้าลุยหิมะ)",
+      "notes": "-",
+      "updatedAtMs": 1795419943874,
+      "id": "reg_1795419944827_tr5j",
+      "createdAtMs": 1795419944827
     }
   ]
 }
