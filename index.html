@@ -10,26 +10,28 @@
     
     <!-- Native Mobile Font Stack (โหลดเร็ว ไม่บล็อกบนเครือข่ายในจีน) -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['PingFang SC', 'Sukhumvit Set', 'Thonburi', 'Leelawadee UI', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-                    },
-                    colors: {
-                        arctic: {
-                            950: '#060E1A',
-                            900: '#0B192C',
-                            800: '#132A46',
-                            700: '#1E3E62',
-                            500: '#2563EB',
-                            400: '#38BDF8',
-                            100: '#E0F2FE',
-                            50:  '#F0F9FF'
+        if (window.tailwind) {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['PingFang SC', 'Sukhumvit Set', 'Thonburi', 'Leelawadee UI', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+                        },
+                        colors: {
+                            arctic: {
+                                950: '#060E1A',
+                                900: '#0B192C',
+                                800: '#132A46',
+                                700: '#1E3E62',
+                                500: '#2563EB',
+                                400: '#38BDF8',
+                                100: '#E0F2FE',
+                                50:  '#F0F9FF'
+                            }
                         }
                     }
                 }
-            }
+            };
         }
     </script>
 
@@ -108,7 +110,7 @@
     <!-- ========================================================= -->
     <!-- TOP HEADER BAR                                            -->
     <!-- ========================================================= -->
-    <header class="sticky top-0 z-40 bg-arctic-900/95 backdrop-blur-md text-white border-b border-white/10 shadow-md">
+    <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md text-white border-b border-white/10 shadow-md">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
             <!-- Brand / Back to Menu Hub -->
             <button type="button" onclick="navigateTo('hub')" class="flex items-center gap-2.5 text-left group focus:outline-none">
@@ -160,7 +162,7 @@
         <!-- ======================================================= -->
         <section id="view-hub" class="view-fade space-y-6">
             <!-- Compact Hero Banner -->
-            <div class="relative bg-gradient-to-br from-arctic-950 via-arctic-900 to-arctic-700 rounded-3xl p-6 sm:p-8 text-white overflow-hidden shadow-xl">
+            <div class="relative bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 rounded-3xl p-6 sm:p-8 text-white overflow-hidden shadow-xl">
                 <div id="snow-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
                 <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
                     <div class="space-y-2">
@@ -172,12 +174,12 @@
                             ทริปหมู่บ้านหิมะจีน – ยาบูลี
                         </h1>
                         <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
-                            ออกเดินทางจาก <strong>ม.ฮาร์บินเอ็นจิเนียริ่ง (HEU)</strong> • เลือกที่พักได้ 2 แห่ง (<strong>เบรฟส์โฮมแลนด์</strong> หรือ <strong>โรงแรมหยุนติ้งเสว</strong>) • รถตู้เหมา 15 ที่นั่งไป-กลับพร้อมกันทั้งกลุ่ม
+                            ออกเดินทางจาก <strong>ม.ฮาร์บินเอ็นจิเนียริ่ง (HEU)</strong> • เลือกที่พักได้ 2 แห่ง (<strong>เบรฟส์โฮมแลนด์</strong> หรือ <strong>โรงแรมหยุนติ้งเสว</strong>) หรือจองห้องเอง • รถไฟ & รถตู้เหมา 15 ที่นั่งไป-กลับพร้อมกันทั้งกลุ่ม
                         </p>
                     </div>
 
                     <!-- Live Quota Pill -->
-                    <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 shrink-0 sm:min-w-[225px]">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 shrink-0 sm:min-w-[235px]">
                         <div class="flex items-center justify-between text-xs text-sky-200">
                             <span>ผู้ลงทะเบียนแล้ว</span>
                             <span id="hub-seats-badge" class="font-bold text-emerald-300">ว่าง 15 ที่นั่ง</span>
@@ -218,7 +220,7 @@
                             1. รายละเอียดโดยสังเขป
                         </h3>
                         <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                            เปรียบเทียบที่พัก 2 แห่ง (เบรฟส์โฮมแลนด์ vs โรงแรมหยุนติ้งเสว) สิทธิ์ฟรี กิจกรรม รถตู้เหมา 15 ที่นั่ง และตารางเที่ยว
+                            เปรียบเทียบที่พัก 2 แห่ง (เบรฟส์โฮมแลนด์ vs โรงแรมหยุนติ้งเสว) สิทธิ์ฟรี กิจกรรม รถไฟ & รถตู้เหมา 15 ที่นั่ง และตารางเที่ยว
                         </p>
                     </div>
                     <div class="flex items-center text-xs font-bold text-blue-600 pt-1">
@@ -240,7 +242,7 @@
                             2. ลงทะเบียนร่วมทริป
                         </h3>
                         <p class="text-xs sm:text-sm text-sky-100 mt-1 leading-relaxed">
-                            ตอบแบบสอบถามทีละข้อ เลือกโรงแรมที่ชอบ (ดูสเปกและสิทธิ์ฟรีก่อนเลือก) พร้อมเลือกรูปแบบนอน <strong>1–4 คน/ห้อง</strong>
+                            ตอบแบบสอบถามทีละข้อ เลือกที่พัก (ฝากซื้อ / ซื้อเอง / อื่นๆ จองห้องเอง) ตั๋วรถไฟ (ฝากซื้อ / ซื้อเอง) และรถตู้เหมา (ฝากซื้อ)
                         </p>
                     </div>
                     <div class="flex items-center text-xs font-bold text-white pt-1">
@@ -286,7 +288,7 @@
                             4. ผลการลงทะเบียน & สรุปห้องจอง
                         </h3>
                         <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
-                            ดูสรุปว่า <strong>ต้องจองที่ไหนกี่ห้อง</strong> ผลจับคู่เพื่อนร่วมห้องแยกตามโรงแรม และยอดจ่ายรายบุคคลอัตโนมัติ
+                            แดชบอร์ดกรองข้อมูล ดูสรุปว่า <strong>ต้องจองที่ไหนกี่ห้อง</strong> ผลจับคู่เพื่อนร่วมห้อง และยอดฝากซื้อ/ซื้อเองอัตโนมัติ
                         </p>
                     </div>
                     <div class="flex items-center text-xs font-bold text-emerald-600 pt-1">
@@ -393,7 +395,6 @@
                                 <p class="text-xs text-slate-500">ห้อง Cozy Warm Kang Room (เตียงคังอุ่น 15 ตร.ม. • ถนนเสวี่ยหยุน)</p>
                             </div>
 
-                            <!-- Freebies Tags -->
                             <div class="bg-emerald-50/70 rounded-2xl p-3.5 border border-emerald-100 space-y-1.5 text-xs">
                                 <p class="font-bold text-emerald-900">🎁 สิทธิ์ฟรีที่รวมในห้องพัก:</p>
                                 <ul class="space-y-1 text-slate-700">
@@ -403,7 +404,6 @@
                                 </ul>
                             </div>
 
-                            <!-- Activities & Nearby -->
                             <div class="text-xs text-slate-600 space-y-1">
                                 <p class="font-bold text-slate-800">🎿 กิจกรรม & ทำเลใกล้เคียง:</p>
                                 <p>• ติดถนนเสน่ห์หิมะ (&lt;100 ม.) และลานสกี <strong>Xuebao Ski Field (&lt;100 ม.)</strong>, Snow World (7.8 กม.), ห้องบิลเลียด/หมากรุก, คาเฟ่</p>
@@ -436,7 +436,6 @@
                                 <p class="text-xs text-slate-500">ห้อง Chen Xue · Tatami Family Room (19 ตร.ม. • วิวภูเขา • ชั้น B1)</p>
                             </div>
 
-                            <!-- Freebies Tags -->
                             <div class="bg-blue-50/70 rounded-2xl p-3.5 border border-blue-100 space-y-1.5 text-xs">
                                 <p class="font-bold text-blue-900">🎁 สิทธิ์ฟรี & สเปกเด่นในห้องพัก:</p>
                                 <ul class="space-y-1 text-slate-700">
@@ -446,7 +445,6 @@
                                 </ul>
                             </div>
 
-                            <!-- Activities & Nearby -->
                             <div class="text-xs text-slate-600 space-y-1">
                                 <p class="font-bold text-slate-800">♨️ กิจกรรม & สิ่งอำนวยความสะดวก:</p>
                                 <p>• ในโรงแรม: <strong>บ่อน้ำพุร้อน, ซาวน่า, สปา</strong> (มีค่าบริการเพิ่ม), ห้องนวด, พื้นที่อาบแดด • นอกที่พัก: <strong>เล่นสกี, ขี่ม้า, เดินป่า</strong>, ใกล้ป้ายหินใหญ่ & ลานกองไฟ</p>
@@ -608,7 +606,7 @@
                     </div>
                 </div>
 
-                <!-- STEP 4: เลือกโรงแรมที่พัก (แสดงรายละเอียดครบ) + จำนวนคนต่อห้อง -->
+                <!-- STEP 4: เลือกโรงแรมที่พัก (แสดงรายละเอียดครบ) + ฝากซื้อ/ซื้อเอง + จำนวนคนต่อห้อง -->
                 <div id="wizard-step-4" class="wizard-step hidden space-y-5">
                     <div class="space-y-1">
                         <span class="inline-block px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold">คำถามที่ 4 / 7</span>
@@ -674,16 +672,12 @@
                     </div>
 
                     <!-- Live Detailed Specification Box for Selected Hotel -->
-                    <div id="selected-hotel-detail-box" class="bg-slate-50 rounded-2xl p-4 border border-slate-200 space-y-2.5 text-xs">
-                        <!-- Rendered dynamically by renderHotelDetailPanel() -->
-                    </div>
+                    <div id="selected-hotel-detail-box" class="bg-slate-50 rounded-2xl p-4 border border-slate-200 space-y-2.5 text-xs"></div>
 
                     <!-- Room Capacity Options (Dynamically Rendered for 1..3 or 1..4) -->
                     <div id="room-capacity-section" class="space-y-2">
                         <label class="block text-xs font-bold text-slate-700">เลือกรูปแบบการหารห้องพัก (2 คืน รวมอาหารเช้า):</label>
-                        <div id="room-capacity-options-container" class="space-y-2.5">
-                            <!-- Rendered dynamically by renderRoomCapacityButtons() -->
-                        </div>
+                        <div id="room-capacity-options-container" class="space-y-2.5"></div>
                     </div>
                 </div>
 
@@ -780,7 +774,7 @@
                     </div>
                 </div>
 
-                <!-- STEP 7: กิจกรรมที่สนใจ (รวมทั้งกิจกรรมของที่พักเก่าและใหม่) -->
+                <!-- STEP 7 -->
                 <div id="wizard-step-7" class="wizard-step hidden space-y-5">
                     <div class="space-y-1">
                         <span class="inline-block px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold">คำถามที่ 7 / 7</span>
@@ -837,10 +831,10 @@
                     <div class="space-y-1">
                         <span class="inline-block px-2.5 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold">ขั้นตอนสุดท้าย • ตรวจสอบก่อนบันทึก</span>
                         <h3 class="text-xl font-bold text-slate-900">สรุปข้อมูลลงทะเบียน & ประมาณการค่าใช้จ่าย</h3>
-                        <p class="text-xs text-slate-500">กรุณาตรวจสอบที่พักที่เลือก สิทธิ์ฟรี และยอดค่าใช้จ่ายคร่าวๆ ด้านล่างก่อนกดยืนยันบันทึก</p>
+                        <p class="text-xs text-slate-500">กรุณาตรวจสอบที่พักที่เลือก รูปแบบการจอง และยอดค่าใช้จ่ายคร่าวๆ ด้านล่างก่อนกดยืนยันบันทึก</p>
                     </div>
 
-                    <div class="bg-gradient-to-br from-slate-900 via-arctic-900 to-blue-900 rounded-2xl p-5 text-white space-y-3.5 shadow-lg">
+                    <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 rounded-2xl p-5 text-white space-y-3.5 shadow-lg">
                         <div class="flex items-center justify-between border-b border-white/15 pb-3">
                             <div>
                                 <p class="text-xs text-sky-300 font-semibold" id="review-hotel-name-label">บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์</p>
@@ -854,13 +848,13 @@
 
                         <div class="space-y-2 text-xs">
                             <div class="flex justify-between items-center text-slate-200">
-                                <span>1. เดินทาง HEU ↔ สถานียาบูลี (ไป-กลับ)</span>
+                                <span>1. เดินทางรถไฟ HEU ↔ สถานียาบูลี (ไป-กลับ)</span>
                                 <span class="font-bold text-white" id="review-cost-heu">฿ 769.12</span>
                             </div>
                             <div class="flex justify-between items-center text-slate-200">
                                 <div>
                                     <span>2. รถตู้เหมา 15 ที่นั่ง ยาบูลี ↔ หมู่บ้านหิมะ</span>
-                                    <span class="block text-[10px] text-sky-300" id="review-van-note">อ้างอิงหาร 10 ท่าน (หากครบ 15 คนเหลือ ฿624.48)</span>
+                                    <span class="block text-[10px] text-sky-300" id="review-van-note">ฝากซื้อเหมากลุ่ม • อ้างอิงหาร 10 ท่าน</span>
                                 </div>
                                 <span class="font-bold text-white" id="review-cost-van">฿ 936.73</span>
                             </div>
@@ -874,7 +868,7 @@
                         </div>
 
                         <p class="text-[10px] text-slate-400 pt-1 border-t border-white/10">
-                            * หมายเหตุ: ยอดจริงจะประมวลผลตามผลการจับคู่ห้องพักในโรงแรมเดียวกันและจำนวนผู้ร่วมเดินทางจริงในเมนูที่ 4 (ยังไม่รวมตั๋วเข้าอุทยานหมู่บ้านหิมะ ~¥120–135)
+                            * หมายเหตุ: ยอดจริงจะประมวลผลตามผลการจับคู่ห้องพักและจำนวนผู้ร่วมเดินทางจริงในเมนูที่ 4 (ยังไม่รวมตั๋วเข้าอุทยานหมู่บ้านหิมะ ~¥120–135)
                         </p>
                     </div>
 
@@ -923,7 +917,6 @@
             </div>
 
             <div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-5 sm:p-7 space-y-6">
-                <!-- Hotel Switcher inside DBD Calculator -->
                 <div class="space-y-2">
                     <span class="text-xs font-bold text-slate-600">1. เลือกโรงแรมที่ต้องการคำนวณงบ:</span>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -938,7 +931,6 @@
                     </div>
                 </div>
 
-                <!-- Room Capacity Buttons (Dynamically rendered for 1..3 or 1..4) -->
                 <div class="space-y-2">
                     <span class="text-xs font-bold text-slate-600">2. เลือกรูปแบบจำนวนคนต่อห้อง:</span>
                     <div id="dbd-cap-buttons-container" class="grid grid-cols-3 gap-2"></div>
@@ -1089,7 +1081,7 @@
                 </div>
             </div>
 
-            <!-- HOTEL BOOKING SUMMARY BOARD (สรุปว่าต้องจองที่ไหนกี่ห้อง!) -->
+            <!-- HOTEL BOOKING SUMMARY BOARD -->
             <div class="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-4">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -1099,9 +1091,7 @@
                     <span class="text-xs text-slate-500" id="booking-summary-subtitle">แยกยอด ฝากซื้อ vs ซื้อเอง ให้อัตโนมัติ</span>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="hotel-booking-summary-cards">
-                    <!-- Rendered dynamically by renderResultsViews() -->
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="hotel-booking-summary-cards"></div>
             </div>
 
             <!-- Summary KPI Strip -->
@@ -1381,7 +1371,68 @@
     <script>
         (function() {
             // =============================================================
-            // 1. GITHUB DB CONFIGURATION (padrewcdit/harbin-trip)
+            // 1. BUILT-IN SVG ICONS (ทำงานในตัว 100% ไม่ต้องโหลดจากเน็ตนอก)
+            // =============================================================
+            const SVG_ICONS = {
+                'snowflake': '<path d="M2 12h20"/><path d="M12 2v20"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/>',
+                'lock': '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+                'unlock': '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>',
+                'layout-grid': '<rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>',
+                'calendar-days': '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/>',
+                'compass': '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>',
+                'chevron-right': '<path d="m9 18 6-6-6-6"/>',
+                'chevron-left': '<path d="m15 18-6-6 6-6"/>',
+                'clipboard-edit': '<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L7.95 21 4 22l.99-3.95 5.43-5.44Z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5.5"/><path d="M4 13.5V6a2 2 0 0 1 2-2h2"/>',
+                'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+                'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
+                'calculator': '<rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>',
+                'users-round': '<path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/>',
+                'train-front': '<path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/><path d="m9 15-1-1"/><path d="m15 15 1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"/><path d="m8 19-2 3"/><path d="m16 19 2 3"/>',
+                'bus': '<path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/>',
+                'building-2': '<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>',
+                'calendar-check': '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/>',
+                'external-link': '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/>',
+                'map-pin': '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+                'check-circle-2': '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+                'copy': '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+                'download': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>',
+                'shield-check': '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+                'log-out': '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/>',
+                'user-plus': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/>',
+                'database': '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>',
+                'hard-drive-download': '<path d="M12 2v8"/><path d="m16 6-4 4-4-4"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 18h.01"/><path d="M10 18h.01"/>',
+                'hard-drive-upload': '<path d="m16 6-4-4-4 4"/><path d="M12 2v8"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 18h.01"/><path d="M10 18h.01"/>',
+                'trash-2': '<path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/>',
+                'bed-double': '<path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/>',
+                'list-checks': '<path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/>',
+                'search': '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+                'x': '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+                'edit-3': '<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>'
+            };
+
+            function renderIcons() {
+                document.querySelectorAll('i[data-lucide]').forEach(el => {
+                    const name = el.getAttribute('data-lucide');
+                    const paths = SVG_ICONS[name];
+                    if (!paths) return;
+                    const cls = el.getAttribute('class') || 'w-4 h-4';
+                    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    svg.setAttribute('class', cls);
+                    svg.setAttribute('viewBox', '0 0 24 24');
+                    svg.setAttribute('fill', 'none');
+                    svg.setAttribute('stroke', 'currentColor');
+                    svg.setAttribute('stroke-width', '2');
+                    svg.setAttribute('stroke-linecap', 'round');
+                    svg.setAttribute('stroke-linejoin', 'round');
+                    svg.innerHTML = paths;
+                    if (el.parentNode) {
+                        el.parentNode.replaceChild(svg, el);
+                    }
+                });
+            }
+
+            // =============================================================
+            // 2. GITHUB DB CONFIGURATION (padrewcdit/harbin-trip)
             // =============================================================
             const _ghTokenCodes = [103,105,116,104,117,98,95,112,97,116,95,49,49,66,85,89,86,89,84,81,48,102,54,108,49,115,65,106,106,49,53,82,90,95,115,76,99,82,78,56,82,78,83,105,86,117,84,89,53,83,114,111,54,82,118,98,101,57,66,87,76,86,101,53,71,112,110,89,103,53,90,81,50,55,72,117,76,87,74,81,53,82,66,73,50,100,77,79,57,99,86,121,57];
             const _defaultGhToken = String.fromCharCode(..._ghTokenCodes);
@@ -1398,10 +1449,10 @@
                 token: savedStoredToken || _defaultGhToken
             };
 
-            const LOCAL_CACHE_KEY = 'xuexiang_2569_registrations_cache_v2';
+            const LOCAL_CACHE_KEY = 'xuexiang_2569_registrations_cache_v3';
 
             // =============================================================
-            // 2. HOTELS CATALOG & PRICING CONSTANTS (ทั้งเก่าและใหม่)
+            // 3. HOTELS CATALOG & PRICING CONSTANTS (ทั้งเก่าและใหม่)
             // =============================================================
             const HOTELS = {
                 braves: {
@@ -1500,7 +1551,556 @@
                 shuttleRoundTripNet: 9367.26,  // ไป-กลับ 2 เที่ยว (รถตู้เหมา 15 ที่นั่ง เกาลูน)
                 maxVanSeats: 15
             };
-// ... existing code ... -->
+
+            // =============================================================
+            // 4. APPLICATION STATE
+            // =============================================================
+            let registrations = [];
+            let githubFileSha = null;
+            let useGitHubDb = false;
+            let activeGitHubTarget = {
+                owner: GITHUB_DB_CONFIG.owner,
+                repo: GITHUB_DB_CONFIG.repo,
+                branch: GITHUB_DB_CONFIG.branch,
+                filePath: GITHUB_DB_CONFIG.filePath,
+                token: GITHUB_DB_CONFIG.token
+            };
+
+            let isAdminLoggedIn = false;
+            try {
+                isAdminLoggedIn = sessionStorage.getItem('harbin_trip_admin_auth') === '1';
+            } catch (e) {}
+
+            let pendingDeleteId = null;
+            let activeView = 'hub';
+            let currentWizardStep = 1;
+            const TOTAL_WIZARD_STEPS = 8;
+
+            let dbdSelectedPax = 10;
+            let dbdHotelId = 'braves';
+            let dbdRoomCap = 3;
+            let resultsSubTab = 'rooms';
+
+            // =============================================================
+            // 5. UTILITY & HELPER FUNCTIONS
+            // =============================================================
+            function getHotelObj(hotelId) {
+                return HOTELS[hotelId] || HOTELS.braves;
+            }
+
+            function fmtThb(num) {
+                return Number(num || 0).toLocaleString('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+            }
+
+            function escapeHtml(str) {
+                return String(str ?? '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
+
+            function showToast(msg, isError = false) {
+                const toast = document.getElementById('toast-notification');
+                const msgEl = document.getElementById('toast-message');
+                const iconWrap = document.getElementById('toast-icon-wrap');
+                if (!toast || !msgEl) return;
+
+                msgEl.textContent = msg;
+                if (iconWrap) {
+                    iconWrap.className = isError ? 'shrink-0 text-rose-400' : 'shrink-0 text-emerald-400';
+                    iconWrap.innerHTML = isError
+                        ? '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>'
+                        : '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>';
+                }
+
+                toast.classList.remove('translate-y-24', 'opacity-0');
+                clearTimeout(window._toastTimer);
+                window._toastTimer = setTimeout(() => {
+                    toast.classList.add('translate-y-24', 'opacity-0');
+                }, 3400);
+            }
+
+            function copyTextFallback(text, successMsg) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        showToast(successMsg);
+                    }).catch(() => {
+                        fallbackTextareaCopy(text, successMsg);
+                    });
+                } else {
+                    fallbackTextareaCopy(text, successMsg);
+                }
+            }
+
+            function fallbackTextareaCopy(text, successMsg) {
+                try {
+                    const ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    showToast(successMsg);
+                } catch (e) {
+                    showToast('ไม่สามารถคัดลอกอัตโนมัติได้', true);
+                }
+            }
+
+            function initSnowEffect() {
+                const container = document.getElementById('snow-container');
+                if (!container) return;
+                container.innerHTML = '';
+                for (let i = 0; i < 16; i++) {
+                    const flake = document.createElement('span');
+                    flake.className = 'snowflake';
+                    flake.textContent = '❄';
+                    flake.style.left = `${Math.random() * 100}%`;
+                    flake.style.fontSize = `${10 + Math.random() * 12}px`;
+                    flake.style.animationDuration = `${6 + Math.random() * 7}s`;
+                    flake.style.animationDelay = `${Math.random() * 5}s`;
+                    container.appendChild(flake);
+                }
+            }
+
+            function saveLocalCache() {
+                try {
+                    localStorage.setItem(LOCAL_CACHE_KEY, JSON.stringify(registrations));
+                } catch (e) {}
+            }
+
+            function loadLocalCache() {
+                try {
+                    const raw = localStorage.getItem(LOCAL_CACHE_KEY);
+                    if (raw) {
+                        const parsed = JSON.parse(raw);
+                        if (Array.isArray(parsed)) return parsed;
+                    }
+                } catch (e) {}
+                return [];
+            }
+
+            // UTF-8 Safe Base64 Encoding & Decoding for Thai characters
+            function utf8ToBase64(str) {
+                const bytes = new TextEncoder().encode(str);
+                let binString = '';
+                for (let i = 0; i < bytes.length; i++) {
+                    binString += String.fromCharCode(bytes[i]);
+                }
+                return btoa(binString);
+            }
+
+            function base64ToUtf8(b64) {
+                const cleanB64 = String(b64 || '').replace(/\s/g, '');
+                const binString = atob(cleanB64);
+                const bytes = new Uint8Array(binString.length);
+                for (let i = 0; i < binString.length; i++) {
+                    bytes[i] = binString.charCodeAt(i);
+                }
+                return new TextDecoder('utf-8').decode(bytes);
+            }
+
+            function updateDbStatusBadge(mode, text) {
+                const badge = document.getElementById('db-status-badge');
+                if (!badge) return;
+                if (mode === 'github') {
+                    badge.className = 'flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-emerald-500/20 text-emerald-200 border border-emerald-400/30 hover:opacity-90 transition cursor-pointer';
+                    badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span><span>${escapeHtml(text || 'GitHub DB')}</span>`;
+                } else if (mode === 'syncing') {
+                    badge.className = 'flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-amber-500/20 text-amber-200 border border-amber-400/30 hover:opacity-90 transition cursor-pointer';
+                    badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span><span>${escapeHtml(text || 'กำลังซิงก์...')}</span>`;
+                } else {
+                    badge.className = 'flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-sky-500/20 text-sky-200 border border-sky-400/30 hover:opacity-90 transition cursor-pointer';
+                    badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-sky-400"></span><span>${escapeHtml(text || 'พร้อมใช้งาน')}</span>`;
+                }
+            }
+
+            function updateGlobalCounters() {
+                const count = registrations.length;
+                document.querySelectorAll('.live-pax-count').forEach(el => {
+                    el.textContent = String(count);
+                });
+
+                const remSeats = Math.max(0, PRICING.maxVanSeats - count);
+                const seatsBadge = document.getElementById('hub-seats-badge');
+                if (seatsBadge) {
+                    seatsBadge.textContent = remSeats > 0 ? `ว่าง ${remSeats} ที่นั่ง` : 'เต็ม 15 ที่นั่งแล้ว';
+                    seatsBadge.className = remSeats > 0 ? 'font-bold text-emerald-300' : 'font-bold text-amber-300';
+                }
+
+                const progBar = document.getElementById('hub-progress-bar');
+                if (progBar) {
+                    const pct = Math.min(100, Math.round((count / PRICING.maxVanSeats) * 100));
+                    progBar.style.width = `${pct}%`;
+                }
+
+                const { hotelStats } = computeRoomMatchingAndCosts();
+                const hubRoomsPill = document.getElementById('hub-rooms-summary-pill');
+                if (hubRoomsPill) {
+                    hubRoomsPill.textContent = `เบรฟส์ ${hotelStats.braves.roomsBooked}/${HOTELS.braves.availableRooms} ห้อง • หยุนติ้งเสว ${hotelStats.yunding.roomsBooked}/${HOTELS.yunding.availableRooms} ห้อง`;
+                }
+
+                const wizQuotaBraves = document.getElementById('wiz-quota-braves');
+                if (wizQuotaBraves) {
+                    const remB = Math.max(0, HOTELS.braves.availableRooms - hotelStats.braves.roomsBooked);
+                    wizQuotaBraves.textContent = `เหลือ ${remB} ห้อง`;
+                }
+
+                const wizQuotaYunding = document.getElementById('wiz-quota-yunding');
+                if (wizQuotaYunding) {
+                    const remY = Math.max(0, HOTELS.yunding.availableRooms - hotelStats.yunding.roomsBooked);
+                    wizQuotaYunding.textContent = `เหลือ ${remY} ห้อง`;
+                }
+            }
+
+            // =============================================================
+            // 6. GITHUB API DATABASE SYNC ENGINE
+            // =============================================================
+            function getGitHubApiUrl() {
+                const { owner, repo, filePath } = activeGitHubTarget;
+                const cleanPath = String(filePath || 'registrations.json').replace(/^\/+/, '');
+                return `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${cleanPath}`;
+            }
+
+            async function fetchGitHubRecords() {
+                if (!activeGitHubTarget.owner || !activeGitHubTarget.repo) return null;
+                const url = `${getGitHubApiUrl()}?ref=${encodeURIComponent(activeGitHubTarget.branch || 'main')}&t=${Date.now()}`;
+                const headers = {
+                    'Accept': 'application/vnd.github+json'
+                };
+                if (activeGitHubTarget.token) {
+                    headers['Authorization'] = `Bearer ${activeGitHubTarget.token}`;
+                }
+
+                const resp = await fetch(url, { headers, cache: 'no-store' });
+                if (resp.status === 404) {
+                    githubFileSha = null;
+                    return [];
+                }
+                if (!resp.ok) {
+                    throw new Error(`GitHub API HTTP ${resp.status}`);
+                }
+                const data = await resp.json();
+                githubFileSha = data.sha || null;
+                if (!data.content) return [];
+                const decodedStr = base64ToUtf8(data.content);
+                const parsed = JSON.parse(decodedStr);
+                return Array.isArray(parsed) ? parsed : [];
+            }
+
+            async function mutateGitHubRecords(mutatorFn, commitMessage, retryCount = 0) {
+                const latest = await fetchGitHubRecords();
+                const baseList = Array.isArray(latest) ? latest : [...registrations];
+                const updatedList = await mutatorFn(baseList);
+
+                const url = getGitHubApiUrl();
+                const bodyPayload = {
+                    message: commitMessage || 'Update trip registrations',
+                    content: utf8ToBase64(JSON.stringify(updatedList, null, 2)),
+                    branch: activeGitHubTarget.branch || 'main'
+                };
+                if (githubFileSha) {
+                    bodyPayload.sha = githubFileSha;
+                }
+
+                const resp = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Accept': 'application/vnd.github+json',
+                        'Authorization': `Bearer ${activeGitHubTarget.token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(bodyPayload)
+                });
+
+                if (resp.status === 409 && retryCount < 2) {
+                    return mutateGitHubRecords(mutatorFn, commitMessage, retryCount + 1);
+                }
+
+                if (!resp.ok) {
+                    const errText = await resp.text();
+                    throw new Error(`บันทึก GitHub ไม่สำเร็จ (${resp.status}): ${errText}`);
+                }
+
+                const resJson = await resp.json();
+                if (resJson && resJson.content && resJson.content.sha) {
+                    githubFileSha = resJson.content.sha;
+                }
+                registrations = updatedList;
+                saveLocalCache();
+                return updatedList;
+            }
+
+            async function initCentralDatabase() {
+                // Load local cache immediately for instant UI responsiveness
+                const cached = loadLocalCache();
+                if (cached.length > 0) {
+                    registrations = cached;
+                    updateGlobalCounters();
+                }
+
+                if (!GITHUB_DB_CONFIG.enabled || !activeGitHubTarget.token) {
+                    useGitHubDb = false;
+                    updateDbStatusBadge('local', 'พร้อมใช้งาน (Local)');
+                    return;
+                }
+
+                updateDbStatusBadge('syncing', 'ซิงก์ GitHub...');
+                try {
+                    const remoteRecords = await fetchGitHubRecords();
+                    if (Array.isArray(remoteRecords)) {
+                        registrations = remoteRecords;
+                        saveLocalCache();
+                        useGitHubDb = true;
+                        updateDbStatusBadge('github', 'GitHub DB');
+                        updateGlobalCounters();
+                        if (activeView === 'results') renderResultsViews();
+                    }
+                } catch (err) {
+                    console.warn('GitHub sync fallback to local:', err);
+                    useGitHubDb = Boolean(activeGitHubTarget.token);
+                    updateDbStatusBadge('local', 'Local Cache');
+                }
+            }
+
+            window.openDbSetupModal = function() {
+                const modal = document.getElementById('db-setup-modal');
+                const statusBox = document.getElementById('db-setup-status-box');
+                const ownerEl = document.getElementById('gh-input-owner');
+                const repoEl = document.getElementById('gh-input-repo');
+                const branchEl = document.getElementById('gh-input-branch');
+                const pathEl = document.getElementById('gh-input-filepath');
+                const tokenEl = document.getElementById('gh-input-token');
+
+                if (ownerEl) ownerEl.value = activeGitHubTarget.owner || 'padrewcdit';
+                if (repoEl) repoEl.value = activeGitHubTarget.repo || 'harbin-trip';
+                if (branchEl) branchEl.value = activeGitHubTarget.branch || 'main';
+                if (pathEl) pathEl.value = activeGitHubTarget.filePath || 'registrations.json';
+                if (tokenEl) tokenEl.value = activeGitHubTarget.token || '';
+
+                if (statusBox) {
+                    if (useGitHubDb && activeGitHubTarget.token) {
+                        statusBox.className = 'p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-1';
+                        statusBox.innerHTML = `
+                            <p class="font-bold text-sm">✅ เชื่อมต่อกับ GitHub DB สำเร็จแล้ว</p>
+                            <p>Repository: <strong>${escapeHtml(activeGitHubTarget.owner)}/${escapeHtml(activeGitHubTarget.repo)}</strong> • ไฟล์: <code>${escapeHtml(activeGitHubTarget.filePath)}</code> (ข้อมูลทั้งหมด ${registrations.length} รายการ)</p>
+                        `;
+                    } else {
+                        statusBox.className = 'p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 space-y-1';
+                        statusBox.innerHTML = `
+                            <p class="font-bold text-sm">⚠️ ยังไม่ได้ยืนยัน Token หรือกำลังใช้ Local Cache</p>
+                            <p>กรอก GitHub Token ด้านล่างแล้วกด "ทดสอบเชื่อมต่อ & ซิงก์ทันที"</p>
+                        `;
+                    }
+                }
+
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    renderIcons();
+                }
+            };
+
+            window.closeDbSetupModal = function() {
+                const modal = document.getElementById('db-setup-modal');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            };
+
+            window.applySessionGitHubToken = async function() {
+                const owner = (document.getElementById('gh-input-owner')?.value || '').trim();
+                const repo = (document.getElementById('gh-input-repo')?.value || '').trim();
+                const branch = (document.getElementById('gh-input-branch')?.value || 'main').trim();
+                const filePath = (document.getElementById('gh-input-filepath')?.value || 'registrations.json').trim();
+                const token = (document.getElementById('gh-input-token')?.value || '').trim();
+
+                if (!owner || !repo || !token) {
+                    showToast('กรุณากรอก Owner, Repository และ Token ให้ครบ', true);
+                    return;
+                }
+
+                activeGitHubTarget = { owner, repo, branch, filePath, token };
+                try { localStorage.setItem('harbin_trip_gh_token', token); } catch (e) {}
+
+                updateDbStatusBadge('syncing', 'กำลังทดสอบ...');
+                try {
+                    const records = await fetchGitHubRecords();
+                    registrations = records || [];
+                    saveLocalCache();
+                    useGitHubDb = true;
+                    updateDbStatusBadge('github', 'GitHub DB');
+                    updateGlobalCounters();
+                    if (activeView === 'results') renderResultsViews();
+                    openDbSetupModal();
+                    showToast('เชื่อมต่อและซิงก์ข้อมูลจาก GitHub สำเร็จ!');
+                } catch (err) {
+                    useGitHubDb = false;
+                    updateDbStatusBadge('local', 'เชื่อมต่อไม่ผ่าน');
+                    showToast(`เชื่อมต่อไม่สำเร็จ: ${err.message}`, true);
+                }
+            };
+
+            window.copyGitHubConfigSnippet = function() {
+                const snippet = `const GITHUB_DB_CONFIG = {\n    enabled: true,\n    owner: '${activeGitHubTarget.owner}',\n    repo: '${activeGitHubTarget.repo}',\n    branch: '${activeGitHubTarget.branch}',\n    filePath: '${activeGitHubTarget.filePath}',\n    token: '${activeGitHubTarget.token}'\n};`;
+                copyTextFallback(snippet, 'คัดลอกโค้ดตั้งค่า GITHUB_DB_CONFIG เรียบร้อยแล้ว');
+            };
+
+            // =============================================================
+            // 7. ADMIN AUTHENTICATION (devilnananae / naenanadevil)
+            // =============================================================
+            function updateAdminUI() {
+                const headerBtn = document.getElementById('header-admin-btn');
+                const resultsLoginBtn = document.getElementById('results-admin-login-btn');
+                const controlBar = document.getElementById('admin-control-bar');
+
+                if (isAdminLoggedIn) {
+                    if (headerBtn) {
+                        headerBtn.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-500/25 text-emerald-200 border border-emerald-400/40 transition cursor-pointer';
+                        headerBtn.innerHTML = '<i data-lucide="shield-check" class="w-3 h-3"></i><span>Admin</span>';
+                    }
+                    if (resultsLoginBtn) resultsLoginBtn.classList.add('hidden');
+                    if (controlBar) controlBar.classList.remove('hidden');
+                } else {
+                    if (headerBtn) {
+                        headerBtn.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-white/10 hover:bg-white/20 text-sky-200 border border-white/15 transition cursor-pointer';
+                        headerBtn.innerHTML = '<i data-lucide="lock" class="w-3 h-3"></i><span>แอดมิน</span>';
+                    }
+                    if (resultsLoginBtn) resultsLoginBtn.classList.remove('hidden');
+                    if (controlBar) controlBar.classList.add('hidden');
+                }
+                renderIcons();
+            }
+
+            window.handleHeaderAdminClick = function() {
+                if (isAdminLoggedIn) {
+                    navigateTo('results');
+                    showToast('เข้าสู่ระบบแอดมินอยู่แล้ว (devilnananae)');
+                } else {
+                    openAdminLoginModal();
+                }
+            };
+
+            window.openAdminLoginModal = function() {
+                const modal = document.getElementById('admin-login-modal');
+                const errEl = document.getElementById('admin-login-error');
+                const userEl = document.getElementById('admin-username-input');
+                const passEl = document.getElementById('admin-password-input');
+                if (errEl) errEl.classList.add('hidden');
+                if (userEl) userEl.value = '';
+                if (passEl) passEl.value = '';
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    renderIcons();
+                    setTimeout(() => { if (userEl) userEl.focus(); }, 60);
+                }
+            };
+
+            window.closeAdminLoginModal = function() {
+                const modal = document.getElementById('admin-login-modal');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            };
+
+            window.submitAdminLogin = function(e) {
+                if (e) e.preventDefault();
+                const user = (document.getElementById('admin-username-input')?.value || '').trim();
+                const pass = (document.getElementById('admin-password-input')?.value || '').trim();
+                const errEl = document.getElementById('admin-login-error');
+
+                if (user === 'devilnananae' && pass === 'naenanadevil') {
+                    isAdminLoggedIn = true;
+                    try { sessionStorage.setItem('harbin_trip_admin_auth', '1'); } catch (err) {}
+                    closeAdminLoginModal();
+                    updateAdminUI();
+                    if (activeView === 'results') renderResultsViews();
+                    showToast('เข้าสู่ระบบแอดมินสำเร็จ! ปลดล็อกสิทธิ์แก้ไขและลบข้อมูลแล้ว');
+                } else {
+                    if (errEl) errEl.classList.remove('hidden');
+                }
+            };
+
+            window.logoutAdmin = function() {
+                isAdminLoggedIn = false;
+                try { sessionStorage.removeItem('harbin_trip_admin_auth'); } catch (err) {}
+                updateAdminUI();
+                if (activeView === 'results') renderResultsViews();
+                showToast('ออกจากระบบแอดมินเรียบร้อยแล้ว');
+            };
+
+            // =============================================================
+            // 8. NAVIGATION & STEP-BY-STEP WIZARD LOGIC
+            // =============================================================
+            window.navigateTo = function(viewName) {
+                activeView = viewName;
+                const views = ['hub', 'overview', 'register', 'budget', 'results'];
+                views.forEach(v => {
+                    const el = document.getElementById(`view-${v}`);
+                    if (!el) return;
+                    if (v === viewName) el.classList.remove('hidden');
+                    else el.classList.add('hidden');
+                });
+
+                document.querySelectorAll('.top-nav-btn').forEach(btn => {
+                    const isTarget = btn.getAttribute('data-nav') === viewName;
+                    btn.className = isTarget
+                        ? 'top-nav-btn px-3 py-2 rounded-xl bg-white text-slate-900 font-bold shadow-sm transition'
+                        : 'top-nav-btn px-3 py-2 rounded-xl text-sky-100 hover:bg-white/10 transition';
+                });
+
+                document.querySelectorAll('.bottom-nav-btn').forEach(btn => {
+                    const isTarget = btn.getAttribute('data-nav') === viewName;
+                    if (isTarget) {
+                        btn.classList.remove('text-slate-500');
+                        btn.classList.add('text-blue-600');
+                    } else {
+                        btn.classList.remove('text-blue-600');
+                        btn.classList.add('text-slate-500');
+                    }
+                });
+
+                const backHubBtn = document.getElementById('top-back-hub-btn');
+                if (backHubBtn) {
+                    if (viewName === 'hub') backHubBtn.classList.add('hidden');
+                    else backHubBtn.classList.remove('hidden');
+                }
+
+                if (viewName === 'register') {
+                    selectHotel(document.getElementById('hotelId')?.value || 'braves');
+                }
+                if (viewName === 'results') {
+                    updateAdminUI();
+                    renderResultsViews();
+                }
+                if (viewName === 'budget') {
+                    renderDbdSection();
+                }
+
+                renderIcons();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            window.selectGender = function(val) {
+                const input = document.getElementById('gender');
+                if (input) input.value = val;
+                document.querySelectorAll('.gender-btn').forEach(btn => {
+                    const isMatch = btn.getAttribute('data-gender') === val;
+                    btn.className = isMatch
+                        ? 'gender-btn py-3.5 rounded-2xl border-2 border-blue-600 bg-blue-50 text-blue-700 font-bold text-sm transition'
+                        : 'gender-btn py-3.5 rounded-2xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-sm transition';
+                });
+            };
+
             window.selectHotel = function(hotelKey) {
                 const hotel = getHotelObj(hotelKey);
                 const hotelInput = document.getElementById('hotelId');
@@ -1526,7 +2126,6 @@
                         : 'text-left p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-amber-400 transition space-y-1.5';
                 }
 
-                // Handle forced 'ซื้อเอง' for 'self_other'
                 const lockBadge = document.getElementById('hotel-purchase-lock-badge');
                 const depositBtn = document.getElementById('hotel-buy-deposit');
                 const roomCapSection = document.getElementById('room-capacity-section');
@@ -1653,7 +2252,50 @@
                     </div>
                 `;
             }
-// ... existing code ... -->
+
+            function renderRoomCapacityButtons(hotel, selectedCap) {
+                const container = document.getElementById('room-capacity-options-container');
+                if (!container) return;
+
+                const options = [];
+                for (let cap = hotel.maxCapacity; cap >= 1; cap--) {
+                    const perPerson = hotel.roomTotal2Nights / cap;
+                    let badgeText = '';
+                    let badgeCls = 'bg-slate-100 text-slate-700';
+                    if (cap === hotel.maxCapacity) {
+                        badgeText = 'คุ้มค่าที่สุด';
+                        badgeCls = 'bg-blue-600 text-white';
+                    } else if (cap === 1) {
+                        badgeText = 'ส่วนตัวเต็มห้อง';
+                        badgeCls = 'bg-purple-100 text-purple-700';
+                    } else {
+                        badgeText = `หาร ${cap} ท่าน`;
+                        badgeCls = 'bg-indigo-100 text-indigo-700';
+                    }
+
+                    const descText = cap === 1
+                        ? `พักส่วนตัวคนเดียวเต็มห้อง 2 คืน (฿${fmtThb(hotel.roomTotal2Nights)} / ห้อง)`
+                        : `หารค่าห้อง ฿${fmtThb(hotel.roomTotal2Nights)} ร่วมกัน ${cap} ท่าน`;
+
+                    options.push(`
+                        <button type="button" onclick="selectRoomCapacity(${cap})" data-cap="${cap}" class="room-cap-btn w-full text-left p-4 rounded-2xl border-2 ${cap === selectedCap ? 'border-blue-600 bg-blue-50/70' : 'border-slate-200 bg-white hover:border-blue-300'} transition flex items-center justify-between gap-3">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2 py-0.5 rounded-md ${badgeCls} text-[10px] font-bold">${badgeText}</span>
+                                    <span class="font-bold text-sm sm:text-base text-slate-900">นอน ${cap} คน / ห้อง</span>
+                                </div>
+                                <p class="text-xs text-slate-600">${descText}</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <p class="text-base sm:text-lg font-extrabold text-blue-700">฿ ${fmtThb(perPerson)}</p>
+                                <p class="text-[11px] text-slate-500">ค่าที่พัก 2 คืน/คน</p>
+                            </div>
+                        </button>
+                    `);
+                }
+                container.innerHTML = options.join('');
+            }
+
             window.selectRoomCapacity = function(cap) {
                 const hotel = getHotelObj(document.getElementById('hotelId')?.value || 'braves');
                 const numCap = Math.max(1, Math.min(hotel.maxCapacity, Number(cap) || hotel.maxCapacity));
@@ -1682,16 +2324,129 @@
                     if (hint) hint.textContent = `ระบุชื่อเล่นเพื่อนที่เลือกพัก "${hotel.shortName}" เหมือนกัน (แบบนอน ${numCap} คน/ห้อง) เพื่อให้ระบบแมตช์ชิ่งให้อัตโนมัติ`;
                 }
             };
-// ... existing code ... -->
+
+            function validateWizardStep(step) {
+                if (step === 1) {
+                    const th = (document.getElementById('fullNameTh')?.value || '').trim();
+                    const nick = (document.getElementById('nickname')?.value || '').trim();
+                    if (!th) {
+                        showToast('กรุณากรอกชื่อ-นามสกุล (ภาษาไทย)', true);
+                        document.getElementById('fullNameTh')?.focus();
+                        return false;
+                    }
+                    if (!nick) {
+                        showToast('กรุณากรอกชื่อเล่นของคุณ', true);
+                        document.getElementById('nickname')?.focus();
+                        return false;
+                    }
+                }
+                if (step === 2) {
+                    const en = (document.getElementById('fullNameEn')?.value || '').trim();
+                    if (!en) {
+                        showToast('กรุณากรอกชื่อภาษาอังกฤษให้ตรงกับพาสปอร์ต', true);
+                        document.getElementById('fullNameEn')?.focus();
+                        return false;
+                    }
+                }
+                if (step === 3) {
+                    const phone = (document.getElementById('phone')?.value || '').trim();
+                    const cid = (document.getElementById('contactId')?.value || '').trim();
+                    if (!phone) {
+                        showToast('กรุณากรอกเบอร์โทรศัพท์ติดต่อ', true);
+                        document.getElementById('phone')?.focus();
+                        return false;
+                    }
+                    if (!cid) {
+                        showToast('กรุณากรอก LINE ID หรือ WeChat ID', true);
+                        document.getElementById('contactId')?.focus();
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            window.goToWizardStep = function(step) {
+                const target = Math.max(1, Math.min(TOTAL_WIZARD_STEPS, Number(step) || 1));
+                currentWizardStep = target;
+
+                for (let i = 1; i <= TOTAL_WIZARD_STEPS; i++) {
+                    const el = document.getElementById(`wizard-step-${i}`);
+                    if (!el) continue;
+                    if (i === target) el.classList.remove('hidden');
+                    else el.classList.add('hidden');
+                }
+
+                const badge = document.getElementById('wizard-step-badge');
+                const bar = document.getElementById('wizard-progress-bar');
+                const prevBtn = document.getElementById('wizard-prev-btn');
+                const nextBtn = document.getElementById('wizard-next-btn');
+                const submitBtn = document.getElementById('wizard-submit-btn');
+
+                if (badge) {
+                    badge.textContent = target < TOTAL_WIZARD_STEPS
+                        ? `ขั้นตอนที่ ${target} จาก ${TOTAL_WIZARD_STEPS}`
+                        : `ขั้นตอนที่ ${TOTAL_WIZARD_STEPS} จาก ${TOTAL_WIZARD_STEPS} • สรุปก่อนบันทึก`;
+                }
+                if (bar) {
+                    bar.style.width = `${Math.round((target / TOTAL_WIZARD_STEPS) * 100)}%`;
+                }
+
+                if (prevBtn) {
+                    prevBtn.style.visibility = target === 1 ? 'hidden' : 'visible';
+                }
+                if (nextBtn && submitBtn) {
+                    if (target === TOTAL_WIZARD_STEPS) {
+                        nextBtn.classList.add('hidden');
+                        submitBtn.classList.remove('hidden');
+                    } else {
+                        nextBtn.classList.remove('hidden');
+                        submitBtn.classList.add('hidden');
+                    }
+                }
+
                 if (target === 4) {
                     selectHotel(document.getElementById('hotelId')?.value || 'braves');
                 }
                 if (target === 5) {
                     selectRoomCapacity(document.getElementById('roomCapacity')?.value || 3);
                 }
-
                 if (target === TOTAL_WIZARD_STEPS) {
-// ... existing code ... -->
+                    renderReviewSummary();
+                }
+
+                renderIcons();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            window.nextWizardStep = function() {
+                if (!validateWizardStep(currentWizardStep)) return;
+                if (currentWizardStep < TOTAL_WIZARD_STEPS) {
+                    goToWizardStep(currentWizardStep + 1);
+                }
+            };
+
+            window.prevWizardStep = function() {
+                if (currentWizardStep > 1) {
+                    goToWizardStep(currentWizardStep - 1);
+                }
+            };
+
+            window.resetWizard = function(clearFields = true) {
+                const editInput = document.getElementById('editing-doc-id');
+                const cancelEditBtn = document.getElementById('wizard-cancel-edit-btn');
+                const headerTitle = document.getElementById('wizard-header-title');
+                const submitText = document.getElementById('wizard-submit-text');
+
+                if (editInput) editInput.value = '';
+                if (cancelEditBtn) cancelEditBtn.classList.add('hidden');
+                if (headerTitle) headerTitle.textContent = 'ลงทะเบียนผู้เดินทาง';
+                if (submitText) submitText.textContent = 'ยืนยันและบันทึกข้อมูล';
+
+                if (clearFields) {
+                    ['fullNameTh', 'nickname', 'fullNameEn', 'phone', 'contactId', 'emergencyContact', 'roommateRequest', 'arrivalNote', 'notes'].forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) el.value = '';
+                    });
                     selectGender('ชาย');
                     selectHotel('braves');
                     selectHotelPurchaseMode('ฝากซื้อ', false);
@@ -1801,7 +2556,7 @@
             }
 
             // =============================================================
-            // 8. SAVE / UPDATE / DELETE REGISTRATION
+            // 9. SAVE / UPDATE / DELETE REGISTRATION
             // =============================================================
             window.submitRegistration = async function() {
                 if (!validateWizardStep(1) || !validateWizardStep(2) || !validateWizardStep(3)) return;
@@ -1848,7 +2603,82 @@
                         notes: (document.getElementById('notes')?.value || '').trim() || '-',
                         updatedAtMs: Date.now()
                     };
-// ... existing code ... -->
+
+                    if (useGitHubDb && activeGitHubTarget.token) {
+                        updateDbStatusBadge('syncing', 'กำลังบันทึก...');
+                        await mutateGitHubRecords((latestList) => {
+                            if (editingId) {
+                                const idx = latestList.findIndex(r => r.id === editingId);
+                                if (idx >= 0) {
+                                    latestList[idx] = { ...latestList[idx], ...recordData, id: editingId };
+                                } else {
+                                    latestList.push({ ...recordData, id: editingId, createdAtMs: Date.now() });
+                                }
+                            } else {
+                                latestList.push({
+                                    ...recordData,
+                                    id: 'reg_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+                                    createdAtMs: Date.now()
+                                });
+                            }
+                            return latestList;
+                        }, editingId ? `Update participant: ${recordData.nickname}` : `Register participant: ${recordData.nickname}`);
+                        updateDbStatusBadge('github', 'GitHub DB');
+                    } else {
+                        if (editingId) {
+                            const idx = registrations.findIndex(r => r.id === editingId);
+                            if (idx >= 0) {
+                                registrations[idx] = { ...registrations[idx], ...recordData, id: editingId };
+                            }
+                        } else {
+                            registrations.push({
+                                ...recordData,
+                                id: 'reg_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+                                createdAtMs: Date.now()
+                            });
+                        }
+                        saveLocalCache();
+                    }
+
+                    updateGlobalCounters();
+                    resetWizard(true);
+                    navigateTo('results');
+                    showToast(editingId ? 'อัปเดตข้อมูลผู้เดินทางเรียบร้อยแล้ว!' : 'ลงทะเบียนสำเร็จ! บันทึกข้อมูลลงฐานข้อมูลแล้ว');
+                } catch (err) {
+                    console.error('Save error:', err);
+                    updateDbStatusBadge('local', 'ซิงก์ขัดข้อง');
+                    showToast(`เกิดข้อผิดพลาดในการบันทึก: ${err.message}`, true);
+                } finally {
+                    if (submitBtn) submitBtn.disabled = false;
+                    if (submitText) submitText.textContent = prevLabel;
+                }
+            };
+
+            window.editRegistration = function(id) {
+                if (!isAdminLoggedIn) {
+                    openAdminLoginModal();
+                    showToast('กรุณาเข้าสู่ระบบแอดมินก่อนแก้ไขข้อมูล', true);
+                    return;
+                }
+                const item = registrations.find(r => r.id === id);
+                if (!item) return;
+
+                const editInput = document.getElementById('editing-doc-id');
+                const cancelEditBtn = document.getElementById('wizard-cancel-edit-btn');
+                const headerTitle = document.getElementById('wizard-header-title');
+                const submitText = document.getElementById('wizard-submit-text');
+
+                if (editInput) editInput.value = item.id;
+                if (cancelEditBtn) cancelEditBtn.classList.remove('hidden');
+                if (headerTitle) headerTitle.textContent = `แก้ไขข้อมูล: ${item.nickname} (${item.fullNameTh})`;
+                if (submitText) submitText.textContent = 'บันทึกการแก้ไขข้อมูล';
+
+                document.getElementById('fullNameTh').value = item.fullNameTh || '';
+                document.getElementById('nickname').value = item.nickname || '';
+                document.getElementById('fullNameEn').value = item.fullNameEn || '';
+                selectGender(item.gender || 'ชาย');
+                document.getElementById('phone').value = item.phone || '';
+                document.getElementById('contactId').value = item.contactId || '';
                 document.getElementById('emergencyContact').value = item.emergencyContact === '-' ? '' : (item.emergencyContact || '');
                 selectHotel(item.hotelId || 'braves');
                 selectHotelPurchaseMode(item.hotelPurchaseMode || 'ฝากซื้อ', (item.hotelId || 'braves') === 'self_other');
@@ -1861,9 +2691,239 @@
                 document.getElementById('arrivalNote').value = item.arrivalNote || '';
                 document.getElementById('coldReadiness').value = item.coldReadiness || 'เตรียมครบแล้ว (เสื้อขนเป็ด, ลองจอน, รองเท้าลุยหิมะ)';
                 document.getElementById('notes').value = item.notes === '-' ? '' : (item.notes || '');
-// ... existing code ... -->
+
+                const savedActs = Array.isArray(item.activities) ? item.activities : [];
+                document.querySelectorAll('input[name="activities"]').forEach(cb => {
+                    cb.checked = savedActs.includes(cb.value);
+                });
+
+                navigateTo('register');
+                goToWizardStep(1);
+            };
+
+            window.requestDelete = function(id, name) {
+                if (!isAdminLoggedIn) {
+                    openAdminLoginModal();
+                    showToast('กรุณาเข้าสู่ระบบแอดมินก่อนลบรายชื่อ', true);
+                    return;
+                }
+                pendingDeleteId = id;
+                const textEl = document.getElementById('confirm-delete-text');
+                if (textEl) textEl.textContent = `คุณต้องการลบรายชื่อ "${name}" ออกจากฐานข้อมูลใช่หรือไม่?`;
+
+                const modal = document.getElementById('confirm-delete-modal');
+                const confirmBtn = document.getElementById('confirm-delete-action-btn');
+                if (confirmBtn) {
+                    confirmBtn.onclick = executeDelete;
+                }
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    renderIcons();
+                }
+            };
+
+            window.closeDeleteModal = function() {
+                pendingDeleteId = null;
+                const modal = document.getElementById('confirm-delete-modal');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            };
+
+            async function executeDelete() {
+                if (!pendingDeleteId) return;
+                const targetId = pendingDeleteId;
+                closeDeleteModal();
+
+                try {
+                    if (useGitHubDb && activeGitHubTarget.token) {
+                        updateDbStatusBadge('syncing', 'กำลังลบ...');
+                        await mutateGitHubRecords((latestList) => latestList.filter(r => r.id !== targetId), `Delete participant ${targetId}`);
+                        updateDbStatusBadge('github', 'GitHub DB');
+                    } else {
+                        registrations = registrations.filter(r => r.id !== targetId);
+                        saveLocalCache();
+                    }
+                    updateGlobalCounters();
+                    renderResultsViews();
+                    showToast('ลบรายชื่อออกจากฐานข้อมูลเรียบร้อยแล้ว');
+                } catch (err) {
+                    showToast(`ลบข้อมูลไม่สำเร็จ: ${err.message}`, true);
+                }
+            }
+
+            window.requestClearAll = function() {
+                if (!isAdminLoggedIn) return;
+                const modal = document.getElementById('confirm-clear-all-modal');
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    renderIcons();
+                }
+            };
+
+            window.closeClearAllModal = function() {
+                const modal = document.getElementById('confirm-clear-all-modal');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            };
+
+            window.executeClearAll = async function() {
+                closeClearAllModal();
+                try {
+                    if (useGitHubDb && activeGitHubTarget.token) {
+                        updateDbStatusBadge('syncing', 'กำลังล้างข้อมูล...');
+                        await mutateGitHubRecords(() => [], 'Clear all registrations');
+                        updateDbStatusBadge('github', 'GitHub DB');
+                    } else {
+                        registrations = [];
+                        saveLocalCache();
+                    }
+                    updateGlobalCounters();
+                    renderResultsViews();
+                    showToast('ล้างข้อมูลผู้ลงทะเบียนทั้งหมดเรียบร้อยแล้ว');
+                } catch (err) {
+                    showToast(`ล้างข้อมูลไม่สำเร็จ: ${err.message}`, true);
+                }
+            };
+
             // =============================================================
-            // 9. SMART HOTEL-GROUPED ROOM MATCHING & BOOKING CALCULATOR
+            // 10. DBD BUDGET ESTIMATOR (MENU 3: 1-15 PAX)
+            // =============================================================
+            window.setDbdHotel = function(hotelId) {
+                const hotel = getHotelObj(hotelId);
+                dbdHotelId = hotel.id;
+                if (dbdRoomCap > hotel.maxCapacity) {
+                    dbdRoomCap = hotel.maxCapacity;
+                }
+
+                const btnB = document.getElementById('dbd-hotel-btn-braves');
+                const btnY = document.getElementById('dbd-hotel-btn-yunding');
+                if (btnB) {
+                    btnB.className = dbdHotelId === 'braves'
+                        ? 'p-3 rounded-2xl border-2 border-emerald-600 bg-emerald-50 text-left transition'
+                        : 'p-3 rounded-2xl border-2 border-slate-200 bg-white hover:border-emerald-400 text-left transition';
+                }
+                if (btnY) {
+                    btnY.className = dbdHotelId === 'yunding'
+                        ? 'p-3 rounded-2xl border-2 border-blue-600 bg-blue-50 text-left transition'
+                        : 'p-3 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-400 text-left transition';
+                }
+
+                renderDbdSection();
+            };
+
+            window.setDbdRoomCap = function(cap) {
+                const hotel = getHotelObj(dbdHotelId);
+                dbdRoomCap = Math.max(1, Math.min(hotel.maxCapacity, Number(cap) || hotel.maxCapacity));
+                renderDbdSection();
+            };
+
+            window.selectDbdPax = function(val) {
+                dbdSelectedPax = Math.max(1, Math.min(15, Number(val) || 10));
+                const slider = document.getElementById('dbd-pax-slider');
+                if (slider) slider.value = dbdSelectedPax;
+                renderDbdSection();
+            };
+
+            window.stepDbdPax = function(delta) {
+                selectDbdPax(dbdSelectedPax + delta);
+            };
+
+            window.scrollDbdCarousel = function(dir) {
+                const track = document.getElementById('dbd-carousel-track');
+                if (!track) return;
+                track.scrollBy({ left: dir * 260, behavior: 'smooth' });
+            };
+
+            window.renderDbdSection = function() {
+                const hotel = getHotelObj(dbdHotelId);
+                const capContainer = document.getElementById('dbd-cap-buttons-container');
+                if (capContainer) {
+                    capContainer.className = `grid grid-cols-${hotel.maxCapacity} gap-2`;
+                    const btns = [];
+                    for (let c = hotel.maxCapacity; c >= 1; c--) {
+                        const pp = hotel.roomTotal2Nights / c;
+                        const active = c === dbdRoomCap;
+                        btns.push(`
+                            <button type="button" onclick="setDbdRoomCap(${c})" class="py-2.5 px-2.5 rounded-xl ${active ? 'bg-blue-600 text-white font-bold shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold'} text-xs sm:text-sm transition">
+                                นอน ${c} คน/ห้อง<br><span class="text-[10px] font-normal ${active ? 'opacity-90' : 'text-slate-500'}">฿${fmtThb(pp)}/คน</span>
+                            </button>
+                        `);
+                    }
+                    capContainer.innerHTML = btns.join('');
+                }
+
+                const heuCost = PRICING.heuTransitOptions.metro_harbin.thb;
+                const hotelPerPerson = hotel.roomTotal2Nights / dbdRoomCap;
+                const vanCost = PRICING.shuttleRoundTripNet / dbdSelectedPax;
+                const totalPerPerson = heuCost + vanCost + hotelPerPerson;
+
+                const full15VanCost = PRICING.shuttleRoundTripNet / 15;
+                const full15Total = heuCost + full15VanCost + hotelPerPerson;
+                const diffFrom15 = totalPerPerson - full15Total;
+
+                const badgeEl = document.getElementById('dbd-match-badge');
+                const dispEl = document.getElementById('dbd-selected-pax-display');
+                const subEl = document.getElementById('dbd-room-summary-sub');
+                const titleEl = document.getElementById('dbd-spot-hotel-title');
+                const totalEl = document.getElementById('dbd-spot-total');
+                const diffEl = document.getElementById('dbd-spot-diff');
+                const heuEl = document.getElementById('dbd-spot-heu');
+                const vanEl = document.getElementById('dbd-spot-van');
+                const capLabelEl = document.getElementById('dbd-spot-cap-label');
+                const hotelEl = document.getElementById('dbd-spot-hotel');
+
+                if (badgeEl) badgeEl.textContent = `${dbdSelectedPax} ท่าน`;
+                if (dispEl) dispEl.textContent = String(dbdSelectedPax);
+                if (subEl) subEl.textContent = `เหลือที่นั่งว่างในรถ ${15 - dbdSelectedPax} ที่`;
+                if (titleEl) titleEl.textContent = `ยอดประมาณการรวมสุทธิ / ท่าน (${hotel.shortName})`;
+                if (totalEl) totalEl.textContent = `฿ ${fmtThb(totalPerPerson)}`;
+                if (diffEl) {
+                    diffEl.textContent = dbdSelectedPax === 15
+                        ? 'เรทเต็มคัน 15 คน ประหยัดค่ารถเหมาที่สุดแล้ว!'
+                        : `ต่างจากเรทเต็มคัน 15 คน +฿ ${fmtThb(diffFrom15)} / ท่าน`;
+                }
+                if (heuEl) heuEl.textContent = `฿ ${fmtThb(heuCost)}`;
+                if (vanEl) vanEl.textContent = `฿ ${fmtThb(vanCost)}`;
+                if (capLabelEl) capLabelEl.textContent = `${dbdRoomCap} คน/ห้อง`;
+                if (hotelEl) hotelEl.textContent = `฿ ${fmtThb(hotelPerPerson)}`;
+                document.querySelectorAll('.dbd-n-label').forEach(el => { el.textContent = String(dbdSelectedPax); });
+
+                const track = document.getElementById('dbd-carousel-track');
+                if (track) {
+                    const cards = [];
+                    for (let n = 1; n <= 15; n++) {
+                        const vCost = PRICING.shuttleRoundTripNet / n;
+                        const tot = heuCost + vCost + hotelPerPerson;
+                        const isSel = n === dbdSelectedPax;
+                        cards.push(`
+                            <button type="button" onclick="selectDbdPax(${n})" class="snap-start shrink-0 w-44 text-left p-4 rounded-2xl border-2 ${isSel ? 'border-blue-600 bg-blue-50/80 shadow-md' : 'border-slate-200 bg-white hover:border-blue-300'} transition space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-extrabold ${isSel ? 'text-blue-700' : 'text-slate-800'}">กลุ่ม ${n} คน</span>
+                                    ${n === 15 ? '<span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-700 text-[9px] font-bold">เต็มคัน</span>' : ''}
+                                </div>
+                                <div>
+                                    <p class="text-lg font-extrabold text-slate-900">฿ ${fmtThb(tot)}</p>
+                                    <p class="text-[10px] text-slate-500">รวมสุทธิ / ท่าน</p>
+                                </div>
+                                <div class="pt-1.5 border-t border-slate-100 text-[10px] text-slate-600 space-y-0.5">
+                                    <p>รถเหมา: ฿${fmtThb(vCost)}</p>
+                                    <p>ที่พัก: ฿${fmtThb(hotelPerPerson)}</p>
+                                </div>
+                            </button>
+                        `);
+                    }
+                    track.innerHTML = cards.join('');
+                }
+            };
+
+            // =============================================================
+            // 11. SMART HOTEL-GROUPED ROOM MATCHING & BOOKING CALCULATOR
             // =============================================================
             function computeRoomMatchingAndCosts() {
                 const totalPax = registrations.length;
@@ -1882,7 +2942,6 @@
                     self_other: { hotel: HOTELS.self_other, depositPaxCount: 0, selfPaxCount: 0, roomsBooked: 0, totalHotelCost: 0 }
                 };
 
-                // Separate self-booked / self_other guests from group-booked ('ฝากซื้อ') guests
                 ordered.forEach(p => {
                     const hId = p.hotelId || 'braves';
                     const buyMode = hId === 'self_other' ? 'ซื้อเอง' : (p.hotelPurchaseMode || 'ฝากซื้อ');
@@ -1892,13 +2951,11 @@
                     }
                 });
 
-                // Group matching independently per hotel for 'ฝากซื้อ' guests
                 ['braves', 'yunding'].forEach(hId => {
                     const hotel = getHotelObj(hId);
                     const hotelGuests = ordered.filter(p => (p.hotelId || 'braves') === hId && (p.hotelPurchaseMode || 'ฝากซื้อ') === 'ฝากซื้อ');
                     const assignedIds = new Set();
 
-                    // 1) Private 1-person rooms
                     hotelGuests.filter(p => Number(p.roomCapacity || hotel.maxCapacity) === 1).forEach(p => {
                         assignedIds.add(p.id);
                         rooms.push({
@@ -1910,7 +2967,6 @@
                         });
                     });
 
-                    // 2) Shared rooms from maxCapacity down to 2
                     for (let cap = hotel.maxCapacity; cap >= 2; cap--) {
                         const pool = hotelGuests.filter(p => !assignedIds.has(p.id) && Number(p.roomCapacity || hotel.maxCapacity) === cap);
 
@@ -1967,7 +3023,6 @@
 
                 let groupGrandTotal = 0;
 
-                // Billing for group-matched ('ฝากซื้อ') rooms
                 rooms.forEach(room => {
                     const st = hotelStats[room.hotelId];
                     if (st) {
@@ -2008,7 +3063,6 @@
                     });
                 });
 
-                // Billing for self-booked ('ซื้อเอง' / 'self_other') guests
                 selfBookedGuests.forEach(m => {
                     const hId = m.hotelId || 'braves';
                     const hotel = getHotelObj(hId);
@@ -2049,7 +3103,28 @@
                     hotelStats
                 };
             }
-// ... existing code ... -->
+
+            window.switchResultsSubTab = function(tabName) {
+                resultsSubTab = tabName;
+                const roomsTab = document.getElementById('results-tab-rooms');
+                const listTab = document.getElementById('results-tab-list');
+                const roomsPane = document.getElementById('results-pane-rooms');
+                const listPane = document.getElementById('results-pane-list');
+
+                if (tabName === 'rooms') {
+                    if (roomsTab) roomsTab.className = 'py-2.5 px-3 rounded-xl bg-white text-slate-900 font-bold text-xs sm:text-sm shadow-sm transition flex items-center justify-center gap-1.5';
+                    if (listTab) listTab.className = 'py-2.5 px-3 rounded-xl text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-1.5';
+                    if (roomsPane) roomsPane.classList.remove('hidden');
+                    if (listPane) listPane.classList.add('hidden');
+                } else {
+                    if (listTab) listTab.className = 'py-2.5 px-3 rounded-xl bg-white text-slate-900 font-bold text-xs sm:text-sm shadow-sm transition flex items-center justify-center gap-1.5';
+                    if (roomsTab) roomsTab.className = 'py-2.5 px-3 rounded-xl text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-1.5';
+                    if (listPane) listPane.classList.remove('hidden');
+                    if (roomsPane) roomsPane.classList.add('hidden');
+                }
+                renderResultsViews();
+            };
+
             window.applyQuickFilter = function(hotelVal, hotelBuyVal, trainBuyVal) {
                 const hEl = document.getElementById('filter-hotel-select');
                 const hbEl = document.getElementById('filter-hotel-buy-select');
@@ -2064,7 +3139,6 @@
                 const { rooms, selfBookedGuests, personBillingMap, actualVanShare, groupGrandTotal, hotelStats } = computeRoomMatchingAndCosts();
                 const total = registrations.length;
 
-                // 1. Render Hotel Booking Summary Board ("ต้องจองที่ไหนกี่ห้อง" + "อื่นๆ จองห้องเอง")
                 const bookingCardsEl = document.getElementById('hotel-booking-summary-cards');
                 if (bookingCardsEl) {
                     const mainHotelCards = ['braves', 'yunding'].map(hId => {
@@ -2136,7 +3210,6 @@
                     bookingCardsEl.innerHTML = mainHotelCards + otherCardHtml;
                 }
 
-                // 2. KPI Updates
                 const maleCount = registrations.filter(r => r.gender === 'ชาย').length;
                 const femaleCount = registrations.filter(r => r.gender === 'หญิง').length;
                 const trainDepositCount = registrations.filter(r => (r.trainPurchaseMode || 'ฝากซื้อ') === 'ฝากซื้อ').length;
@@ -2165,7 +3238,6 @@
                 if (statGrand) statGrand.textContent = `฿ ${fmtThb(groupGrandTotal)}`;
                 if (statPref) statPref.textContent = `ฝากจอง ${rooms.length} ห้อง (${hotelDepositPax} คน) • ซื้อเอง ${selfBookedGuests.length} คน`;
 
-                // 3. Sub-Tab A: Room Matching Cards + Self-Booked Section
                 const roomContainer = document.getElementById('room-matching-container');
                 if (roomContainer) {
                     if (total === 0) {
@@ -2271,7 +3343,6 @@
                     }
                 }
 
-                // 4. Sub-Tab B: All Participants List with Multi-Criteria Filters
                 const listContainer = document.getElementById('participant-cards-container');
                 const countLabel = document.getElementById('filter-result-count-label');
                 if (listContainer) {
@@ -2370,7 +3441,10 @@
                 }
                 renderIcons();
             };
-// ... existing code ... -->
+
+            // =============================================================
+            // 12. MODALS & EXPORT / BACKUP / RESTORE
+            // =============================================================
             const MODAL_CONTENT = {
                 heu_transit: {
                     title: 'รายละเอียดการเดินทางรถไฟ ม.ฮาร์บินเอ็นจิเนียริ่ง (HEU) ↔ สถานียาบูลี',
@@ -2386,7 +3460,122 @@
                     `
                 },
                 shuttle: {
-// ... existing code ... -->
+                    title: 'รถตู้เหมาสายตรง 15 ที่นั่ง (เกาลูน) ยาบูลี ↔ หมู่บ้านหิมะ',
+                    html: `
+                        <div class="space-y-3 text-xs sm:text-sm">
+                            <div class="p-4 rounded-2xl bg-sky-50 border border-sky-200 space-y-1.5">
+                                <p class="font-bold text-sky-900">รถเหมาส่วนตัว 15 ที่นั่ง (ประเภท: เกาลูน) — ฝากซื้อทั้งกลุ่ม</p>
+                                <p>• <strong>ขาไป:</strong> ศุกร์ที่ 18 ธันวาคม 2569 (จากสถานียาบูลี → หมู่บ้านหิมะ) ราคา <strong>฿ 4,683.63</strong> (ลดจาก ฿4,833.63 ส่วนลด ฿150)</p>
+                                <p>• <strong>ขากลับ:</strong> อาทิตย์ที่ 20 ธันวาคม 2569 (จากหมู่บ้านหิมะ → สถานียาบูลี) ราคา <strong>฿ 4,683.63</strong></p>
+                                <p>• <strong>รวมไป-กลับ 2 เที่ยว:</strong> <strong>฿ 9,367.26 / คัน</strong> (หารเฉลี่ยเท่ากันทุกคนที่ร่วมเดินทางจริง)</p>
+                            </div>
+                        </div>
+                    `
+                },
+                hotel_braves: {
+                    title: 'บูทีคโฮมสเตย์เบรฟส์โฮมแลนด์ (ถนนเสวี่ยหยุน)',
+                    html: `
+                        <div class="space-y-3 text-xs sm:text-sm">
+                            <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-1.5">
+                                <p class="font-bold text-emerald-900">Cozy Warm Kang Room • พักได้ 1–3 คน/ห้อง (เหลือ 5 ห้องสุดท้าย)</p>
+                                <p>• <strong>ราคา:</strong> ฿3,147/คืน (รวม 5 ห้อง × 2 คืน รวมภาษี = ฿33,368 หรือเฉลี่ย <strong>฿6,673.60 / ห้อง</strong>)</p>
+                                <p>• <strong>สิ่งที่ฟรี:</strong> อาหารเช้า 3 ท่าน/ห้อง, ของขวัญฟรี, Wi-Fi ฟรี, ที่เก็บสัมภาระฟรี, เช็คอินก่อนเวลา และชุดเสื้อคลุมลายดอกตงเป่ยให้ใส่ถ่ายรูป</p>
+                                <p>• <strong>ทำเล:</strong> ติดถนนเสน่ห์หิมะ (&lt;100 ม.) และลานสกี Xuebao Ski Field (&lt;100 ม.)</p>
+                            </div>
+                        </div>
+                    `
+                },
+                hotel_yunding: {
+                    title: 'โรงแรมหยุนติ้งเสว (Yunding Snow Hotel)',
+                    html: `
+                        <div class="space-y-3 text-xs sm:text-sm">
+                            <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 space-y-1.5">
+                                <p class="font-bold text-blue-900">Chen Xue · Tatami Family Room • พักได้ 1–4 คน/ห้อง (เหลือ 3 ห้องสุดท้าย)</p>
+                                <p>• <strong>ราคา:</strong> ฿4,465/คืน (ลดจาก ฿6,569) รวม 2 คืน = <strong>฿8,930.00 / ห้อง</strong> (หาร 4 คนเหลือ ฿2,232.50/คน)</p>
+                                <p>• <strong>สิ่งที่ฟรี & สเปกห้อง:</strong> อาหารเช้า 4 ท่าน/ห้อง, ของขวัญฟรี, บริการรถรับ-ส่ง & ผู้ช่วยขนกระเป๋าฟรี, พื้นอุ่นทั้งห้อง (Floor Heating), น้ำอุ่น 24 ชม., ชักโครกอัจฉริยะ</p>
+                                <p>• <strong>กิจกรรม:</strong> บ่อน้ำพุร้อน, ซาวน่า, สปา (มีค่าบริการเพิ่ม), ห้องนวด, พื้นที่อาบแดด, เล่นสกี, ขี่ม้า, เดินป่า</p>
+                            </div>
+                        </div>
+                    `
+                },
+                hotel_compare: {
+                    title: 'ตารางเปรียบเทียบที่พัก 2 แห่ง (18–20 ธ.ค. 2569)',
+                    html: `
+                        <div class="overflow-x-auto text-xs">
+                            <table class="w-full border-collapse border border-slate-200 text-left">
+                                <thead>
+                                    <tr class="bg-slate-100">
+                                        <th class="p-2.5 border border-slate-200">หัวข้อเปรียบเทียบ</th>
+                                        <th class="p-2.5 border border-slate-200 text-emerald-800">เบรฟส์โฮมแลนด์</th>
+                                        <th class="p-2.5 border border-slate-200 text-blue-800">โรงแรมหยุนติ้งเสว</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-200 font-semibold">ประเภทห้อง & ขนาด</td>
+                                        <td class="p-2.5 border border-slate-200">Cozy Warm Kang (15 ตร.ม.)</td>
+                                        <td class="p-2.5 border border-slate-200">Tatami Family Room (19 ตร.ม. วิวภูเขา)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-200 font-semibold">จำนวนคนต่อห้องสูงสุด</td>
+                                        <td class="p-2.5 border border-slate-200">สูงสุด 3 คน / ห้อง</td>
+                                        <td class="p-2.5 border border-slate-200">สูงสุด 4 คน / ห้อง</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-200 font-semibold">ราคา 2 คืน / ห้อง</td>
+                                        <td class="p-2.5 border border-slate-200 font-bold">฿ 6,673.60 (หาร 3 = ฿2,224.53/คน)</td>
+                                        <td class="p-2.5 border border-slate-200 font-bold">฿ 8,930.00 (หาร 4 = ฿2,232.50/คน)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-200 font-semibold">โควตาห้องว่าง</td>
+                                        <td class="p-2.5 border border-slate-200 text-rose-600 font-bold">5 ห้องสุดท้าย</td>
+                                        <td class="p-2.5 border border-slate-200 text-rose-600 font-bold">3 ห้องสุดท้าย</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-200 font-semibold">สิทธิ์ฟรีเด่นๆ</td>
+                                        <td class="p-2.5 border border-slate-200">อาหารเช้า 3 ท่าน, ชุดตงเป่ย, ฝากกระเป๋า</td>
+                                        <td class="p-2.5 border border-slate-200">อาหารเช้า 4 ท่าน, รถรับ-ส่ง/ขนกระเป๋าฟรี, พื้นอุ่น+ชักโครกอัจฉริยะ</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    `
+                },
+                packing: {
+                    title: 'เช็กลิสต์เตรียมตัวลุยหิมะ -25°C (หมู่บ้านหิมะจีน)',
+                    html: `
+                        <div class="space-y-2 text-xs sm:text-sm">
+                            <p>• <strong>เสื้อผ้า 3 ชั้น:</strong> 1) ลองจอนฮีทเทคบุขนด้านใน 2) เสื้อไหมพรม/ฟลีซ 3) เสื้อขนเป็ดกันลมยาวคลุมสะโพก</p>
+                            <p>• <strong>ท่อนล่าง & เท้า:</strong> กางเกงบุขนกันลม + ถุงเท้าขนสัตว์ + รองเท้าบูทลุยหิมะพื้นดอกยางลึกกันลื่น</p>
+                            <p>• <strong>อุปกรณ์เสริมสำคัญ:</strong> ถุงมือกันน้ำสัมผัสจอได้, หมวกปิดหู, ผ้าพันคอ, แผ่นแปะร้อน (暖宝宝) แปะหลังและฝ่าเท้า และพาวเวอร์แบงก์ (อากาศหนาวแบตมือถือลดเร็วมาก)</p>
+                        </div>
+                    `
+                }
+            };
+
+            window.openModal = function(key) {
+                const item = MODAL_CONTENT[key];
+                if (!item) return;
+                const modal = document.getElementById('detail-modal');
+                const titleEl = document.getElementById('modal-title');
+                const bodyEl = document.getElementById('modal-body');
+                if (titleEl) titleEl.textContent = item.title;
+                if (bodyEl) bodyEl.innerHTML = item.html;
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    renderIcons();
+                }
+            };
+
+            window.closeModal = function() {
+                const modal = document.getElementById('detail-modal');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            };
+
             window.copyGroupSummary = function() {
                 const { rooms, selfBookedGuests, personBillingMap, actualVanShare, hotelStats } = computeRoomMatchingAndCosts();
                 const trainDep = registrations.filter(r => (r.trainPurchaseMode || 'ฝากซื้อ') === 'ฝากซื้อ').length;
@@ -2445,4 +3634,99 @@
                         b ? b.currentActualTotal.toFixed(2) : '0.00'
                     ].map(v => `"${String(v ?? '').replace(/"/g, '""')}"`).join(',');
                 });
-// ... existing code ... -->
+
+                const csvContent = '\uFEFF' + [headers.join(','), ...rows].join('\n');
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `xuexiang_trip_2569_${new Date().toISOString().slice(0, 10)}.csv`;
+                a.click();
+                URL.revokeObjectURL(url);
+                showToast('ดาวน์โหลดไฟล์ CSV เรียบร้อยแล้ว');
+            };
+
+            window.exportBackupJSON = function() {
+                const payload = {
+                    exportedAt: new Date().toISOString(),
+                    trip: 'Xuexiang-Yabuli-2569',
+                    count: registrations.length,
+                    records: registrations
+                };
+                const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `xuexiang_backup_${new Date().toISOString().slice(0, 10)}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+                showToast('สำรองข้อมูลไฟล์ JSON เรียบร้อยแล้ว');
+            };
+
+            window.importBackupJSON = async function(event) {
+                const file = event?.target?.files?.[0];
+                if (!file) return;
+                try {
+                    const text = await file.text();
+                    const parsed = JSON.parse(text);
+                    const incomingList = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.records) ? parsed.records : []);
+                    if (incomingList.length === 0) {
+                        showToast('ไม่พบข้อมูลรายชื่อในไฟล์ JSON นี้', true);
+                        return;
+                    }
+
+                    let addedCount = 0;
+                    const mergeFn = (baseList) => {
+                        const result = [...baseList];
+                        incomingList.forEach((rec, i) => {
+                            if (!rec || !rec.fullNameTh) return;
+                            const exists = result.some(e => e.fullNameTh === rec.fullNameTh && e.phone === rec.phone);
+                            if (!exists) {
+                                result.push({
+                                    ...rec,
+                                    id: rec.id || ('reg_' + Date.now() + '_' + i),
+                                    createdAtMs: rec.createdAtMs || (Date.now() + i)
+                                });
+                                addedCount++;
+                            }
+                        });
+                        return result;
+                    };
+
+                    if (useGitHubDb && activeGitHubTarget.token) {
+                        updateDbStatusBadge('syncing', 'กำลังกู้คืน...');
+                        await mutateGitHubRecords(mergeFn, `Import ${incomingList.length} backup records`);
+                        updateDbStatusBadge('github', 'GitHub DB');
+                    } else {
+                        registrations = mergeFn(registrations);
+                        saveLocalCache();
+                    }
+
+                    updateGlobalCounters();
+                    renderResultsViews();
+                    showToast(`กู้คืนและรวมข้อมูลสำเร็จ (เพิ่มใหม่ ${addedCount} รายการ)`);
+                } catch (err) {
+                    showToast(`อ่านไฟล์สำรองไม่สำเร็จ: ${err.message}`, true);
+                } finally {
+                    event.target.value = '';
+                }
+            };
+
+            // =============================================================
+            // 13. BOOTSTRAP APPLICATION SAFELY
+            // =============================================================
+            try {
+                renderIcons();
+                initSnowEffect();
+                updateAdminUI();
+                updateGlobalCounters();
+                navigateTo('hub');
+                goToWizardStep(1);
+                initCentralDatabase();
+            } catch (bootErr) {
+                console.error('App initialization error:', bootErr);
+            }
+        })();
+    </script>
+</body>
+</html>
