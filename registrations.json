@@ -10,7 +10,7 @@
       "contactId": "princenaeti",
       "emergencyContact": "-",
       "hotelId": "yunding",
-      "roomCapacity": 2,
+      "roomCapacity": 4,
       "roommateRequest": "",
       "dietary": "ทานอาหารได้ปกติ",
       "shuttlePackage": "roundtrip",
@@ -19,13 +19,19 @@
       "arrivalNote": "พร้อมกลุ่มหลักที่สถานี Metro 哈尔滨工程大学站",
       "activities": [
         "เดินถนนเสวี่ยหยุน & ถ่ายรูปชุดลายดอกตงเป่ย",
-        "จุดชมวิวเขาป้างฉุย & ทางเดินไม้เทพนิยาย"
+        "เล่นสกี (Xuebao Ski Field / นอกที่พัก)",
+        "ขี่ม้า / เดินป่าชมหิมะ / ลานกองไฟ",
+        "จุดชมวิวเขาป้างฉุย & ทางเดินไม้เทพนิยาย",
+        "สโนว์โมบิล / ล่องแก่งน้ำแข็ง / หม้อไฟตงเป่ย"
       ],
       "coldReadiness": "เตรียมครบแล้ว (เสื้อขนเป็ด, ลองจอน, รองเท้าลุยหิมะ)",
       "notes": "-",
-      "updatedAtMs": 1795364567458,
+      "updatedAtMs": 1795417834401,
       "id": "reg_1795364568514_wzyk",
-      "createdAtMs": 1795364568514
+      "createdAtMs": 1795364568514,
+      "hotelPurchaseMode": "ฝากซื้อ",
+      "trainPurchaseMode": "ฝากซื้อ",
+      "busPurchaseMode": "ฝากซื้อ"
     },
     {
       "fullNameTh": "พัดยศ เพชรวงษ์",
