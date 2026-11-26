@@ -240,6 +240,35 @@
       "updatedAtMs": 1795427583365,
       "id": "reg_1795427584412_nc69",
       "createdAtMs": 1795427584412
+    },
+    {
+      "fullNameTh": "ฤทัย กองทอง",
+      "nickname": "รุ้ง",
+      "fullNameEn": "MISS RUTHAI GONGTHONG",
+      "gender": "หญิง",
+      "phone": "0961833030",
+      "contactId": "0625945851",
+      "emergencyContact": "-",
+      "hotelId": "braves",
+      "hotelPurchaseMode": "ฝากซื้อ",
+      "roomCapacity": 3,
+      "roommateRequest": "นุ้ย ต่าย",
+      "dietary": "ทานอาหารได้ปกติ",
+      "heuTransitOption": "metro_harbin",
+      "trainPurchaseMode": "ฝากซื้อ",
+      "busPurchaseMode": "ฝากซื้อ",
+      "shuttlePackage": "roundtrip",
+      "luggage": "กระเป๋า 20-24 นิ้ว (1 ใบ) + เป้สะพายหลัง",
+      "arrivalNote": "พร้อมกลุ่มหลักที่สถานี Metro 哈尔滨工程大学站",
+      "activities": [
+        "เดินถนนเสวี่ยหยุน & ถ่ายรูปชุดลายดอกตงเป่ย",
+        "จุดชมวิวเขาป้างฉุย & ทางเดินไม้เทพนิยาย"
+      ],
+      "coldReadiness": "เตรียมครบแล้ว (เสื้อขนเป็ด, ลองจอน, รองเท้าลุยหิมะ)",
+      "notes": "-",
+      "updatedAtMs": 1795658752162,
+      "id": "reg_1795658753453_tcbb",
+      "createdAtMs": 1795658753455
     }
   ]
 }
